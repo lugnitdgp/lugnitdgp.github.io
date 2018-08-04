@@ -71,7 +71,11 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
+<<<<<<< HEAD
   ],
   "main": ".eslintrc.js",
   "license": "ISC"
+=======
+  ]
+>>>>>>> 9c9027cff8ac92367591573a648b99f8908809a5
 }
