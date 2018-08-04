@@ -26,45 +26,45 @@
         </a>
       </div>
       </div>
-      <div class="col-sm-12 col-md-7 row">
-        <div class="col-sm-12 about-col">
+      <div class="col-sm-12 col-md-7 ">
+        <div class="row">
+          <div class="col-sm-12 about-col" >
 
-          <h2>
-              WHO
-              <span class="highlighted">WE</span>
-              ARE
-            </h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ratione dolorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ratione dolorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus null
-            </p>
-            <a  href="#carouselExampleIndicators2" role="button" data-slide="next" style="float:right">
-               <button  class=" btn btn-dark btn-sm rounded-circle"><i class="fas fa-chevron-right"></i></button>
-            </a>
-            <a   href="#carouselExampleIndicators2" role="button" data-slide="prev" style="float:left">
-                <button  class=" btn btn-dark btn-sm rounded-circle"><i class="fas fa-chevron-left"></i></button>
-           </a>
-            <hr>
-        </div>
+            <h2>
+                WHO
+                <span class="highlighted">WE</span>
+                ARE
+              </h2>
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ratione dolorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ratione dolorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus null
+              </p>
+              <a  href="#carouselExampleIndicators2" role="button" data-slide="next" style="float:right">
+                 <button  class=" btn btn-dark btn-sm rounded-circle"><i class="fas fa-chevron-right"></i></button>
+              </a>
+              <a   href="#carouselExampleIndicators2" role="button" data-slide="prev" style="float:left">
+                  <button  class=" btn btn-dark btn-sm rounded-circle"><i class="fas fa-chevron-left"></i></button>
+             </a>
+              <hr>
+          </div>
 
-        <div class="col-sm-12" >
-          <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" data-interval="2000">
-          <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators2"  v-for="(item,index) in carousal2" :class="{active:item.active}" :key="index" :data-slide-to="index"></li>
-          </ol>
-           <div class="carousel-inner">
-                <div class="carousel-item"  v-for="(item,index) in carousal2" :class="{active:item.active}"  :key="index">
+          <div class="col-sm-12">
+            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" data-interval="2000">
+             <div class="carousel-inner">
+                  <div class="carousel-item"  v-for="(item,index) in carousal2" :class="{active:item.active}"  :key="index">
 
-                  <h3>{{displayheading(item.heading).first}}<span class="highlighted">{{displayheading(item.heading).second}}</span>{{displayheading(item.heading).third}}
-                    </h3>
-                    <p>
-                        {{item.text}}
-                    </p>
+                    <h3>{{displayheading(item.heading).first}}<span class="highlighted">{{displayheading(item.heading).second}}</span>{{displayheading(item.heading).third}}
+                      </h3>
+                      <p class="margin-bottom:1vh">
+                          {{item.text}}
+                      </p>
 
-                </div>
+                  </div>
+            </div>
+          </div>
           </div>
         </div>
-        </div>
+
       </div>
     </div>
   </div>
