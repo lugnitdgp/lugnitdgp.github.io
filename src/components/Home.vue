@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <h1>Welcome to the homepage!</h1>
     <about-us/>
   </div>
 </template>
