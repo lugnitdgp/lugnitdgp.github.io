@@ -1,14 +1,15 @@
 <template>
-  <div class="container">
+  <div class="container" style="min-height:100vh">
     <div class="row">
-    <div class="col-md-5 border-right border-bottom">
+
+    <div class="col-md-4 border-right border-bottom">
       <div class="row">
         <div class="col-md-12" style="padding:0">
           <div class="card text-right border-0 ">
             <transition name="fade">
               <div class="card-body" v-show="show">
                   <h3 class="card-title">{{displayheading(data1.heading).first}}<span class="highlighted">{{displayheading(data1.heading).second}}</span>{{displayheading(data1.heading).third}}</h3>
-                  <p class="card-text"> {{data1.content}}</p>
+                  <p class="card-text p-spec"> {{data1.content}}</p>
                   <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data1.link}}</a>
               </div>
             </transition>
@@ -16,16 +17,16 @@
           </div>
         </div>
       </div>
-
     </div>
-    <div class="col-md-7">
+
+    <div class="col-md-8">
       <div class="row">
         <div class="col-md-12 border-bottom"  style="padding:0">
           <div class="card text-right border-0 text-md-left">
             <transition name="slide-fade">
               <div class="card-body" v-show="show">
                   <h3 class="card-title">{{displayheading(data2.heading).first}}<span class="highlighted">{{displayheading(data2.heading).second}}</span>{{displayheading(data2.heading).third}}</h3>
-                  <p class="card-text"> {{data2.content}}</p>
+                  <p class="card-text" style="display:table-row"> {{data2.content}}</p>
                   <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data2.link}}</a>
               </div>
             </transition>
@@ -38,31 +39,36 @@
           <transition name="slide-fade">
             <div class="card-body" v-show="show">
                 <h3 class="card-title">{{displayheading(data3.heading).first}}<span class="highlighted">{{displayheading(data3.heading).second}}</span>{{displayheading(data3.heading).third}}</h3>
-                <p class="card-text"> {{data3.content}}</p>
+                <p class="card-text" style="display:table-row"> {{data3.content}}</p>
                 <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data3.link}}</a>
             </div>
           </transition>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <div class="row">
-   <div class="col-sm-12" style="padding:0">
-    <div id="bottom-section">
-      <div class="d-flex flex-row bd-highlight ">
-        <div  v-for="(item,index) in bottom" v-bind:key="index" class="p-2 bd-highlight text-center col" >
-        <div class="bottom-div mb-2">
-          <i class="bottom-icon" :class="item.icon"></i>
-          <animate-number :number="item.number"/>
-          <strong>{{item.content}}</strong>
-        </div>
         </div>
       </div>
     </div>
+
    </div>
- </div>
+   <div class="row">
+     <div class="col-sm-12" style="padding:0">
+       <div id="bottom-section">
+         <div class="row justify-content-center">
+           <blockquote class="blockquote text-center">
+             <p class="mb-0 mt-4 text-light ">Software is like information, it's better when it's free!.</p>
+             <footer class="blockquote-footer font-italic">Someone not so famous</footer>
+           </blockquote>
+         </div>
+         <div class="d-flex flex-row bd-highlight ">
+           <div  v-for="(item,index) in bottom" v-bind:key="index" class="p-2 bd-highlight text-center col" >
+             <div class="bottom-div mb-0">
+               <i class="bottom-icon" :class="item.icon"></i>
+               <animate-number :number="item.number"/>
+               <strong>{{item.content}}</strong>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
 
   </div>
 </template>
@@ -78,11 +84,9 @@ export default {
         {icon: 'fas fa-chess', content: 'Events', number: 48},
         {icon: 'fas fa-project-diagram', content: 'Projects', number: 100}
       ],
-      data1: {heading: 'WHO WE ARE', content: 'lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla', link: 'view more'},
-      data2: {heading: 'WHAT WE DO', content: 'lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla', link: 'view more'},
-      data3: {heading: 'OUR VISION', content: 'lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla', link: 'view more'},
-      interval: false,
-      offset: 0,
+      data1: {heading: 'WHO WE ARE', content: 'The GNU/Linux User’s Group, NIT Durgapur is a community of GNU/Linux Users that promote the use of Free and Open Source Software. The Group was established in 2003 by a bunch of FOSS enthusiasts with the idea of popularising and contributing to Open Source. We are a plethora of designers, contributors and developers that believe in learning and sharing through opening up your mind to Open Source.', link: 'Meet the members»'},
+      data2: {heading: 'WHAT WE DO', content: 'We provide budding enthusiasts like ourselves a forum to contribute and learn about FOSS. Through varied workshops on revolutionary Open Technologies throughout the year, we spread the idea of Open Source to beginners and veterans alike. We bring people together to ideate and contribute to the leading Open technologies. We provide help and resources to everyone who wants to make the web world a better place.', link: 'Look at our activities »'},
+      data3: {heading: 'OUR VISION', content: 'Being a bunch of FOSS enthusiasts, we preach the idea of “free things are the best things” and firmly believe in sharing knowledge. We strive to elevate the tech culture in our college and believe that this can only be done through giving people digital resources and knowledge in all realms from hardware to software and data to design. We promote FOSS through various endeavours because we believe in the freedom of expression for everyone.', link: ' See how to join us»'},
       show: false
 
     }
@@ -151,7 +155,7 @@ export default {
   color:#fa631c !important;
 }
 .bottom-div{
-  margin-top: 45px;
+  margin-top:2vh;
   position: relative;
 }
 h2,h3{
@@ -162,7 +166,7 @@ h2,h3{
 p{
   color: #9c9c9c;
 max-width: 578px;
-font-size: 0.8rem;
+font-size: 0.9rem;
 }
 @keyframes translateLtoR{
   from{ transform: translateX(-100);}
@@ -186,5 +190,9 @@ font-size: 0.8rem;
          transition-timing-function: ease-in;
     }
 .slide-fade-enter{transform: translateX(50%);opacity:0}
+.p-spec{
+  font-size: 0.95rem;
+  line-height: inherit;
+}
 
 </style>
