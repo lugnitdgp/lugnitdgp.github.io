@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import animateNumber from './animateNumber'
+import AnimateNumber from './AnimateNumber'
 export default {
 
   data () {
@@ -99,13 +99,11 @@ export default {
     setTimeout(function () {
       var i
       for (i = 0; i < 3; i++) {
-        console.log(i)
         var start = 0
         var temp = +this.bottom[i].number
         this.bottom[i].number = 0
         while (start++ !== temp) {
           this.bottom[i].number = start.toString()
-          console.log(i)
         }
       }
     }.bind(this), 0)
@@ -124,7 +122,7 @@ export default {
   },
   created () {
   },
-  components: {animateNumber}
+  components: {AnimateNumber}
 
 }
 </script>

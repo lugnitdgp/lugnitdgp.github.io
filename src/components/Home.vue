@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import aboutUs from './About-us'
+import AboutUs from './About-us'
 export default {
   name: 'Home',
-  components: {aboutUs}
+  components: {AboutUs}
 }
 </script>
 
