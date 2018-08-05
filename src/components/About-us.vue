@@ -1,85 +1,60 @@
-<template lang="html">
-  <div>
+<template>
   <div class="container">
     <div class="row">
-      <div class="col-sm-12 col-md-5" style="padding:0px">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000" style="height:100%">
-        <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators"  v-for="(item,index) in carousal1" :class="{active:item.active}" :key="index" :data-slide-to="index"></li>
-        </ol>
-         <div class="carousel-inner" style="height:100%">
-              <div class="carousel-item" v-for="(item,index) in carousal1" :class="{active:item.active}"  :key="index" style="height:100%">
-                <img class="d-block w-100" :src="item.image" :alt="index" style="height:100%" >
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>{{item.heading}}</h5>
-                  <p>{{item.para}}</p>
-                </div>
-              </div>
-        </div>
-         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-        </a>
-      </div>
-      </div>
-      <div class="col-sm-12 col-md-7 ">
-        <div class="row">
-          <div class="col-sm-12 about-col" >
-
-            <h2>
-                WHO
-                <span class="highlighted">WE</span>
-                ARE
-              </h2>
-              <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ratione dolorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ratione dolorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus null
-              </p>
-              <a  href="#carouselExampleIndicators2" role="button" data-slide="next" style="float:right">
-                 <button  class=" btn btn-dark btn-sm rounded-circle"><i class="fas fa-chevron-right"></i></button>
-              </a>
-              <a   href="#carouselExampleIndicators2" role="button" data-slide="prev" style="float:left">
-                  <button  class=" btn btn-dark btn-sm rounded-circle"><i class="fas fa-chevron-left"></i></button>
-             </a>
-              <hr>
-          </div>
-
-          <div class="col-sm-12">
-            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" data-interval="2000">
-             <div class="carousel-inner">
-                  <div class="carousel-item"  v-for="(item,index) in carousal2" :class="{active:item.active}"  :key="index">
-
-                    <h3>{{displayheading(item.heading).first}}<span class="highlighted">{{displayheading(item.heading).second}}</span>{{displayheading(item.heading).third}}
-                      </h3>
-                      <p class="margin-bottom:1vh">
-                          {{item.text}}
-                      </p>
-
-                  </div>
+    <div class="col-md-5 border-right">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card text-right border-0">
+            <div class="card-body">
+                <h3 class="card-title">{{displayheading(data1.heading).first}}<span class="highlighted">{{displayheading(data1.heading).second}}</span>{{displayheading(data1.heading).third}}</h3>
+                <p class="card-text"> {{data1.content}}</p>
+                <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data1.link}}</a>
             </div>
           </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-7">
+      <div class="row">
+        <div class="col-md-12 border-bottom">
+          <div class="card text-right border-0 text-md-left">
+            <div class="card-body">
+                <h3 class="card-title">{{displayheading(data2.heading).first}}<span class="highlighted">{{displayheading(data2.heading).second}}</span>{{displayheading(data2.heading).third}}</h3>
+                <p class="card-text"> {{data2.content}}</p>
+                <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data2.link}}</a>
+            </div>
           </div>
         </div>
-
       </div>
+      <div class="row">
+        <div class="card text-right border-0 text-md-left " >
+          <div class="card-body">
+              <h3 class="card-title">{{displayheading(data3.heading).first}}<span class="highlighted">{{displayheading(data3.heading).second}}</span>{{displayheading(data3.heading).third}}</h3>
+              <p class="card-text"> {{data3.content}}</p>
+              <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data3.link}}</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-   <div class="container" id="bottom-section" >
-        <div class="d-flex flex-row bd-highlight mb-3">
-          <div  v-for="(item,index) in bottom" v-bind:key="index" class="p-2 bd-highlight text-center col" >
-          <div class="bottom-div">
-            <i class="bottom-icon" :class="item.icon"></i>
-            <h3>{{displaynumber(item.number).first}}<span class="highlighted">{{displaynumber(item.number).second}}</span> </h3>
-            <strong>{{item.content}}</strong>
-          </div>
-          </div>
-
-     </div>
+  <div class="row">
+   <div class="col-sm-12" style="padding:0">
+    <div id="bottom-section">
+      <div class="d-flex flex-row bd-highlight ">
+        <div  v-for="(item,index) in bottom" v-bind:key="index" class="p-2 bd-highlight text-center col" >
+        <div class="bottom-div mb-2">
+          <i class="bottom-icon" :class="item.icon"></i>
+          <h3>{{displaynumber(item.number).first}}<span class="highlighted">{{displaynumber(item.number).second}}</span> </h3>
+          <strong>{{item.content}}</strong>
+        </div>
+        </div>
+      </div>
     </div>
+   </div>
+ </div>
+
   </div>
 </template>
 
@@ -88,18 +63,14 @@ export default {
 
   data () {
     return {
-      carousal1: [{image: 'https://cdn.pixabay.com/photo/2015/03/30/20/33/heart-700141__340.jpg', heading: 'hdwqjvfi', para: 'hdwqjvfi', active: true},
-        {image: 'https://cdn.pixabay.com/photo/2015/03/30/20/33/heart-700141__340.jpg', heading: 'hdwqjvfi', para: 'hdwqjvfi', active: false},
-        {image: 'https://cdn.pixabay.com/photo/2015/03/30/20/33/heart-700141__340.jpg', heading: 'hdwqjvfi', para: 'hdwqjvfi', active: false}
-      ],
-      carousal2: [{heading: 'OUR MOTTO', text: 'lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.', active: true},
-        {heading: 'WHAT WE DO', text: 'lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.', active: false},
-        {heading: 'OUR VISION', text: 'lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.', active: false}],
       bottom: [
         {icon: 'fas fa-users ', content: 'Members', number: '12'},
         {icon: 'fas fa-chess', content: 'Events', number: '48'},
         {icon: 'fas fa-project-diagram', content: 'Projects', number: '100'}
       ],
+      data1: {heading: 'OUR MOTTO', content: 'lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla', link: 'view more'},
+      data2: {heading: 'WHAT WE DO', content: 'lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla', link: 'view more'},
+      data3: {heading: 'OUR VISION', content: 'lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla', link: 'view more'},
       interval: false,
       offset: 0
 
@@ -142,7 +113,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style scoped>
 #bottom-section{
 
   background-color: #444 !important;
@@ -168,27 +139,23 @@ export default {
   color:#fa631c !important;
 }
 .bottom-div{
-  margin-top: 54px;
+  margin-top: 45px;
   position: relative;
 }
 .bottom-div h3{
+  color:white;
   margin: 0 !important;
 }
-.about-col h2{
+h2,h3{
   font-weight: bold;
   margin: 10px;
    color:  #444;
 }
-.about-col p{
+p{
   color: #9c9c9c;
 max-width: 578px;
-font-size: 1.06667rem;
-}
+font-size: 0.8rem;
 
-#carouselExampleIndicators2 h3{
-  font-weight: bold;
-  margin: 10px;
-   color:  #444;
 }
 
 </style>
