@@ -1,12 +1,12 @@
 <template>
-  <div class="hello">
-    <h1>Welcome to the homepage!</h1>
-  </div>
+  <events/>
 </template>
 
 <script>
+import events from './Events.vue'
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {events}
 }
 </script>
 
