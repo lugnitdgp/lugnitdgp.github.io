@@ -1,26 +1,18 @@
 <template>
-  <h3 v-scroll="AnimateNumNow">{{ displaynumber(displayNumber).first }}<span class="highlighted">{{ displaynumber(displayNumber).second }}</span></h3>
+<h3>{{displaynumber(displayNumber).first}}<span class="highlighted">{{displaynumber(displayNumber).second}}</span> </h3>
 </template>
 
 <script>
 export default {
-  props: {
-    'number': {
-      type: Number,
-      default: 0
-    }
-  },
-
+  props: {'number': {default: 0}},
   data () {
     return {
-      displayNumber: 10,
-      interval: false,
-      once: true
+      displayNumber: 0,
+      interval: false
     }
   },
 
   ready: function () {
-    console.log(this.number)
     this.displayNumber = this.number ? this.number : 0
   },
 
@@ -47,27 +39,17 @@ export default {
         first: num.substr(0, 1),
         second: num.substr(1, num.length)
       }
-    },
-    AnimateNumNow (e) {
-      var count = window.pageYOffset || document.documentElement.scrollTop
-      if (count >= 600 && this.once) {
-        this.AnimateNumber()
-        this.once = false
-      }
-    },
-    AnimateNumber () {
-      this.displayNumber = 10
     }
   }
 }
 </script>
 
 <style scoped>
-.highlighted {
-  color: #fa631c;
+.highlighted{
+  color:#fa631c !important;
 }
-h3 {
-  color: white;
-  margin: 0;
+h3{
+  color:white;
+  margin: 0 !important;
 }
 </style>
