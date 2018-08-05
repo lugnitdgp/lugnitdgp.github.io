@@ -1,15 +1,18 @@
 <template>
   <div class="container">
     <div class="row">
-    <div class="col-md-5 border-right">
+    <div class="col-md-5 border-right border-bottom">
       <div class="row">
-        <div class="col-md-12">
-          <div class="card text-right border-0">
-            <div class="card-body">
-                <h3 class="card-title">{{displayheading(data1.heading).first}}<span class="highlighted">{{displayheading(data1.heading).second}}</span>{{displayheading(data1.heading).third}}</h3>
-                <p class="card-text"> {{data1.content}}</p>
-                <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data1.link}}</a>
-            </div>
+        <div class="col-md-12" style="padding:0">
+          <div class="card text-right border-0 ">
+            <transition name="fade">
+              <div class="card-body" v-show="show">
+                  <h3 class="card-title">{{displayheading(data1.heading).first}}<span class="highlighted">{{displayheading(data1.heading).second}}</span>{{displayheading(data1.heading).third}}</h3>
+                  <p class="card-text"> {{data1.content}}</p>
+                  <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data1.link}}</a>
+              </div>
+            </transition>
+
           </div>
         </div>
       </div>
@@ -17,23 +20,29 @@
     </div>
     <div class="col-md-7">
       <div class="row">
-        <div class="col-md-12 border-bottom">
+        <div class="col-md-12 border-bottom"  style="padding:0">
           <div class="card text-right border-0 text-md-left">
-            <div class="card-body">
-                <h3 class="card-title">{{displayheading(data2.heading).first}}<span class="highlighted">{{displayheading(data2.heading).second}}</span>{{displayheading(data2.heading).third}}</h3>
-                <p class="card-text"> {{data2.content}}</p>
-                <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data2.link}}</a>
-            </div>
+            <transition name="slide-fade">
+              <div class="card-body" v-show="show">
+                  <h3 class="card-title">{{displayheading(data2.heading).first}}<span class="highlighted">{{displayheading(data2.heading).second}}</span>{{displayheading(data2.heading).third}}</h3>
+                  <p class="card-text"> {{data2.content}}</p>
+                  <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data2.link}}</a>
+              </div>
+            </transition>
+
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="card text-right border-0 text-md-left " >
-          <div class="card-body">
-              <h3 class="card-title">{{displayheading(data3.heading).first}}<span class="highlighted">{{displayheading(data3.heading).second}}</span>{{displayheading(data3.heading).third}}</h3>
-              <p class="card-text"> {{data3.content}}</p>
-              <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data3.link}}</a>
-          </div>
+        <div class="card text-right border-0 text-md-left" style="padding:0" >
+          <transition name="slide-fade">
+            <div class="card-body" v-show="show">
+                <h3 class="card-title">{{displayheading(data3.heading).first}}<span class="highlighted">{{displayheading(data3.heading).second}}</span>{{displayheading(data3.heading).third}}</h3>
+                <p class="card-text"> {{data3.content}}</p>
+                <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data3.link}}</a>
+            </div>
+          </transition>
+
         </div>
       </div>
 
@@ -46,7 +55,7 @@
         <div  v-for="(item,index) in bottom" v-bind:key="index" class="p-2 bd-highlight text-center col" >
         <div class="bottom-div mb-2">
           <i class="bottom-icon" :class="item.icon"></i>
-          <h3>{{displaynumber(item.number).first}}<span class="highlighted">{{displaynumber(item.number).second}}</span> </h3>
+          <animate-number :number="item.number"/>
           <strong>{{item.content}}</strong>
         </div>
         </div>
@@ -59,24 +68,44 @@
 </template>
 
 <script>
+import animateNumber from './animateNumber'
 export default {
 
   data () {
     return {
       bottom: [
-        {icon: 'fas fa-users ', content: 'Members', number: '12'},
-        {icon: 'fas fa-chess', content: 'Events', number: '48'},
-        {icon: 'fas fa-project-diagram', content: 'Projects', number: '100'}
+        {icon: 'fas fa-users ', content: 'Members', number: 120},
+        {icon: 'fas fa-chess', content: 'Events', number: 48},
+        {icon: 'fas fa-project-diagram', content: 'Projects', number: 100}
       ],
-      data1: {heading: 'OUR MOTTO', content: 'lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla', link: 'view more'},
+      data1: {heading: 'WHO WE ARE', content: 'lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla', link: 'view more'},
       data2: {heading: 'WHAT WE DO', content: 'lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla', link: 'view more'},
       data3: {heading: 'OUR VISION', content: 'lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla.lorem, reprehenderit laboriosam eius tenetur modi quas, esse nesciunt similique repellendus nulla', link: 'view more'},
       interval: false,
-      offset: 0
+      offset: 0,
+      show: false
 
     }
   },
+  mounted () {
+    setTimeout(function () {
+      this.show = true
+    }.bind(this), 0)
 
+    setTimeout(function () {
+      var i
+      for (i = 0; i < 3; i++) {
+        console.log(i)
+        var start = 0
+        var temp = +this.bottom[i].number
+        this.bottom[i].number = 0
+        while (start++ !== temp) {
+          this.bottom[i].number = start.toString()
+          console.log(i)
+        }
+      }
+    }.bind(this), 0)
+  },
   methods: {
     displayheading (text) {
       var str = text.length
@@ -86,29 +115,12 @@ export default {
         second: text.substr(strd, 2),
         third: text.substr(2 + strd, str)
       }
-    },
-    displaynumber (num) {
-      return {
-        first: num.substr(0, 1),
-        second: num.substr(1, num.length)
-      }
     }
-  /*  ChangeNumbers () {
-      var start = 0
-      var i
-      for (i = 0; i < this.bottom.length; i++) {
-        start = 0
-        var num = Number(this.bottom[i].number)
-        while (start++ !== num) {
-          this.bottom[i].number = start
-        }
-      }
-    } */
 
   },
   created () {
-  //  window.addEventListener('scroll', this.ChangeNumbers)
-  }
+  },
+  components: {animateNumber}
 
 }
 </script>
@@ -142,10 +154,6 @@ export default {
   margin-top: 45px;
   position: relative;
 }
-.bottom-div h3{
-  color:white;
-  margin: 0 !important;
-}
 h2,h3{
   font-weight: bold;
   margin: 10px;
@@ -155,7 +163,28 @@ p{
   color: #9c9c9c;
 max-width: 578px;
 font-size: 0.8rem;
-
 }
+@keyframes translateLtoR{
+  from{ transform: translateX(-100);}
+  to{transform: translateX(0);}
+}
+@keyframes transitionRtoL{
+  from{ transform: translateX(100);}
+  to{transform: translateX(0);}
+}
+
+.fade-enter-active{
+
+       transition: all 0.8s ;
+       transition-timing-function: ease-in;
+  }
+.fade-enter{transform: translateX(-50%);
+            opacity:0;}
+.slide-fade-enter-active{
+
+         transition: all 0.8s ;
+         transition-timing-function: ease-in;
+    }
+.slide-fade-enter{transform: translateX(50%);opacity:0}
 
 </style>
