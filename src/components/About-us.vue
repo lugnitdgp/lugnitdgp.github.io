@@ -130,12 +130,12 @@ export default {
 <style scoped>
 #bottom-section{
 
-  background-color: #444 !important;
+  background-color: #444 ;
   color:white;
 }
 .bottom-icon{
   background-color: white;
-  color:#fa631c !important;
+  color:#fa631c ;
   box-shadow: 0px 0px 2px #888;
 
     border-radius: 50%;
@@ -150,7 +150,7 @@ export default {
     width: 64px;
 }
 .highlighted{
-  color:#fa631c !important;
+  color:#fa631c ;
 }
 .bottom-div{
   margin-top:2vh;

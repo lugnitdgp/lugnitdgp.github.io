@@ -46,10 +46,10 @@ export default {
 
 <style scoped>
 .highlighted{
-  color:#fa631c !important;
+  color:#fa631c;
 }
 h3{
   color:white;
-  margin: 0 !important;
+  margin: 0;
 }
 </style>
