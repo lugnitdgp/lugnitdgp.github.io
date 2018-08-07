@@ -1,5 +1,5 @@
-<template>
-  <div class="container" style="min-height:100vh">
+<template >
+  <div class="container" style="min-height:100vh !important">
     <div class="row">
 
     <div class="col-md-4 border-right border-bottom">
@@ -9,7 +9,7 @@
             <transition name="fade">
               <div class="card-body" v-show="show">
                   <h3 class="card-title">{{displayheading(data1.heading).first}}<span class="highlighted">{{displayheading(data1.heading).second}}</span>{{displayheading(data1.heading).third}}</h3>
-                  <p class="card-text p-spec"> {{data1.content}}</p>
+                  <p class="card-text p-spec tex-justified"> {{data1.content}}</p>
                   <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data1.link}}</a>
               </div>
             </transition>
@@ -165,6 +165,7 @@ p{
   color: #9c9c9c;
 max-width: 578px;
 font-size: 0.9rem;
+line-height: 1.4rem !important;
 }
 @keyframes translateLtoR{
   from{ transform: translateX(-100);}
@@ -189,8 +190,6 @@ font-size: 0.9rem;
     }
 .slide-fade-enter{transform: translateX(50%);opacity:0}
 .p-spec{
-  font-size: 0.95rem;
-  line-height: inherit;
+  font-size: 0.9rem;
 }
-
 </style>
