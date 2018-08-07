@@ -2,15 +2,15 @@
   <div class="container" style="min-height:100vh !important">
     <div class="row">
 
-    <div class="col-md-4 border-right border-bottom">
+    <div class="col-md-4 border-right border-bottom ">
       <div class="row">
-        <div class="col-md-12" style="padding:0">
-          <div class="card text-right border-0 ">
+        <div class="col-md-12" >
+          <div class="card text-right border-0 pb-1 pt-1">
             <transition name="fade">
               <div class="card-body" v-show="show">
-                  <h3 class="card-title">{{displayheading(data1.heading).first}}<span class="highlighted">{{displayheading(data1.heading).second}}</span>{{displayheading(data1.heading).third}}</h3>
-                  <p class="card-text p-spec tex-justified"> {{data1.content}}</p>
-                  <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data1.link}}</a>
+                  <h2 class="card-title">{{displayheading(data1.heading).first}}<span class="highlighted">{{displayheading(data1.heading).second}}</span>{{displayheading(data1.heading).third}}</h2>
+                  <p class="card-text p-spec "> {{data1.content}}</p>
+                <!--  <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data1.link}}</a>-->
               </div>
             </transition>
 
@@ -21,13 +21,13 @@
 
     <div class="col-md-8">
       <div class="row">
-        <div class="col-md-12 border-bottom"  style="padding:0">
-          <div class="card text-right border-0 text-md-left">
+        <div class="col-md-12 border-bottom " >
+          <div class="card text-right border-0 text-md-left pb-1 pt-1">
             <transition name="slide-fade">
               <div class="card-body" v-show="show">
-                  <h3 class="card-title">{{displayheading(data2.heading).first}}<span class="highlighted">{{displayheading(data2.heading).second}}</span>{{displayheading(data2.heading).third}}</h3>
+                  <h2 class="card-title">{{displayheading(data2.heading).first}}<span class="highlighted">{{displayheading(data2.heading).second}}</span>{{displayheading(data2.heading).third}}</h2>
                   <p class="card-text" style="display:table-row"> {{data2.content}}</p>
-                  <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data2.link}}</a>
+                <!--  <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data2.link}}</a>-->
               </div>
             </transition>
 
@@ -35,14 +35,16 @@
         </div>
       </div>
       <div class="row">
-        <div class="card text-right border-0 text-md-left" style="padding:0" >
-          <transition name="slide-fade">
-            <div class="card-body" v-show="show">
-                <h3 class="card-title">{{displayheading(data3.heading).first}}<span class="highlighted">{{displayheading(data3.heading).second}}</span>{{displayheading(data3.heading).third}}</h3>
-                <p class="card-text" style="display:table-row"> {{data3.content}}</p>
-                <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data3.link}}</a>
-            </div>
-          </transition>
+        <div class="col-md-12">
+          <div class="card text-right border-0 text-md-left pb-1 pt-1" >
+            <transition name="slide-fade">
+              <div class="card-body" v-show="show">
+                  <h2 class="card-title">{{displayheading(data3.heading).first}}<span class="highlighted">{{displayheading(data3.heading).second}}</span>{{displayheading(data3.heading).third}}</h2>
+                  <p class="card-text" style="display:table-row"> {{data3.content}}</p>
+                <!--  <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data3.link}}</a>-->
+              </div>
+            </transition>
+          </div>
         </div>
       </div>
     </div>
@@ -59,7 +61,7 @@
          </div>
          <div class="d-flex flex-row bd-highlight ">
            <div  v-for="(item,index) in bottom" v-bind:key="index" class="p-2 bd-highlight text-center col" >
-             <div class="bottom-div mb-0">
+             <div class="bottom-div mb-3">
                <i class="bottom-icon" :class="item.icon"></i>
                <animate-number :number="item.number"/>
                <strong>{{item.content}}</strong>
@@ -156,7 +158,7 @@ export default {
   margin-top:2vh;
   position: relative;
 }
-h2,h3{
+h1,h2,h3{
   font-weight: bold;
   margin: 10px;
    color:  #444;
