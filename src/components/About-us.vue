@@ -1,5 +1,5 @@
 <template >
-  <div class="container" style="min-height:100vh !important">
+  <div class="container" style="min-height:100vh !important;padding:0">
     <div class="row">
 
     <div class="col-md-4 border-right border-bottom ">
