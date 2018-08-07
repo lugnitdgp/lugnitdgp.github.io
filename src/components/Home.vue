@@ -1,12 +1,14 @@
 <template>
   <div class="hello">
-    <h1>Welcome to the homepage!</h1>
+    <home-carousal/>
   </div>
 </template>
 
 <script>
+import HomeCarousal from './HomeCarousal'
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {HomeCarousal}
 }
 </script>
 
