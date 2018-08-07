@@ -66,17 +66,17 @@ export default {
 }
 
 .carousel-image-1{
-  background: url('@/assets/images/image1.jpg');
+  background: url('../assets/images/image1.jpg');
   background-size: cover;
 }
 
 .carousel-image-2{
-  background: url('@/assets/images/image2.jpg');
+  background: url('../assets/images/image2.jpg');
   background-size: cover;
 }
 
 .carousel-image-3{
-  background: url('@/assets/images/image3.jpg');
+  background: url('../assets/images/image3.jpg');
   background-size: cover;
 }
 
