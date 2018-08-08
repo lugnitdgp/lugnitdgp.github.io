@@ -1,18 +1,14 @@
 <template>
-  <div class="hello">
+  <div id="home">
     <about-us/>
   </div>
 </template>
 
 <script>
 import AboutUs from './About-us'
+
 export default {
   name: 'Home',
-  components: {AboutUs}
+  components: { AboutUs }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-</style>
