@@ -1,18 +1,24 @@
 <template>
-<h3>{{displaynumber(displayNumber).first}}<span class="highlighted">{{displaynumber(displayNumber).second}}</span> </h3>
+  <h3>{{ displaynumber(displayNumber).first }}<span class="highlighted">{{ displaynumber(displayNumber).second }}</span></h3>
 </template>
 
 <script>
 export default {
-  props: {'number': {default: 0}},
+  props: {
+    'number': {
+      default: 0
+    }
+  },
+
   data () {
     return {
-      displayNumber: 0,
+      displayNumber: 10,
       interval: false
     }
   },
 
   ready: function () {
+    console.log(this.number)
     this.displayNumber = this.number ? this.number : 0
   },
 
@@ -45,11 +51,11 @@ export default {
 </script>
 
 <style scoped>
-.highlighted{
-  color:#fa631c;
+.highlighted {
+  color: #fa631c;
 }
-h3{
-  color:white;
+h3 {
+  color: white;
   margin: 0;
 }
 </style>

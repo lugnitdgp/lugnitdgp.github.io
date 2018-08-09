@@ -17,3 +17,26 @@ npm run build
 # deploy to gh-pages branch
 npm run deploy
 ```
+
+## Development Setup
+
+```bash
+# Fork the repository
+
+# Clone your fork
+git clone https://github.com/<your_username>/lugnitdgp-website.git
+
+# Add a remote to the original repo as upstream
+git remote add upstream https:/github.com/lugnitdgp/lugnitdgp-website.git
+
+# Do your thing: solve a bug or create a new feature
+
+# Stage and commit you changes and push to your fork
+git add .
+git commit -m "Good commit message"
+git push origin master
+
+# Create a pull request and when the PR gets merged update your fork 
+git pull upstream master --rebase
+git push origin master -f
+```
