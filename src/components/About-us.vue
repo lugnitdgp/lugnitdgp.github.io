@@ -220,5 +220,7 @@ p.card-text {
 .border-bottom, .border-right {
   border-color: rgba(222, 226, 230, 0.45) !important;
 }
-
+ blockquote{
+   font-size:0.95rem;
+ }
 </style>
