@@ -1,15 +1,15 @@
 <template>
   <div id="home">
     <about-us/>
-    <profile-slider/>
+    <team-section/>
   </div>
 </template>
 
 <script>
 import AboutUs from './About-us'
-import ProfileSlider from './ProfileSlider'
+import TeamSection from './TeamSection'
 export default {
   name: 'Home',
-  components: { AboutUs, ProfileSlider }
+  components: { AboutUs, TeamSection }
 }
 </script>
