@@ -1,15 +1,21 @@
 <template>
   <div id="home">
+<<<<<<< HEAD
     <nav-bar />
     <home-carousel />
     <about-us id="AboutUsSection" />
     <event-section id="EventsSection" />
     <team-section id="TeamSection" :profiles="profiles" />
     <blog-section id="BlogSection" />
+=======
+    <about-us/>
+    <team-section/>
+>>>>>>> team-section name and css changes
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
 import NavBar from './NavBar'
 import HomeCarousel from './HomeCarousel'
 import AboutUs from './AboutUs'
@@ -50,5 +56,12 @@ export default {
       }
     }
   }
+=======
+import AboutUs from './About-us'
+import TeamSection from './TeamSection'
+export default {
+  name: 'Home',
+  components: { AboutUs, TeamSection }
+>>>>>>> team-section name and css changes
 }
 </script>
