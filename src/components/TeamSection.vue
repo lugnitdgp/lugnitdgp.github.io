@@ -1,19 +1,18 @@
 <template>
   <section class="team-section">
     <h2 class="text-center font-weight-bold pt-5 pb-3">{{ displayheading("OUR TEAM").first }}<span class="highlighted">{{ displayheading("OUR TEAM").second }}</span>{{ displayheading("OUR TEAM").third }}</h2>
-    <carousel :navigationEnabled="true" :loop="true" :autoplay="true" :paginationEnabled="false" :perPageCustom="[[280,1],[768, 3]]" :autoplayHoverPause="true" class="container p-0">
+    <carousel autoplayTimeout="5000" :navigationEnabled="true" :loop="true" :autoplay="true" :paginationEnabled="false" :perPageCustom="[[280,1],[768, 3]]" :autoplayHoverPause="true" class="container p-0">
       <slide v-for="(item,index) in profiles" :key="index" class="col-md-4 col-sm-12 p-2">
         <div class="card  rounded-0">
-
-          <img class="card-img-top rounded-0" src="https://www.gettyimages.co.jp/gi-resources/images/CreativeLandingPage/CHP_Mar_7_2018/03_621199382.jpg" alt="Card image cap">
+          <img class="card-img-top rounded-0" :src="item.image" alt="Card image cap">
           <div class="overlay-image"></div>
           <div class="card-body">
-            <h5 class="card-title font-weight-bold">{{ displayheading(item.name).first }}<span class="highlighted">{{ displayheading(item.name).second }}</span>{{ displayheading(item.name).third }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{item.post}}</h6>
+            <h5 class="card-title font-weight-bold">{{ displayheading(item.first_name+" "+item.last_name).first }}<span class="highlighted">{{ displayheading(item.first_name+" "+item.last_name).second }}</span>{{ displayheading(item.first_name+" "+item.last_name).third }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{item.alias}}</h6>
             <div class="icon-block text-center">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-github"></i></a>
-              <a href="#"><i class="fab fa-google-plus-g"></i></a>
+              <a :href="item.facebook_link"><i class="fab fa-facebook-f"></i></a>
+              <a :href="item.git_link"><i class="fab fa-github"></i></a>
+              <a :href="item.email"><i class="fab fa-google-plus-g"></i></a>
             </div>
           </div>
         </div>
@@ -25,21 +24,20 @@
 
 <script>
 import { Carousel, Slide } from 'vue-carousel'
+import Members from '@/services/members.js'
+
 export default {
   data () {
     return {
-      profiles: [{name: 'ARchana choudhary', post: 'head', github: '', facebook: '', gmail: ''},
-        {name: 'Arnav', post: 'ex-presi', github: '', facebook: '', gmail: ''},
-        {name: 'Vrushali', post: 'worker', github: '', facebook: '', gmail: ''},
-        {name: 'Purnima', post: 'assistant', github: '', facebook: '', gmail: ''}]
+      profiles: []
     }
   },
-  components: {
-    Carousel,
-    Slide
-  },
-
   methods: {
+    categorise (mem) {
+      if (mem.degree_name === 'BTECH' & mem.year_name === '4') {
+        this.profiles.push(mem)
+      }
+    },
     displayheading (text) {
       var length = text.length
       var middle = length / 2
@@ -50,41 +48,56 @@ export default {
         third: text.substr(highlighted + middle, length)
       }
     }
-
+  },
+  async created () {
+    try {
+      const team = (await Members.getMembers()).data
+      console.log(team)
+      team.forEach((mem) => {
+        this.categorise(mem)
+      })
+    } catch (e) {
+      console.log(e.message)
+    }
+  },
+  components: {
+    Carousel,
+    Slide
   }
 }
 </script>
 
 <style>
-.team-section{
+  .team-section{
     background-color: #f7f7f7;
     min-height: 100vh;
-}
-.card img{
+  }
+  .card img{
   height:18rem;
-}
-.card .overlay-image{
+  }
+  .card .overlay-image{
     background-color: #fa631c;
     width:100%;
     height:18rem;
     position: absolute;
     opacity:0.5;
-    visibility: hidden;
     transform: scale3d(1,0.5,1);
-}
-@keyframes displayOverlay {
-    0%{visibility:hidden;}
-    100%{visibility:visible;}
-}
-.card:hover .overlay-image{
+    visibility: hidden;
+  }
+  @keyframes displayOverlay {
+    0%{visibility:hidden}
+    100%{visibility:visible}
+  }
+  .card:hover .overlay-image{
   animation-name:displayOverlay;
   animation-duration: 1s;
   animation-timing-function: ease-in;
   transform: scale3d(1,1,1);
   transition-duration: 0.15s;
   transition-timing-function: ease-in;
-}
-.card i {
+  visibility: visible;
+  }
+  .card i {
     display: inline-block;
     font-size: 16px;
     color: #232323;
@@ -95,26 +108,26 @@ export default {
     line-height: 30px;
     border-radius: 50%;
     margin:0 5px;
-}
-.card .icon-block{
+  }
+  .card .icon-block{
     float:left;
     width:100%;
     margin-top:15px;
-}
-.card .icon-block a{
+  }
+  .card .icon-block a{
     text-decoration:none;
-}
-.card i:hover {
+  }
+  .card i:hover {
   background-color:#232323;
   color:#fff;
   text-decoration:none;
-}
-.highlighted {
+  }
+  .highlighted {
   color: #fa631c;
-}
-.VueCarousel-navigation-button{
+  }
+  .VueCarousel-navigation-button{
   color:white !important;
   border-radius: 100% !important;
   background-color: #fa631c !important;
-}
+  }
 </style>
