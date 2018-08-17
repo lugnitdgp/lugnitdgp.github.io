@@ -81,7 +81,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style scoped>
 
   .carousel-cell {
     width:100%;
