@@ -1,18 +1,16 @@
 <template>
   <div class="hello">
     <home-carousal/>
+    <about-us/>
   </div>
 </template>
 
 <script>
 import HomeCarousal from './HomeCarousal'
+import AboutUs from './About-us'
+
 export default {
   name: 'Home',
-  components: {HomeCarousal}
+  components: { HomeCarousal, AboutUs }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-</style>
