@@ -12,6 +12,7 @@
     "deploy": "npm run build; push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "vue": "^2.5.2",
     "vue-carousel": "^0.10.0",
     "vue-router": "^3.0.1"

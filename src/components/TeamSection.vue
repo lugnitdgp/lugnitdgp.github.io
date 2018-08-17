@@ -2,7 +2,7 @@
   <section class="team-section">
     <h2 class="text-center font-weight-bold pt-5 pb-3">{{ displayheading("OUR TEAM").first }}<span class="highlighted">{{ displayheading("OUR TEAM").second }}</span>{{ displayheading("OUR TEAM").third }}</h2>
     <carousel :navigationEnabled="true" :loop="true" :autoplay="true" :paginationEnabled="false" :perPageCustom="[[280,1],[768, 3]]" :autoplayHoverPause="true" class="container p-0">
-      <slide v-for="(item,index) in profiles" :key="index" class="col-md-4 col-sm-12 p-1">
+      <slide v-for="(item,index) in profiles" :key="index" class="col-md-4 col-sm-12 p-2">
         <div class="card  rounded-0">
 
           <img class="card-img-top rounded-0" src="https://www.gettyimages.co.jp/gi-resources/images/CreativeLandingPage/CHP_Mar_7_2018/03_621199382.jpg" alt="Card image cap">
@@ -61,12 +61,12 @@ export default {
     min-height: 100vh;
 }
 .card img{
-  height:20rem;
+  height:18rem;
 }
 .card .overlay-image{
     background-color: #fa631c;
     width:100%;
-    height:20rem;
+    height:18rem;
     position: absolute;
     opacity:0.5;
     visibility: hidden;
