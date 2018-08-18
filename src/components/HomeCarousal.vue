@@ -17,6 +17,9 @@
              <div class="carousel-caption d-none d-sm-block text-left mb-5">
                <h1 class="display-3">Heading One</h1>
                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur similique quaerat odio accusamus quisquam laborum optio, amet sapiente quae hic.</p>
+               <div class="button">
+                 <carousel-button/>
+               </div>
              </div>
            </div>
          </div>
@@ -27,6 +30,9 @@
              <div class="carousel-caption d-none d-sm-block text-left mb-5">
                <h1 class="display-3">Heading Two</h1>
                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur similique quaerat odio accusamus quisquam laborum optio, amet sapiente quae hic.</p>
+               <div class="button">
+                 <carousel-button/>
+               </div>
              </div>
            </div>
          </div>
@@ -37,6 +43,9 @@
              <div class="carousel-caption d-none d-sm-block text-left mb-5">
                <h1 class="display-3">Heading Three</h1>
                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur similique quaerat odio accusamus quisquam laborum optio, amet sapiente quae hic.</p>
+               <div class="button">
+                 <carousel-button/>
+               </div>
              </div>
            </div>
          </div>
@@ -56,6 +65,12 @@
 </template>
 
 <script>
+import CarouselButton from './CarouselButton'
+
+export default {
+  components: { CarouselButton }
+}
+
 </script>
 
 <style lang="scss" scoped>
@@ -80,25 +95,30 @@
 }
 
 .carousel-caption{
-  padding-bottom: 26vh;
+  padding-bottom: 19vh;
 }
 
 .display-3{
-  transform: translateX(-1000px);
+  transform: translateX(-15px);
+  opacity: 0;
+}
+
+.button{
+  transform: translateX(-15px);
   opacity: 0;
 }
 
 .lead{
-  transform: translateX(1000px);
+  transform: translateX(15px);
   opacity: 0;
 }
 
 .active {
-.display-3 {
+.display-3{
     animation: {
         name: slideInLeft;
-        duration: 1s;
-        timing-function: cubic-bezier(.24,1,.72,1);
+        duration: 1.5s;
+  //    timing-function: cubic-bezier(.24,1,.72,1);
         fill-mode: forwards;
     }
   }
@@ -106,17 +126,26 @@
  .lead{
     animation: {
         name: slideInRight;
-        duration: 1s;
-        timing-function: cubic-bezier(.24,1,.72,1);
+        duration: 1.5s;
+    //  timing-function: cubic-bezier(.24,1,.72,1);
+        fill-mode: forwards;
+    }
+  }
+
+  .button{
+    animation: {
+        name: slideInLeft;
+        duration: 1.5s;
+    //  timing-function: cubic-bezier(.24,1,.72,1);
         fill-mode: forwards;
     }
   }
 }
 
-.carousel-control-next.carousel-control-prev {
+.carousel-control-next .carousel-control-prev {
             width: 10%;
             opacity: 0;
-            transition: opacity 0.6s;
+            transition: opacity 0.4s;
 }
 
 .cover{
