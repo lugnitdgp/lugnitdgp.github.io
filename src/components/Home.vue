@@ -9,6 +9,5 @@ import AboutUs from './About-us'
 
 export default {
   name: 'Home',
-  components: { AboutUs 
-}
+  components: { AboutUs }
 </script>
