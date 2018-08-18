@@ -1,18 +1,18 @@
 <template>
   <section class="team-section">
     <h2 class="text-center font-weight-bold pt-5 pb-3">{{ displayheading("OUR TEAM").first }}<span class="highlighted">{{ displayheading("OUR TEAM").second }}</span>{{ displayheading("OUR TEAM").third }}</h2>
-    <carousel autoplayTimeout="5000" :navigationEnabled="true" :loop="true" :autoplay="true" :paginationEnabled="false" :perPageCustom="[[280,1],[768, 3]]" :autoplayHoverPause="true" class="container p-0">
+    <carousel autoplay-timeout="5000" :navigation-enabled="true" :loop="true" :autoplay="true" :pagination-enabled="false" :per-page-custom="[[280,1],[768, 3]]" :autoplay-hover-pause="true" class="container p-0">
       <slide v-for="(item,index) in profiles" :key="index" class="col-md-4 col-sm-12 p-2">
         <div class="card  rounded-0">
           <img class="card-img-top rounded-0" :src="item.image" alt="Card image cap">
-          <div class="overlay-image"></div>
+          <div class="overlay-image" />
           <div class="card-body">
             <h5 class="card-title font-weight-bold">{{ displayheading(item.first_name+" "+item.last_name).first }}<span class="highlighted">{{ displayheading(item.first_name+" "+item.last_name).second }}</span>{{ displayheading(item.first_name+" "+item.last_name).third }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{item.alias}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{{ item.alias }}</h6>
             <div class="icon-block text-center">
-              <a :href="item.facebook_link"><i class="fab fa-facebook-f"></i></a>
-              <a :href="item.git_link"><i class="fab fa-github"></i></a>
-              <a :href="item.email"><i class="fab fa-google-plus-g"></i></a>
+              <a :href="item.facebook_link"><i class="fab fa-facebook-f" /></a>
+              <a :href="item.git_link"><i class="fab fa-github" /></a>
+              <a :href="item.email"><i class="fab fa-google-plus-g" /></a>
             </div>
           </div>
         </div>
@@ -27,9 +27,25 @@ import { Carousel, Slide } from 'vue-carousel'
 import Members from '@/services/members.js'
 
 export default {
+  components: {
+    Carousel,
+    Slide
+  },
   data () {
     return {
       profiles: []
+    }
+  },
+
+  async created () {
+    try {
+      const team = (await Members.getMembers()).data
+      console.log(team)
+      team.forEach((mem) => {
+        this.categorise(mem)
+      })
+    } catch (e) {
+      console.log(e.message)
     }
   },
   methods: {
@@ -48,21 +64,6 @@ export default {
         third: text.substr(highlighted + middle, length)
       }
     }
-  },
-  async created () {
-    try {
-      const team = (await Members.getMembers()).data
-      console.log(team)
-      team.forEach((mem) => {
-        this.categorise(mem)
-      })
-    } catch (e) {
-      console.log(e.message)
-    }
-  },
-  components: {
-    Carousel,
-    Slide
   }
 }
 </script>

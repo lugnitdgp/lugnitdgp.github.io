@@ -1,7 +1,7 @@
 <template>
   <div id="home">
-    <about-us/>
-    <team-section/>
+    <about-us />
+    <team-section />
   </div>
 </template>
 
