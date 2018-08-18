@@ -1,16 +1,14 @@
 <template>
-  <events/>
+  <div id="home">
+    <about-us/>
+  </div>
 </template>
 
 <script>
-import events from './Events.vue'
+import AboutUs from './About-us'
+
 export default {
   name: 'Home',
-  components: {events}
+  components: { AboutUs 
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-</style>
