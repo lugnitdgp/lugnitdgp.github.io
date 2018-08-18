@@ -6,6 +6,7 @@
 export default {
   props: {
     'number': {
+      type: Number,
       default: 0
     }
   },

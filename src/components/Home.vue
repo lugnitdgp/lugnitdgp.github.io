@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <about-us/>
+    <about-us />
   </div>
 </template>
 
