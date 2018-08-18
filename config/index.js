@@ -9,7 +9,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: 'lugnitdgp-website/',
+    assetsPublicPath: '/',
     proxyTable: {},
 
     // Various Dev Server settings
