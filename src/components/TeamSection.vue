@@ -1,6 +1,7 @@
 <template>
   <section class="team-section">
     <div class="container">
+
       <h2 class="text-center font-weight-bold pt-3 pb-3">Our <span class="highlighted">Tea</span>m</h2>
       <div class="row justify-content-center">
         <carousel :navigation-enabled="true" :loop="true" :autoplay="true" :pagination-enabled="false" :per-page-custom="[[280,1],[480,2],[768, 3]]" :navigation-next-label="`<i class=&quot;fas fa-chevron-circle-right fa-2x ; aria-hidden=&quot;true&quot;></i>`" :navigation-prev-label="`<i class=&quot;fas fa-chevron-circle-left fa-2x ; aria-hidden=&quot;true&quot; />`" :autoplay-hover-pause="true" class="col-10 p-0">
@@ -16,16 +17,13 @@
                   <a :href="item.git_link"><i class="fab fa-github" /></a>
                   <a :href="item.email"><i class="fab fa-google-plus-g" /></a>
                 </div>
+
+              </div>
+              <div class="row justify-content-center">
+                <p class="highlighted text-right m-0 mt-2  pb-1 col-10"><u><a> Meet all the members »</a></u></p>
               </div>
             </div>
-          </slide>
-        </carousel>
-      </div>
-      <div class="row justify-content-center">
-        <p class="highlighted text-right m-0 mt-2  pb-1 col-10"><u><a> Meet all the members »</a></u></p>
-      </div>
-    </div>
-  </section>
+  </slide></carousel></div></div></section>
 </template>
 
 <script>

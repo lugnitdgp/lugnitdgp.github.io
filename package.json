@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "lint": "eslint --ext .js,.vue src",
+    "lint": "eslint --fix --ext .js,.vue src",
     "build": "node build/build.js",
     "deploy": "npm run build; push-dir --dir=dist --branch=gh-pages --cleanup"
   },
@@ -60,11 +60,9 @@
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
-<<<<<<< HEAD
+
     "url-loader": "^1.1.1",
-=======
-    "url-loader": "^1.1.0",
->>>>>>> team-section added
+
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",

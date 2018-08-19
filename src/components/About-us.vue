@@ -1,76 +1,76 @@
-<template >
+<template>
   <div class="container" style="min-height:100vh !important;padding:0">
     <div class="row">
 
-    <div class="col-md-4 border-right border-bottom ">
-      <div class="row">
-        <div class="col-md-12" >
-          <div class="card text-right border-0 pb-1 pt-1">
-            <transition name="fade">
-              <div class="card-body" v-show="show">
-                  <h2 class="card-title">{{displayheading(data1.heading).first}}<span class="highlighted">{{displayheading(data1.heading).second}}</span>{{displayheading(data1.heading).third}}</h2>
-                  <p class="card-text p-spec "> {{data1.content}}</p>
+      <div class="col-md-4 border-right border-bottom ">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card text-right border-0 pb-1 pt-1">
+              <transition name="fade">
+                <div v-show="show" class="card-body">
+                  <h2 class="card-title">{{ displayheading(data1.heading).first }}<span class="highlighted">{{ displayheading(data1.heading).second }}</span>{{ displayheading(data1.heading).third }}</h2>
+                  <p class="card-text p-spec "> {{ data1.content }}</p>
                 <!--  <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data1.link}}</a>-->
-              </div>
-            </transition>
+                </div>
+              </transition>
 
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-md-8">
-      <div class="row">
-        <div class="col-md-12 border-bottom " >
-          <div class="card text-right border-0 text-md-left pb-1 pt-1">
-            <transition name="slide-fade">
-              <div class="card-body" v-show="show">
-                  <h2 class="card-title">{{displayheading(data2.heading).first}}<span class="highlighted">{{displayheading(data2.heading).second}}</span>{{displayheading(data2.heading).third}}</h2>
-                  <p class="card-text" style="display:table-row"> {{data2.content}}</p>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-12 border-bottom ">
+            <div class="card text-right border-0 text-md-left pb-1 pt-1">
+              <transition name="slide-fade">
+                <div v-show="show" class="card-body">
+                  <h2 class="card-title">{{ displayheading(data2.heading).first }}<span class="highlighted">{{ displayheading(data2.heading).second }}</span>{{ displayheading(data2.heading).third }}</h2>
+                  <p class="card-text" style="display:table-row"> {{ data2.content }}</p>
                 <!--  <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data2.link}}</a>-->
-              </div>
-            </transition>
+                </div>
+              </transition>
 
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card text-right border-0 text-md-left pb-1 pt-1">
+              <transition name="slide-fade">
+                <div v-show="show" class="card-body">
+                  <h2 class="card-title">{{ displayheading(data3.heading).first }}<span class="highlighted">{{ displayheading(data3.heading).second }}</span>{{ displayheading(data3.heading).third }}</h2>
+                  <p class="card-text" style="display:table-row"> {{ data3.content }}</p>
+                <!--  <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data3.link}}</a>-->
+                </div>
+              </transition>
+            </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card text-right border-0 text-md-left pb-1 pt-1" >
-            <transition name="slide-fade">
-              <div class="card-body" v-show="show">
-                  <h2 class="card-title">{{displayheading(data3.heading).first}}<span class="highlighted">{{displayheading(data3.heading).second}}</span>{{displayheading(data3.heading).third}}</h2>
-                  <p class="card-text" style="display:table-row"> {{data3.content}}</p>
-                <!--  <a href="#" class="card-link highlighted" style="text-decoration:underline">{{data3.link}}</a>-->
+
+    </div>
+    <div class="row">
+      <div class="col-sm-12" style="padding:0">
+        <div id="bottom-section">
+          <div class="row justify-content-center">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0 mt-4 text-light ">Software is like information, it's better when it's free!.</p>
+              <footer class="blockquote-footer font-italic">Someone not so famous</footer>
+            </blockquote>
+          </div>
+          <div class="d-flex flex-row bd-highlight ">
+            <div v-for="(item,index) in bottom" :key="index" class="p-2 bd-highlight text-center col">
+              <div class="bottom-div mb-3">
+                <i class="bottom-icon" :class="item.icon" />
+                <animate-number :number="item.number" />
+                <strong>{{ item.content }}</strong>
               </div>
-            </transition>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-   </div>
-   <div class="row">
-     <div class="col-sm-12" style="padding:0">
-       <div id="bottom-section">
-         <div class="row justify-content-center">
-           <blockquote class="blockquote text-center">
-             <p class="mb-0 mt-4 text-light ">Software is like information, it's better when it's free!.</p>
-             <footer class="blockquote-footer font-italic">Someone not so famous</footer>
-           </blockquote>
-         </div>
-         <div class="d-flex flex-row bd-highlight ">
-           <div  v-for="(item,index) in bottom" v-bind:key="index" class="p-2 bd-highlight text-center col" >
-             <div class="bottom-div mb-3">
-               <i class="bottom-icon" :class="item.icon"></i>
-               <animate-number :number="item.number"/>
-               <strong>{{item.content}}</strong>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
 
   </div>
 </template>
@@ -78,6 +78,7 @@
 <script>
 import AnimateNumber from './AnimateNumber'
 export default {
+  components: {AnimateNumber},
 
   data () {
     return {
@@ -110,6 +111,8 @@ export default {
       }
     }.bind(this), 0)
   },
+  created () {
+  },
   methods: {
     displayheading (text) {
       var str = text.length
@@ -121,10 +124,7 @@ export default {
       }
     }
 
-  },
-  created () {
-  },
-  components: {AnimateNumber}
+  }
 
 }
 </script>
