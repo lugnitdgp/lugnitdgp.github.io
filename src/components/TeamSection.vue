@@ -2,7 +2,7 @@
   <section class="team-section">
     <div class="container">
       <h2 class="text-center font-weight-bold pt-5 pb-3">{{ displayheading("OUR TEAM").first }}<span class="highlighted">{{ displayheading("OUR TEAM").second }}</span>{{ displayheading("OUR TEAM").third }}</h2>
-      <carousel autoplay-timeout="5000" :navigation-enabled="true" :loop="true" :autoplay="true" :pagination-enabled="false" :per-page-custom="[[280,1],[768, 3]]" :navigation-next-label='`<i class="fas fa-chevron-circle-right fa-2x d-none d-md-block" aria-hidden="true" ></i>`' :navigation-prev-label='`<i class="fas fa-chevron-circle-left fa-2x d-none d-md-block" aria-hidden="true" ></i>`' :autoplay-hover-pause="true" class="container p-0">
+      <carousel autoplay-timeout="5000" :navigation-enabled="true" :loop="true" :autoplay="true" :pagination-enabled="false" :per-page-custom="[[280,1],[768, 3]]" :navigation-next-label="`<i class=&quot;fas fa-chevron-circle-right fa-2x d-none d-md-block&quot; aria-hidden=&quot;true&quot;></i>`" :navigation-prev-label="`<i class=&quot;fas fa-chevron-circle-left fa-2x d-none d-md-block&quot; aria-hidden=&quot;true&quot; />`" :autoplay-hover-pause="true" class="container p-0">
         <slide v-for="(item,index) in profiles" :key="index" class="col-md-4 col-sm-12 p-2">
           <div class="card  rounded-0">
             <img class="card-img-top rounded-0" :src="item.image" alt="Card image cap">
