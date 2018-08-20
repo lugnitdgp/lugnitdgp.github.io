@@ -5,7 +5,7 @@
         <div v-for="event in events" :key="event.id" class="carousel-cell">
           <div id="image">
             <img :src="event.event_image" width="100%">
-            <div id="date">{{ (event.event_timing).slice(0,-1).split('T')[0] }}&nbsp;<img src="../assets/calendar.png" id="calendar"></div>
+            <div id="date">{{ (event.event_timing).slice(0,-1).split('T')[0] }}&nbsp;<img id="calendar" src="../assets/calendar.png"></div>
           </div>
           <div id="info">
             <h4 class="info-head">{{ event.title }}</h4>
@@ -44,7 +44,7 @@ export default {
       }
     }
   },
-  
+
   beforeCreate () {
     axios
       .get('https://sdxblog.ml/api/events/?format=json')
