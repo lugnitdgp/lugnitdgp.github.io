@@ -1,0 +1,19 @@
+.blog-section-container .card .social-share-container {
+  height: 36px;
+  padding: 0 10px;
+}
+
+.blog-section-container .card .social-share-icons {
+  height: 28px;
+  width: 28px;
+  font-size: 16px;
+  border-radius: 50%;
+  border: 2px solid #d3d3d3;
+  margin: 0 2px;
+  cursor: pointer;
+}
+
+.blog-section-container .card .social-share-icons:hover {
+  color: #fa631c;
+  text-decoration: none;
+}

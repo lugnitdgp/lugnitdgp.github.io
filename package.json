@@ -17,7 +17,9 @@
     "vue": "^2.5.2",
     "vue-flickity": "^1.1.2",
     "vue-router": "^3.0.1",
-    "vue-slick": "^1.1.13"
+    "vue-router": "^3.0.1",
+    "vue-social-sharing": "^2.3.3",
+    "vuetify": "^1.1.13"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -42,7 +44,7 @@
     "eslint-plugin-node": "^5.2.0",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
-    "eslint-plugin-vue": "^4.0.0",
+    "eslint-plugin-vue": "^5.0.0-beta.3",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
