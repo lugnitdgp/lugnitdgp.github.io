@@ -1,16 +1,16 @@
 <template lang="html">
   <div class="container-fluid">
     <div id="test" class="col-xl-4">
-      <flickity  v-if="events.length > 0" ref="flickity" :options="flickityOptions">
-        <div class="carousel-cell" v-for="event in events" :key="event.id">
+      <flickity v-if="events.length > 0" ref="flickity" :options="flickityOptions">
+        <div v-for="event in events" :key="event.id" class="carousel-cell">
           <div id="image">
-            <img :src="event.event_image" width="100%"/>
-            <div id="date">{{(event.event_timing).slice(0,-1).split('T')[0]}}&nbsp;<img src="../assets/calendar.png" id="calendar"/></div>
+            <img :src="event.event_image" width="100%">
+            <div id="date">{{ (event.event_timing).slice(0,-1).split('T')[0] }}&nbsp;<img src="../assets/calendar.png" id="calendar"></div>
           </div>
           <div id="info">
-            <h4 class="info-head">{{event.title}}</h4>
-            <span class="info-head"><img src="../assets/clock.png" class="icons"/>&nbsp;&nbsp;{{(event.event_timing).slice(0,-1).split('T')[1]}}&nbsp;<img src="../assets/location.png" class="icons"/>&nbsp;&nbsp;{{event.venue}}</span>
-            <div id="text" v-html="event.description"></div><br/>
+            <h4 class="info-head">{{ event.title }}</h4>
+            <span class="info-head"><img src="../assets/clock.png" class="icons">&nbsp;&nbsp;{{ (event.event_timing).slice(0,-1).split('T')[1] }}&nbsp;<img src="../assets/location.png" class="icons">&nbsp;&nbsp;{{ event.venue }}</span>
+            <div id="text">{{ event.description }}</div><br>
             <a class="event-action">Read More</a>
             <a class="event-action">Join Us</a>
           </div>
@@ -44,6 +44,12 @@ export default {
       }
     }
   },
+  
+  beforeCreate () {
+    axios
+      .get('https://sdxblog.ml/api/events/?format=json')
+      .then(response => (this.events = response.data))
+  },
 
   methods: {
     next () {
@@ -53,12 +59,6 @@ export default {
     prev () {
       this.$refs.flickity.prev()
     }
-  },
-
-  beforeCreate () {
-    axios
-      .get('https://sdxblog.ml/api/events/?format=json')
-      .then(response => (this.events = response.data))
   }
 }
 </script>
