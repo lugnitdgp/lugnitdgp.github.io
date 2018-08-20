@@ -64,11 +64,6 @@ export default {
 </script>
 
 <style scoped>
-
-  flickity {
-    height:50vh;
-  }
-
   .carousel-cell {
     width:100%;
     margin:2%;
