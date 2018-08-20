@@ -14,8 +14,7 @@ import BlogSection from './BlogSection'
 export default {
 
   name: 'Home',
-
-  components: { Events }
-  components: { AboutUs, BlogSection }
+  
+  components: { AboutUs, BlogSection, Events }
 }
 </script>
