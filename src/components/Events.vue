@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="container-fluid">
     <div id="test" class="col-xl-4">
-      <flickity ref="flickity" :options="flickityOptions">
+      <flickity  v-if="events.length > 0" ref="flickity" :options="flickityOptions">
         <div class="carousel-cell" v-for="event in events" :key="event.id">
           <div id="image">
             <img :src="event.event_image" width="100%"/>
@@ -39,7 +39,8 @@ export default {
         pageDots: false,
         wrapAround: true,
         autoPlay: 5000,
-        cellAlign: 'center'
+        cellAlign: 'center',
+        adaptiveHeight: false
       }
     }
   },
@@ -54,7 +55,7 @@ export default {
     }
   },
 
-  created () {
+  beforeCreate () {
     axios
       .get('https://sdxblog.ml/api/events/?format=json')
       .then(response => (this.events = response.data))
@@ -63,6 +64,10 @@ export default {
 </script>
 
 <style scoped>
+
+  flickity {
+    height:50vh;
+  }
 
   .carousel-cell {
     width:100%;

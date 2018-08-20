@@ -1,14 +1,16 @@
 <template>
   <div id="home">
-    <about-us/>
+    <events/>
   </div>
 </template>
 
 <script>
-import AboutUs from './About-us'
+import Events from './Events'
 
 export default {
+
   name: 'Home',
-  components: { AboutUs }
+
+  components: { Events }
 }
 </script>
