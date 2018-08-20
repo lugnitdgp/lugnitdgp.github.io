@@ -45,7 +45,7 @@ export default {
     }
   },
 
-  beforeCreate () {
+beforeCreate () {
     axios
       .get('https://sdxblog.ml/api/events/?format=json')
       .then(response => (this.events = response.data))
