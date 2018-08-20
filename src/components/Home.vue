@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <events/>
+    <events />
     <about-us />
     <blog-section />
   </div>
@@ -12,9 +12,7 @@ import AboutUs from './AboutUs'
 import BlogSection from './BlogSection'
 
 export default {
-
   name: 'Home',
-  
   components: { AboutUs, BlogSection, Events }
 }
 </script>
