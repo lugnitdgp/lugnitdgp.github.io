@@ -73,7 +73,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped >
   .team-section {
     background-color: #f7f7f7;
   }
@@ -130,13 +130,6 @@ export default {
   }
   .highlighted {
   color: #fa631c;
-  }
-  .VueCarousel-navigation-button {
-  color: #fa631c !important;
-  padding:0px 5px 0px 5px !important;
-  }
-  .VueCarousel-navigation-button:hover {
-     text-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   }
   h2 {
     font-size: 32px;
