@@ -1,22 +1,20 @@
 <template lang="html">
   <div class="container-fluid">
-    <div id="test" class="col-xl-4">
-      <flickity v-if="events.length > 0" ref="flickity" :options="flickityOptions">
-        <div v-for="event in events" :key="event.id" class="carousel-cell">
-          <div id="image">
-            <img :src="event.event_image" width="100%">
-            <div id="date">{{ (event.event_timing).slice(0,-1).split('T')[0] }}&nbsp;<img id="calendar" src="../assets/calendar.png"></div>
-          </div>
-          <div id="info">
-            <h4 class="info-head">{{ event.title }}</h4>
-            <span class="info-head"><img src="../assets/clock.png" class="icons">&nbsp;&nbsp;{{ (event.event_timing).slice(0,-1).split('T')[1] }}&nbsp;<img src="../assets/location.png" class="icons">&nbsp;&nbsp;{{ event.venue }}</span>
-            <div id="text">{{ event.description }}</div><br>
-            <a class="event-action">Read More</a>
-            <a class="event-action">Join Us</a>
-          </div>
+    <flickity v-if="events.length > 0" ref="flickity" :options="flickityOptions">
+      <div v-for="event in events" :key="event.id" class="carousel-cell">
+        <div id="image">
+          <img class="event-image" :src="event.event_image" width="100%">
+          <div id="date">{{ (event.event_timing).slice(0,-1).split('T')[0] }}&nbsp;<img id="calendar" src="../assets/calendar.png"></div>
         </div>
-      </flickity>
-    </div>
+        <div id="info">
+          <h4 class="info-head">{{ event.title }}</h4>
+          <span class="info-head"><img src="../assets/clock.png" class="icons">&nbsp;&nbsp;{{ (event.event_timing).slice(0,-1).split('T')[1] }}&nbsp;<img src="../assets/location.png" class="icons">&nbsp;&nbsp;{{ event.venue }}</span>
+          <div id="text">{{ event.description }}</div><br>
+          <a class="event-action">Read More</a>
+          <a class="event-action">Join Us</a>
+        </div>
+      </div>
+    </flickity>
   </div>
 </template>
 
@@ -40,7 +38,7 @@ export default {
         wrapAround: true,
         autoPlay: 5000,
         cellAlign: 'center',
-        adaptiveHeight: false
+        groupCells: 1
       }
     }
   },
@@ -64,30 +62,45 @@ export default {
 </script>
 
 <style scoped>
+  .container {
+    width: 100vw;
+    height: 95vh;
+  }
+
   .carousel-cell {
-    width:100%;
+    width:330px;
     margin:2%;
+    height: 55vh;
+    border: .5px solid #bbb;
+    overflow: hidden;
+    border-radius: 1%;
   }
 
   #info {
     padding: 2%;
     padding-bottom:5%;
-    border: .5px solid #bbb;
-    border-top: none;
+    border-top: .5px solid #bbb;
     text-align: left;
-    color: #777;
+    color: #9c9c9c;
+    height: 25vh;
+    width: 329px;
   }
 
   #image {
-    border: 1px solid #bbb;
-    position:relative;
+    height: 30vh;
+    width: 329px;
+    position: relative;
+  }
+
+  .event-image {
+    height: inherit;
   }
 
   #date {
     position: absolute;
     left: 0%;
     bottom: 10%;
-    height:3.8vh;
+    height: 3.8vh;
     color: #777;
     background: #fff;
     font-weight: bold;
@@ -98,6 +111,15 @@ export default {
     height: 3vh;
     border-left: 1px solid #bbb;
     padding: .4vh;
+  }
+
+  #text {
+    display: -webkit-box;
+    height: 8vh;
+    width: 310px;
+    overflow: hidden;
+    -webkit-line-clamp : 3;
+    -webkit-box-orient: vertical;
   }
 
   .icons {
