@@ -12,7 +12,10 @@
     "deploy": "npm run build; push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "jquery": "^3.3.1",
     "vue": "^2.5.2",
+    "vue-flickity": "^1.1.2",
     "vue-router": "^3.0.1",
     "vue-social-sharing": "^2.3.3",
     "vuetify": "^1.1.13"
@@ -30,6 +33,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.0",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
@@ -73,5 +77,7 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": ".eslintrc.js",
+  "license": "ISC"
 }
