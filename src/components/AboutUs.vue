@@ -1,13 +1,13 @@
-<template >
+<template>
   <div class="container about-us-container">
 
     <div class="row">
       <div class="col-md-4 border-right">
         <div class="row">
-          <div class="col-md-12" >
+          <div class="col-md-12">
             <div class="card text-right border-0 pb-1 pt-1">
               <transition name="fade">
-                <div class="card-body" v-show="show">
+                <div v-show="show" class="card-body">
                   <h2 class="card-title">
                     {{ displayheading(section1.heading).first }}<span class="highlighted">{{ displayheading(section1.heading).second }}</span>{{ displayheading(section1.heading).third }}
                   </h2>
@@ -22,65 +22,63 @@
         </div>
       </div>
 
-    <div class="col-md-8">
-      <div class="row">
-        <div class="col-md-12 border-bottom" >
-          <div class="card text-right border-0 text-md-left pb-1 pt-1">
-            <transition name="slide-fade">
-              <div class="card-body" v-show="show">
-                <h2 class="card-title">
-                  {{ displayheading(section2.heading).first }}<span class="highlighted">{{ displayheading(section2.heading).second }}</span>{{ displayheading(section2.heading).third }}
-                </h2>
-                <p class="card-text" style="display:table-row">
-                  {{ section2.content }}
-                </p>
-              </div>
-            </transition>
-
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-12 border-bottom">
+            <div class="card text-right border-0 text-md-left pb-1 pt-1">
+              <transition name="slide-fade">
+                <div v-show="show" class="card-body">
+                  <h2 class="card-title">
+                    {{ displayheading(section2.heading).first }}<span class="highlighted">{{ displayheading(section2.heading).second }}</span>{{ displayheading(section2.heading).third }}
+                  </h2>
+                  <p class="card-text">
+                    {{ section2.content }}
+                  </p>
+                </div>
+              </transition>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card text-right border-0 text-md-left pb-1 pt-1" >
-            <transition name="slide-fade">
-              <div class="card-body" v-show="show">
-                <h2 class="card-title">
-                  {{ displayheading(section3.heading).first }}<span class="highlighted">{{ displayheading(section3.heading).second }}</span>{{ displayheading(section3.heading).third }}
-                </h2>
-                <p class="card-text" style="display:table-row">
-                  {{ section3.content }}
-                </p>
-              </div>
-            </transition>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card text-right border-0 text-md-left pb-1 pt-1">
+              <transition name="slide-fade">
+                <div v-show="show" class="card-body">
+                  <h2 class="card-title">
+                    {{ displayheading(section3.heading).first }}<span class="highlighted">{{ displayheading(section3.heading).second }}</span>{{ displayheading(section3.heading).third }}
+                  </h2>
+                  <p class="card-text">
+                    {{ section3.content }}
+                  </p>
+                </div>
+              </transition>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-   </div>
-   <div class="row">
-     <div class="col-sm-12">
-       <div id="bottom-section">
-         <div class="row justify-content-center">
-           <blockquote class="blockquote text-center">
-             <p class="mb-0 mt-4 text-light ">Software is like information, it's better when it's free!.</p>
-             <footer class="blockquote-footer font-italic">Someone not so famous</footer>
-           </blockquote>
-         </div>
-         <div class="d-flex flex-row bd-highlight ">
-           <div v-for="(item, index) in section4" v-bind:key="index" class="p-2 bd-highlight text-center col" >
-             <div class="bottom-div mb-3">
-               <i class="bottom-icon" :class="'fas ' + item.icon"></i>
-               <animate-number :number="item.number" />
-               <strong>{{ item.content }}</strong>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
-
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="bottom-section">
+          <div class="row justify-content-center">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0 mt-4 text-light ">Software is like information, it's better when it's free!.</p>
+              <footer class="blockquote-footer font-italic">Someone not so famous</footer>
+            </blockquote>
+          </div>
+          <div class="d-flex flex-row bd-highlight ">
+            <div v-for="(item, index) in section4" :key="index" class="p-2 bd-highlight text-center col">
+              <div class="bottom-div mb-3">
+                <i class="bottom-icon" :class="'fas ' + item.icon" />
+                <animate-number :number="item.number" />
+                <strong>{{ item.content }}</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -88,6 +86,10 @@
 import AnimateNumber from './AnimateNumber'
 
 export default {
+
+  components: {
+    AnimateNumber
+  },
 
   data () {
     return {
@@ -144,10 +146,7 @@ export default {
         third: text.substr(highlighted + middle, length)
       }
     }
-
-  },
-
-  components: { AnimateNumber }
+  }
 
 }
 </script>
@@ -190,18 +189,18 @@ export default {
 }
 h1, h2, h3 {
   font-weight: bold;
-  margin: 10px;
   color:  #444;
 }
 h2.card-title {
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 p.card-text {
   color: #9c9c9c;
   max-width: 578px;
   font-size: 0.95rem;
   line-height: 1.6rem;
+  display: table-row;
 }
 .fade-enter-active, .slide-fade-enter-active {
   transition: all 0.7s ;
