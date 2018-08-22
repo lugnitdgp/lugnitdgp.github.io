@@ -1,18 +1,18 @@
 <template>
   <div id="home">
+    <home-carousel />
     <about-us />
-    <home-carousal/>
     <blog-section />
   </div>
 </template>
 
 <script>
-import HomeCarousal from './HomeCarousal'
-import AboutUs from './About-us'
+import HomeCarousel from './HomeCarousel'
+import AboutUs from './AboutUs'
 import BlogSection from './BlogSection'
 
 export default {
   name: 'Home',
-  components: { HomeCarousal, AboutUs, BlogSection }
+  components: { HomeCarousel, AboutUs, BlogSection }
 }
 </script>

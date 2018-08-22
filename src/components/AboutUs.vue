@@ -2,7 +2,7 @@
   <div class="container about-us-container">
 
     <div class="row">
-      <div class="col-md-4 border-right">
+      <div class="col-md-4 border-right border-md-none">
         <div class="row">
           <div class="col-md-12">
             <div class="card text-right border-0 pb-1 pt-1">
@@ -24,7 +24,7 @@
 
       <div class="col-md-8">
         <div class="row">
-          <div class="col-md-12 border-bottom">
+          <div class="col-md-12 border-bottom border-md-none">
             <div class="card text-right border-0 text-md-left pb-1 pt-1">
               <transition name="slide-fade">
                 <div v-show="show" class="card-body">
@@ -154,7 +154,8 @@ export default {
 <style scoped>
 
 .about-us-container {
-  padding: 0
+  padding: 0;
+  padding-top: 40px;
 }
 .about-us-container > .row {
   margin-bottom: 20px;
@@ -220,5 +221,9 @@ p.card-text {
 .border-bottom, .border-right {
   border-color: rgba(222, 226, 230, 0.45) !important;
 }
-
+@media(max-width: 768px) {
+  .border-md-none {
+    border: none !important;
+  }
+}
 </style>
