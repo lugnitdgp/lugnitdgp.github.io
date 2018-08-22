@@ -2,8 +2,8 @@
   <section class="team-section">
     <div class="container">
       <h2 class="text-center font-weight-bold pt-3 pb-3">{{ displayheading("OUR TEAM").first }}<span class="highlighted">{{ displayheading("OUR TEAM").second }}</span>{{ displayheading("OUR TEAM").third }}</h2>
-      <div class="row  justify-content-center">
-        <carousel autoplay-timeout="5000" :navigation-enabled="true" :loop="true" :autoplay="true" :pagination-enabled="false" :per-page-custom="[[280,1],[768, 3]]" :navigation-next-label="`<i class=&quot;fas fa-chevron-circle-right fa-2x ; aria-hidden=&quot;true&quot;></i>`" :navigation-prev-label="`<i class=&quot;fas fa-chevron-circle-left fa-2x ; aria-hidden=&quot;true&quot; />`" :autoplay-hover-pause="true" class="col-10 p-0">
+      <div class="row justify-content-center">
+        <carousel autoplay-timeout="5000" :navigation-enabled="true" :loop="true" :autoplay="true" :pagination-enabled="false" :per-page-custom="[[280,1],[480,2],[768, 3]]" :navigation-next-label="`<i class=&quot;fas fa-chevron-circle-right fa-2x ; aria-hidden=&quot;true&quot;></i>`" :navigation-prev-label="`<i class=&quot;fas fa-chevron-circle-left fa-2x ; aria-hidden=&quot;true&quot; />`" :autoplay-hover-pause="true" class="col-10 p-0">
           <slide v-for="(item,index) in profiles" :key="index" class="p-1">
             <div class="card  rounded-0">
               <img class="card-img-top rounded-0" :src="item.image" alt="Card image cap">
@@ -20,9 +20,10 @@
             </div>
           </slide>
         </carousel>
-
       </div>
-      <p class="highlighted text-right m-0 mt-2 mr-2 pb-1"><u><a> Meet all the members »</a></u></p>
+      <div class="row justify-content-center">
+        <p class="highlighted text-right m-0 mt-2  pb-1 col-10"><u><a> Meet all the members »</a></u></p>
+      </div>
     </div>
   </section>
 </template>
@@ -75,7 +76,7 @@ export default {
 
 <style scoped >
   .team-section {
-    background-color: #f7f7f7;
+  /*  background-color: #f7f7f7;*/
   }
   .card img {
   height:18rem;
