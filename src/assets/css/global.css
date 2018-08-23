@@ -1,15 +1,12 @@
 .VueCarousel-navigation-button {
-color: #fa631c !important;
-padding:0px 5px 0px 5px !important;
+  color: #fa631c !important;
+  padding: 0px 5px 0px 5px !important;
 }
-.VueCarousel-navigation-button:hover {
-   text-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+
 .blog-section-container .card .social-share-container {
   height: 36px;
   padding: 0 10px;
 }
-
 .blog-section-container .card .social-share-icons {
   height: 28px;
   width: 28px;
@@ -19,7 +16,6 @@ padding:0px 5px 0px 5px !important;
   margin: 0 2px;
   cursor: pointer;
 }
-
 .blog-section-container .card .social-share-icons:hover {
   color: #fa631c;
   text-decoration: none;
