@@ -71,7 +71,7 @@
             <div v-for="(item, index) in section4" :key="index" class="p-2 bd-highlight text-center col">
               <div class="bottom-div mb-3">
                 <i class="bottom-icon" :class="'fas ' + item.icon" />
-                <animate-number :number="item.number" />
+                <animate-number :number="parseInt(item.number)" />
                 <strong>{{ item.content }}</strong>
               </div>
             </div>

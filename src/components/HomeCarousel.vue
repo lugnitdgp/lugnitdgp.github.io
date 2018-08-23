@@ -4,9 +4,13 @@
 
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#homeCarousel" data-slide-to="0" class="active" />
-        <li data-target="#homeCarousel" data-slide-to="1" />
-        <li data-target="#homeCarousel" data-slide-to="2" />
+        <li
+          v-for="(item, index) in carousel"
+          :key="index"
+          data-target="#homeCarousel"
+          :data-slide-to="index"
+          :class="[index == 0 ? 'active' : '']"
+        />
       </ol>
 
       <!-- Carousel items -->
@@ -47,19 +51,19 @@ export default {
     return {
       carousel: [
         {
-          image: '/static/images/image1.jpg',
+          image: 'static/images/image1.jpg',
           heading: 'Heading One',
           subtitle: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
             similique quaerat odio accusamus quisquam laborum optio, amet sapiente quae hic.`
         },
         {
-          image: '/static/images/image3.jpg',
+          image: 'static/images/image3.jpg',
           heading: 'Heading Two',
           subtitle: `Lorem ipsum dolor, consectetur adipisicing elit. Consectetur
             similique quaerat odio accusamus optio, amet sapiente quae hic.`
         },
         {
-          image: '/static/images/image3.jpg',
+          image: 'static/images/image3.jpg',
           heading: 'Heading Three',
           subtitle: `Lorem ipsum dolor sit amet, cdipisicing elit. Consectetur
             similique quaer optio, met, cdipisicin amet sapiente quae hic.`
