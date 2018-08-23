@@ -71,7 +71,7 @@
             <div v-for="(item, index) in section4" :key="index" class="p-2 bd-highlight text-center col">
               <div class="bottom-div mb-3">
                 <i class="bottom-icon" :class="'fas ' + item.icon" />
-                <animate-number :number="parseInt(item.number)" />
+                <animate-number :number="item.number" />
                 <strong>{{ item.content }}</strong>
               </div>
             </div>
@@ -143,7 +143,7 @@ export default {
     },
     AnimateSecNow (e) {
       var count = window.pageYOffset || document.documentElement.scrollTop
-      if (count > 5) { this.show = true } else this.show = false
+      if (count > 50) { this.show = true } else this.show = false
     }
   }
 
