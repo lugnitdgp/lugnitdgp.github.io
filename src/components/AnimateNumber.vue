@@ -39,7 +39,6 @@ export default {
       }.bind(this), 80)
     }
   },
-
   methods: {
     displaynumber (num) {
       num = num.toString()

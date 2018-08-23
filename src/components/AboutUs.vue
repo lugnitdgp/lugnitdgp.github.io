@@ -84,7 +84,6 @@
 
 <script>
 import AnimateNumber from './AnimateNumber'
-
 export default {
 
   components: {
@@ -221,6 +220,11 @@ p.card-text {
 .border-bottom, .border-right {
   border-color: rgba(222, 226, 230, 0.45) !important;
 }
+
+ blockquote{
+   font-size:0.95rem;
+ }
+
 @media(max-width: 768px) {
   .border-md-none {
     border: none !important;
