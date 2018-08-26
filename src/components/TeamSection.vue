@@ -30,34 +30,30 @@
 
 <script>
 import { Carousel, Slide } from 'vue-carousel'
-import Members from '@/services/members.js'
 
 export default {
   components: {
     Carousel,
     Slide
   },
-  data () {
-    return {
-      profiles: []
+  props: {
+    'profiles': {
+      type: Array,
+      default: null
     }
   },
-
-  async created () {
-    try {
-      const team = (await Members.getMembers()).data
-      console.log(team)
-      team.forEach((mem) => {
-        this.categorise(mem)
-      })
-    } catch (e) {
-      console.log(e.message)
-    }
+  created () {
+    console.log(this.profiles[0])
   },
   methods: {
-    categorise (mem) {
-      if (mem.degree_name === 'BTECH' & mem.year_name === 4) {
-        this.profiles.push(mem)
+    displayheading (text) {
+      var length = text.length
+      var middle = length / 2
+      var highlighted = 3
+      return {
+        first: text.substr(0, middle),
+        second: text.substr(middle, highlighted),
+        third: text.substr(highlighted + middle, length)
       }
     }
   }

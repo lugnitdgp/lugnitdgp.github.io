@@ -50,7 +50,6 @@ export default {
     },
     AnimateNumNow (e) {
       var count = window.pageYOffset || document.documentElement.scrollTop
-      console.log(count)
       if (count >= 600 && this.once) {
         this.AnimateNumber()
         this.once = false
