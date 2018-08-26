@@ -51,9 +51,12 @@ export default {
     AnimateNumNow (e) {
       var count = window.pageYOffset || document.documentElement.scrollTop
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       console.log(count)
 >>>>>>> Edit Animation
+=======
+>>>>>>> Add preloader
       if (count >= 600 && this.once) {
         this.AnimateNumber()
         this.once = false

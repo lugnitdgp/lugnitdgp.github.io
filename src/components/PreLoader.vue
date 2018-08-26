@@ -51,7 +51,11 @@ export default {
 }
 </script>
 
+<<<<<<< HEAD
 <style scoped>
+=======
+<style lang="css">
+>>>>>>> Add preloader
   div #loader {
     height: 200px;
     width: 200px;

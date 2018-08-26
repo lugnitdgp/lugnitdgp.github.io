@@ -3,11 +3,17 @@
 
     <nav-bar />
     <home-carousel />
+<<<<<<< HEAD
     <about-us id="AboutUsSection" />
     <event-section id="EventsSection" />
     <team-section id="TeamSection" :profiles="profiles" />
     <blog-section id="BlogSection" />
 
+=======
+    <about-us />
+    <team-section :profiles="profiles" />
+    <blog-section />
+>>>>>>> Add preloader
   </div>
 </template>
 
@@ -17,11 +23,18 @@ import HomeCarousel from './HomeCarousel'
 import AboutUs from './AboutUs'
 import TeamSection from './TeamSection'
 import BlogSection from './BlogSection'
+<<<<<<< HEAD
 import EventSection from './EventSection'
 import common from '@/services/common.js'
 export default {
   name: 'Home',
   components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection, NavBar },
+=======
+import common from '@/services/common.js'
+export default {
+  name: 'Home',
+  components: { HomeCarousel, AboutUs, TeamSection, BlogSection },
+>>>>>>> Add preloader
   data () {
     return {
       profiles: []

@@ -44,9 +44,20 @@ export default {
     console.log(this.profiles[0])
   },
   methods: {
+<<<<<<< HEAD
     categorise (mem) {
       if (mem.degree_name === 'BTECH' & mem.year_name === '4') {
         this.profiles.push(mem)
+=======
+    displayheading (text) {
+      var length = text.length
+      var middle = length / 2
+      var highlighted = 3
+      return {
+        first: text.substr(0, middle),
+        second: text.substr(middle, highlighted),
+        third: text.substr(highlighted + middle, length)
+>>>>>>> Add preloader
       }
     },
     displayheading (text) {
