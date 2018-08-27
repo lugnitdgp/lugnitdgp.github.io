@@ -3,7 +3,7 @@
     <div class="container">
       <h2 class="text-center font-weight-bold pt-3 pb-3">Our <span class="highlighted">Tea</span>m</h2>
       <div class="row justify-content-center">
-        <carousel :autoplay-timeout="5000" :navigation-enabled="true" :loop="true" :autoplay="true" :pagination-enabled="false" :per-page-custom="[[280,1],[480,2],[768, 3]]" :navigation-next-label="`<i class=&quot;fas fa-chevron-circle-right fa-2x ; aria-hidden=&quot;true&quot;></i>`" :navigation-prev-label="`<i class=&quot;fas fa-chevron-circle-left fa-2x ; aria-hidden=&quot;true&quot; />`" :autoplay-hover-pause="true" class="col-10 p-0">
+        <carousel :navigation-enabled="true" :loop="true" :autoplay="true" :pagination-enabled="false" :per-page-custom="[[280,1],[480,2],[768, 3]]" :navigation-next-label="`<i class=&quot;fas fa-chevron-circle-right fa-2x ; aria-hidden=&quot;true&quot;></i>`" :navigation-prev-label="`<i class=&quot;fas fa-chevron-circle-left fa-2x ; aria-hidden=&quot;true&quot; />`" :autoplay-hover-pause="true" class="col-10 p-0">
           <slide v-for="(item,index) in profiles" :key="index" class="p-1">
             <div class="card rounded-0">
               <img class="card-img-top rounded-0" :src="item.image" alt="Card image cap">
@@ -30,36 +30,22 @@
 
 <script>
 import { Carousel, Slide } from 'vue-carousel'
-import Members from '@/services/members.js'
 
 export default {
   components: {
     Carousel,
     Slide
   },
-  data () {
-    return {
-      profiles: []
+  props: {
+    'profiles': {
+      type: Array,
+      default: null
     }
   },
-
-  async created () {
-    try {
-      const team = (await Members.getMembers()).data
-      console.log(team)
-      team.forEach((mem) => {
-        this.categorise(mem)
-      })
-    } catch (e) {
-      console.log(e.message)
-    }
+  created () {
+    console.log(this.profiles[0])
   },
   methods: {
-    categorise (mem) {
-      if (mem.degree_name === 'BTECH' & mem.year_name === 4) {
-        this.profiles.push(mem)
-      }
-    },
     displayheading (text) {
       var length = text.length
       var middle = length / 2

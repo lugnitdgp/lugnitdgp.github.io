@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <div class="col-md-8">
+      <div v-scroll="AnimateSecNow" class="col-md-8">
         <div class="row">
           <div class="col-md-12 border-bottom border-md-none">
             <div class="card text-right border-0 text-md-left pb-1 pt-1">
@@ -71,7 +71,7 @@
             <div v-for="(item, index) in section4" :key="index" class="p-2 bd-highlight text-center col">
               <div class="bottom-div mb-3">
                 <i class="bottom-icon" :class="'fas ' + item.icon" />
-                <animate-number :number="parseInt(item.number)" />
+                <animate-number :number="item.number" />
                 <strong>{{ item.content }}</strong>
               </div>
             </div>
@@ -118,10 +118,6 @@ export default {
 
   mounted () {
     setTimeout(function () {
-      this.show = true
-    }.bind(this), 0)
-
-    setTimeout(function () {
       var i
       for (i = 0; i < 3; i++) {
         var start = 0
@@ -144,6 +140,10 @@ export default {
         second: text.substr(middle, highlighted),
         third: text.substr(highlighted + middle, length)
       }
+    },
+    AnimateSecNow (e) {
+      var count = window.pageYOffset || document.documentElement.scrollTop
+      if (count > 50) { this.show = true } else this.show = false
     }
   }
 

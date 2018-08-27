@@ -1,5 +1,5 @@
 <template>
-  <h3>{{ displaynumber(displayNumber).first }}<span class="highlighted">{{ displaynumber(displayNumber).second }}</span></h3>
+  <h3 v-scroll="AnimateNumNow">{{ displaynumber(displayNumber).first }}<span class="highlighted">{{ displaynumber(displayNumber).second }}</span></h3>
 </template>
 
 <script>
@@ -14,7 +14,8 @@ export default {
   data () {
     return {
       displayNumber: 10,
-      interval: false
+      interval: false,
+      once: true
     }
   },
 
@@ -46,6 +47,16 @@ export default {
         first: num.substr(0, 1),
         second: num.substr(1, num.length)
       }
+    },
+    AnimateNumNow (e) {
+      var count = window.pageYOffset || document.documentElement.scrollTop
+      if (count >= 600 && this.once) {
+        this.AnimateNumber()
+        this.once = false
+      }
+    },
+    AnimateNumber () {
+      this.displayNumber = 10
     }
   }
 }
