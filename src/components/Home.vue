@@ -12,6 +12,7 @@
 =======
     <about-us />
     <team-section :profiles="profiles" />
+    <event-section />
     <blog-section />
 >>>>>>> Add preloader
   </div>
@@ -24,6 +25,7 @@ import AboutUs from './AboutUs'
 import TeamSection from './TeamSection'
 import BlogSection from './BlogSection'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import EventSection from './EventSection'
 import common from '@/services/common.js'
 export default {
@@ -35,6 +37,13 @@ export default {
   name: 'Home',
   components: { HomeCarousel, AboutUs, TeamSection, BlogSection },
 >>>>>>> Add preloader
+=======
+import EventSection from './EventSection'
+import common from '@/services/common.js'
+export default {
+  name: 'Home',
+  components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection },
+>>>>>>> Add event section
   data () {
     return {
       profiles: []
