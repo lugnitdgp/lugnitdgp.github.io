@@ -3,6 +3,7 @@
     <home-carousel />
     <about-us />
     <team-section :profiles="profiles" />
+    <event-section />
     <blog-section />
   </div>
 </template>
@@ -12,10 +13,11 @@ import HomeCarousel from './HomeCarousel'
 import AboutUs from './AboutUs'
 import TeamSection from './TeamSection'
 import BlogSection from './BlogSection'
+import EventSection from './EventSection'
 import common from '@/services/common.js'
 export default {
   name: 'Home',
-  components: { HomeCarousel, AboutUs, TeamSection, BlogSection },
+  components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection },
   data () {
     return {
       profiles: []
