@@ -3,7 +3,7 @@
     <div v-show="loader" class="loader">
       <pre-loader />
     </div>
-    <router-view v-show="!loader" @hideloader="hideLoader" />
+    <router-view @hideloader="hideLoader" />
   </div>
 </template>
 
@@ -16,12 +16,20 @@ export default {
   },
   data () {
     return {
-      loader: true
+      loader: true,
+      loadCount: 0
     }
   },
   methods: {
     hideLoader (val) {
-      if (typeof val === 'boolean') { this.loader = !val } else { this.loader = false }
+      console.log(this.loadCount)
+      if (val === true) {
+        this.loadCount++
+      }
+      // Increase this value whenever you add $emit to any component
+      if (this.loadCount === 1) {
+        this.loader = false
+      }
     }
   }
 }

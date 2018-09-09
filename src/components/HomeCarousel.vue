@@ -57,7 +57,7 @@ export default {
             similique quaerat odio accusamus quisquam laborum optio, amet sapiente quae hic.`
         },
         {
-          image: 'static/images/image3.jpg',
+          image: 'static/images/image2.jpg',
           heading: 'Heading Two',
           subtitle: `Lorem ipsum dolor, consectetur adipisicing elit. Consectetur
             similique quaerat odio accusamus optio, amet sapiente quae hic.`
@@ -70,8 +70,20 @@ export default {
         }
       ]
     }
-  }
+  },
+  mounted () {
+    var carouselItems = document.getElementsByClassName('carousel-item')
+    var len = carouselItems.length
+    for (var i = 0; i < len; i++) {
+      const style = getComputedStyle(carouselItems[i])
+      var background = style.backgroundImage
+      var backgroundImageUrl = background.match(/\((.*?)\)/)[1].replace(/('|")/g, '')
 
+      var img = new Image()
+      img.src = backgroundImageUrl
+      img.onload = () => this.$emit('hideloader', true)
+    }
+  }
 }
 
 </script>
