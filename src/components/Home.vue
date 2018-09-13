@@ -1,21 +1,25 @@
 <template>
   <div id="home">
+    <nav-bar />
     <home-carousel />
-    <about-us />
-    <team-section :profiles="profiles" />
-    <blog-section />
+    <about-us id="AboutUsSection" />
+    <event-section id="EventsSection" />
+    <team-section id="TeamSection" :profiles="profiles" />
+    <blog-section id="BlogSection" />
   </div>
 </template>
 
 <script>
+import NavBar from './NavBar'
 import HomeCarousel from './HomeCarousel'
 import AboutUs from './AboutUs'
 import TeamSection from './TeamSection'
 import BlogSection from './BlogSection'
+import EventSection from './EventSection'
 import common from '@/services/common.js'
 export default {
   name: 'Home',
-  components: { HomeCarousel, AboutUs, TeamSection, BlogSection },
+  components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection, NavBar },
   data () {
     return {
       profiles: []

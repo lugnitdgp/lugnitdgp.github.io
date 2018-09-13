@@ -51,7 +51,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style scoped>
   div #loader {
     height: 200px;
     width: 200px;

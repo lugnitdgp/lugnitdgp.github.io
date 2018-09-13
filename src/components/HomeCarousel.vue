@@ -108,7 +108,7 @@ export default {
 
     .btn-custom {
       background-color: #fff;
-      color: #ff9800;
+      color: #fa631c;
       font-weight: 600;
       padding: 14px 18px;
       border-radius: 50px;
