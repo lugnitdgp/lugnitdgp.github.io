@@ -1,28 +1,11 @@
 <template>
   <div id="home">
-<<<<<<< HEAD
-
     <nav-bar />
     <home-carousel />
-<<<<<<< HEAD
-=======
-    <nav-bar />
-    <home-carousel />
->>>>>>> ADD NAVBAR
     <about-us id="AboutUsSection" />
     <event-section id="EventsSection" />
     <team-section id="TeamSection" :profiles="profiles" />
     <blog-section id="BlogSection" />
-<<<<<<< HEAD
-
-=======
-    <about-us />
-    <team-section :profiles="profiles" />
-    <event-section />
-    <blog-section />
->>>>>>> Add preloader
-=======
->>>>>>> ADD NAVBAR
   </div>
 </template>
 
@@ -32,30 +15,11 @@ import HomeCarousel from './HomeCarousel'
 import AboutUs from './AboutUs'
 import TeamSection from './TeamSection'
 import BlogSection from './BlogSection'
-<<<<<<< HEAD
-<<<<<<< HEAD
 import EventSection from './EventSection'
 import common from '@/services/common.js'
 export default {
   name: 'Home',
   components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection, NavBar },
-=======
-import common from '@/services/common.js'
-export default {
-  name: 'Home',
-  components: { HomeCarousel, AboutUs, TeamSection, BlogSection },
->>>>>>> Add preloader
-=======
-import EventSection from './EventSection'
-import common from '@/services/common.js'
-export default {
-  name: 'Home',
-<<<<<<< HEAD
-  components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection },
->>>>>>> Add event section
-=======
-  components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection, NavBar },
->>>>>>> ADD NAVBAR
   data () {
     return {
       profiles: []

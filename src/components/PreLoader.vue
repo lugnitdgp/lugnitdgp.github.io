@@ -51,15 +51,7 @@ export default {
 }
 </script>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 <style scoped>
-=======
-<style lang="css">
->>>>>>> Add preloader
-=======
-<style scoped>
->>>>>>> Add event section
   div #loader {
     height: 200px;
     width: 200px;
