@@ -3,7 +3,7 @@
     <h2 class="text-center font-weight-bold pt-5 pb-3">Fea<span class="highlighted">tur</span>ed <span class="highlighted">Eve</span>nts</h2>
     <div class="cards" :class="{&quot;showing&quot;:isShowing}">
       <div v-for="(item,index) in events" :key="index" :ref="index" class="grid-card" @click="ShowCard(index)">
-        <img src="http://s4c.cymru/temp/wave1.jpg">
+        <img :src="item.event_image" style="height:12rem;width:20rem">
         <div class="card-title">
           <a class="toggle-info btn">
             <span class="left" />
@@ -11,20 +11,14 @@
           </a>
           <h5 class="font-weight-bold">{{ item.title }}</h5>
           <div class="details">
-            <i class="fas fa-calendar-alt" /> Date
-            <i class="far fa-clock" /> Time
-            <i class="fas fa-map-marker-alt" /> Venue
+            <i class="fas fa-calendar-alt" /> {{ new Date(item.event_timing).toLocaleDateString() }}<br>
+            <i class="far fa-clock" /> {{ new Date(item.event_timing).toLocaleTimeString() }}<br>
+            <i class="fas fa-map-marker-alt" /> {{ item.venue||item.url }}<br>
           </div>
         </div>
         <div class="card-flap flap1">
-          <div class="card-description">
-            {{ item.description }}
-          </div>
-          <div class="card-flap flap2">
-            <div class="card-actions">
-              <a href="#" class="btn">Read more</a>
-            </div>
-          </div>
+          <!--  <div class="card-description" v-html="item.description" />-->
+          <div class="card-description">{{ item.description }} </div>
         </div>
       </div>
     </div>
@@ -33,13 +27,14 @@
 
 <script>
 export default {
+  props: {
+    'events': {
+      type: Array,
+      default: null
+    }
+  },
   data () {
     return {
-      events: [{title: 'Card title', subtitle: 'Image from unsplash.com', description: 'This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when theyre not available etc.'},
-        {title: 'Card title', subtitle: 'Image from unsplash.com', description: 'This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when theyre not available etc.'},
-        {title: 'Card title', subtitle: 'Image from unsplash.com', description: 'This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when theyre not available etc.'},
-        {title: 'Card title', subtitle: 'Image from unsplash.com', description: 'This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when theyre not available etc.'},
-        {title: 'Card title', subtitle: 'Image from unsplash.com', description: 'This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when theyre not available etc.'}],
       isShowing: false,
       Showing: null
     }
@@ -107,15 +102,14 @@ a.btn:active {
 
 div.cards {
   margin: auto;
-  max-width: 960px;
+  max-width: 100%;
   text-align: center;
 }
 
 div.grid-card {
   background: #ffffff;
   display: inline-block;
-  margin: 8px;
-  max-width: 300px;
+  margin: 2vh 2vw;
   perspective: 1000;
   position: relative;
   text-align: left;
@@ -163,10 +157,15 @@ div.grid-card div.card-title a.toggle-info span.right {
   transform: rotate(-45deg);
 }
 
+div.grid-card div.details {
+  font-size: 0.8rem;
+}
+
 div.grid-card div.card-description {
   padding: 0px 15px 10px;
   position: relative;
   display: none;
+  font-size: 0.8rem;
 }
 div.grid-card div.details{
   color:#444;
@@ -189,10 +188,7 @@ div.grid-card div.flap1 {
   transition: all 0.3s 0.3s ease-out;
   z-index: -1;
 }
-div.grid-card div.flap2 {
-  transition: all 0.3s 0s ease-out;
-  z-index: -2;
-}
+
 div.cards.showing div.grid-card {
   cursor: pointer;
   opacity: 0.6;
@@ -226,9 +222,7 @@ div.grid-card.show div.card-flap {
 div.grid-card.show div.flap1 {
   transition: all 0.3s 0s ease-out;
 }
-div.grid-card.show div.flap2 {
-  transition: all 0.3s 0.2s ease-out;
-}
+
 div.grid-card.show div.card-description {
   display: block;
 }

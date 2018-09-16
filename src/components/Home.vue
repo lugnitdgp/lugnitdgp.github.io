@@ -3,7 +3,7 @@
     <nav-bar />
     <home-carousel />
     <about-us id="AboutUsSection" />
-    <event-section id="EventsSection" />
+    <event-section id="EventsSection" :events="events" />
     <team-section id="TeamSection" :profiles="profiles" />
     <blog-section id="BlogSection" />
   </div>
@@ -22,7 +22,8 @@ export default {
   components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection, NavBar },
   data () {
     return {
-      profiles: []
+      profiles: [],
+      events: []
     }
   },
   created () {
@@ -30,12 +31,22 @@ export default {
     common.getMembers()
       .then(response => {
         const team = response.data
-        console.log(team)
         team.forEach((mem) => {
           this.categorise(mem)
         })
         count++
-        if (count === 1) {
+        if (count === 2) {
+          this.$emit('hideloader', true)
+        }
+      })
+      .catch(e => {
+        console.log(e)
+      })
+    common.getEvents()
+      .then(response => {
+        this.events = response.data
+        count++
+        if (count === 2) {
           this.$emit('hideloader', true)
         }
       })
