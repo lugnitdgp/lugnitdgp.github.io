@@ -27,17 +27,13 @@ export default {
     }
   },
   created () {
-    let count = 0
     common.getMembers()
       .then(response => {
         const team = response.data
         team.forEach((mem) => {
           this.categorise(mem)
         })
-        count++
-        if (count === 2) {
-          this.$emit('hideloader', true)
-        }
+        this.$emit('hideloader', true)
       })
       .catch(e => {
         console.log(e)
@@ -45,10 +41,7 @@ export default {
     common.getEvents()
       .then(response => {
         this.events = response.data
-        count++
-        if (count === 2) {
-          this.$emit('hideloader', true)
-        }
+        this.$emit('hideloader', true)
       })
       .catch(e => {
         console.log(e)
