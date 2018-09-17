@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="col-sm-12 col-lg-5 p-0">
-        <div class="Contact-footer--right">
+        <div class="Contact-footer--right" style="background-image: url('static/images/image4.jpeg')">
           <div class="Contact-footer--right-content">
             <div class="row mt-2">
               <div class="col-1 p-0 mr-2">
@@ -71,7 +71,6 @@ export default {
   border-left: 0.8vw solid #444;
 }
 .Contact-footer--right{
-  background-image: url("/static/images/image4.jpeg");
   background-size: cover;
   color: white;
   line-height: normal;
