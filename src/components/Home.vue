@@ -6,6 +6,7 @@
     <event-section id="EventsSection" :events="events" />
     <team-section id="TeamSection" :profiles="profiles" />
     <blog-section id="BlogSection" />
+    <contact-us />
   </div>
 </template>
 
@@ -16,10 +17,11 @@ import AboutUs from './AboutUs'
 import TeamSection from './TeamSection'
 import BlogSection from './BlogSection'
 import EventSection from './EventSection'
+import ContactUs from './ContactUs'
 import common from '@/services/common.js'
 export default {
   name: 'Home',
-  components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection, NavBar },
+  components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection, NavBar, ContactUs },
   data () {
     return {
       profiles: [],
