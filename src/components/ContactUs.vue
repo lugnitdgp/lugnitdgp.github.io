@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid Contact-us">
     <div class="row p-0">
-      <div class="col-md-12 col-lg-6 p-0 m-0">
+      <div class="col-md-12 col-lg-6 p-0 m-0 pb-lg-5">
 
         <h2 class="text-center font-weight-bold pt-5 pb-3">G<span class="highlighted">E</span>T IN T<span class="highlighted">UC</span>H</h2>
         <div class="row d-flex justify-content-center">
@@ -62,12 +62,13 @@ export default {
 <style scoped>
 .Contact-us{
   background-color: #f5f5f5;
+  border-bottom: 1px dashed #fa631c;
 }
 .contact-card{
   background-color: white;
   margin: 2vh 2vw;
   min-width: 50%;
-  padding: 2vw;
+  padding: 1rem;
   border-left: 0.8vw solid #444;
 }
 .Contact-footer--right{
@@ -78,11 +79,13 @@ export default {
   height:100%;
   font-size: 0.8rem;
 }
-.Contact-footer--right-content {margin: 0;
+.Contact-footer--right-content {
+  margin: 0;
   padding: 3vh 1vw 3vh;
   width: 100%;
   float:left;
   box-sizing: border-box;
+  padding-bottom: 20vh;
 }
 .Contact-footer--right .Contact-footer--right-content > div {
   position: relative;
@@ -108,7 +111,7 @@ export default {
 }
 .links i{
   border:2px solid #444;
-  padding: 0.8rem;
+  padding: 0.6rem;
   margin: 1rem;
 }
 .links i:hover{

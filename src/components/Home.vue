@@ -7,6 +7,7 @@
     <team-section id="TeamSection" :profiles="profiles" />
     <blog-section id="BlogSection" />
     <contact-us id="ContactUs" />
+    <page-footer />
   </div>
 </template>
 
@@ -18,10 +19,11 @@ import TeamSection from './TeamSection'
 import BlogSection from './BlogSection'
 import EventSection from './EventSection'
 import ContactUs from './ContactUs'
+import PageFooter from './PageFooter'
 import common from '@/services/common.js'
 export default {
   name: 'Home',
-  components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection, NavBar, ContactUs },
+  components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection, NavBar, ContactUs, PageFooter },
   data () {
     return {
       profiles: [],

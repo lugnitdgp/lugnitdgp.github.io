@@ -17,12 +17,12 @@
                   <a :href="item.email"><i class="fab fa-google-plus-g" /></a>
                 </div>
               </div>
-              <div class="row justify-content-center">
-                <p class="highlighted text-right m-0 mt-2  pb-1 col-10"><u><a> Meet all the members »</a></u></p>
-              </div>
             </div>
           </slide>
         </carousel>
+      </div>
+      <div class="row justify-content-center">
+        <p class="highlighted text-right m-0 mt-2  pb-1 col-10"><u><a> Meet all the members »</a></u></p>
       </div>
     </div>
   </section>
