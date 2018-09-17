@@ -6,7 +6,7 @@
     <event-section id="EventsSection" :events="events" />
     <team-section id="TeamSection" :profiles="profiles" />
     <blog-section id="BlogSection" />
-    <contact-us />
+    <contact-us id="ContactUs" />
   </div>
 </template>
 

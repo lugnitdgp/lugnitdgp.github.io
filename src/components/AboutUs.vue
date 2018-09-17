@@ -143,7 +143,7 @@ export default {
     },
     AnimateSecNow (e) {
       var count = window.pageYOffset || document.documentElement.scrollTop
-      if (count > 50) { this.show = true } else this.show = false
+      if (count > 42) { this.show = true } else this.show = false
     }
   }
 
