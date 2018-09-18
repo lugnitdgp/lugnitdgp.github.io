@@ -3,11 +3,13 @@
   padding: 0px 5px 0px 5px !important;
 }
 
-.blog-section-container .card .social-share-container {
+.blog-section-container .card .social-share-container,
+.event-section-container .card .social-share-container {
   height: 36px;
   padding: 0 10px;
 }
-.blog-section-container .card .social-share-icons {
+.blog-section-container .card .social-share-icons,
+.event-section-container .card .social-share-icons {
   height: 28px;
   width: 28px;
   font-size: 16px;
@@ -16,7 +18,8 @@
   margin: 0 2px;
   cursor: pointer;
 }
-.blog-section-container .card .social-share-icons:hover {
+.blog-section-container .card .social-share-icons:hover,
+.event-section-container .card .social-share-icons:hover {
   color: #fa631c;
   text-decoration: none;
 }
