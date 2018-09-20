@@ -136,13 +136,19 @@ export default {
 <style lang="scss" scoped>
 @import '../../node_modules/bootstrap/scss/mixins';
 
-h2 {
-  font-size: 32px;
-  text-transform: uppercase;
+.container {
+  padding: 0;
+
+  h2 {
+    font-size: 32px;
+    text-transform: uppercase;
+
+    .highlighted {
+      color: #fa631c;
+    }
+  }
 }
-.highlighted {
-  color: #fa631c;
-}
+
 .card {
   margin-bottom: 15px;
 }
