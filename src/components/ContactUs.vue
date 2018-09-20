@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <h2 class="text-center font-weight-bold pt-5 pb-3">G<span class="highlighted">E</span>T IN TO<span class="highlighted">UC</span>H</h2>
+    <h2 class="text-center font-weight-bold pt-5 pb-3">G<span class="highlighted">e</span>t in To<span class="highlighted">uc</span>h</h2>
     <div class="row p-0 Contact-us">
       <div class="col-md-12 col-lg-5 m-0 pb-4 pt-4">
         <div class="row d-flex justify-content-center">
@@ -39,7 +39,7 @@
                 <i class="fas fa-map-marker-alt fa-2x" />
               </div>
               <div class="col-10">
-                <p> <strong>GNU Linux user's group<br>  NIT Durgapur</strong></p><p>Durgapur<br>West Bengal 713209</p>
+                <p> <strong>GNU/Linux Users' Group<br>  NIT Durgapur</strong></p><p>Durgapur<br>West Bengal 713209</p>
               </div>
             </div>
           </div>
@@ -55,6 +55,11 @@ export default {
 </script>
 
 <style scoped>
+
+h2 {
+  font-size: 32px;
+  text-transform: uppercase;
+}
 .Contact-us{
   background-color: #f5f5f5;
   border-bottom: 1px dashed #fa631c;

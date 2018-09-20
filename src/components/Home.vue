@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <nav-bar />
-    <home-carousel />
+    <home-carousel id="Carousel" />
     <about-us id="AboutUsSection" />
     <event-section id="EventsSection" :events="events" />
     <team-section id="TeamSection" :profiles="profiles" />
@@ -21,9 +21,19 @@ import EventSection from './EventSection'
 import ContactUs from './ContactUs'
 import PageFooter from './PageFooter'
 import common from '@/services/common.js'
+
 export default {
   name: 'Home',
-  components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection, NavBar, ContactUs, PageFooter },
+  components: {
+    HomeCarousel,
+    AboutUs,
+    TeamSection,
+    BlogSection,
+    EventSection,
+    NavBar,
+    ContactUs,
+    PageFooter
+  },
   data () {
     return {
       profiles: [],

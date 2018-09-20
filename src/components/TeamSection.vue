@@ -7,7 +7,6 @@
           <slide v-for="(item,index) in profiles" :key="index" class="p-1">
             <div class="card rounded-0">
               <img class="card-img-top rounded-0" :src="item.image" alt="Card image cap">
-              <div class="overlay-image" />
               <div class="card-body">
                 <h5 class="card-title font-weight-bold">{{ displayheading(item.first_name+" "+item.last_name).first }}<span class="highlighted">{{ displayheading(item.first_name+" "+item.last_name).second }}</span>{{ displayheading(item.first_name+" "+item.last_name).third }}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">{{ item.alias }}</h6>
@@ -85,15 +84,6 @@ export default {
   100% {
     visibility: visible;
   }
-}
-.card:hover .overlay-image {
-  animation-name: displayOverlay;
-  animation-duration: 1s;
-  animation-timing-function: ease-in;
-  transform: scale3d(1,1,1);
-  transition-duration: 0.15s;
-  transition-timing-function: ease-in;
-  visibility: visible;
 }
 .card i {
   display: inline-flex;

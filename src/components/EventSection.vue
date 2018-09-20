@@ -1,6 +1,6 @@
 <template>
   <div class="container event-section-container">
-    <h2 class="text-center font-weight-bold pt-5 pb-3">Our E<span class="highlighted">ven</span>ts</h2>
+    <h2 class="text-center font-weight-bold pt-5 pb-5">Our Fe<span class="highlighted">atu</span>red E<span class="highlighted">ven</span>ts</h2>
     <div :class="[active != null ? 'active' : '', 'row align-items-center']">
       <div
         v-for="(item, index) in events"
@@ -9,22 +9,25 @@
       >
         <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
           <v-card-media
-            :src="item.image_url"
+            :src="item.event_image"
             :height="index == active ? '300px' : '200px'"
           />
 
           <div class="cover d-flex">
             <div class="d-inline-flex">
-              <span><i class="far fa-calendar" aria-hidden="true" /> {{ item.date }}</span>
-              <span><i class="fas fa-calendar-alt" /> {{ new Date(item.event_timing).toLocaleDateString() }}</span>
+              <span><i class="far fa-calendar" aria-hidden="true" /> {{ new Date(item.event_timing).toLocaleDateString() }}</span>
+              <span><i class="fas fa-clock" />{{ new Date(item.event_timing).toLocaleTimeString() }}</span>
             </div>
-            <div><span><i class="far fa-clock" /> {{ new Date(item.event_timing).toLocaleTimeString() }}</span></div>
+            <div>
+              <span v-if="item.venue"><i class="fas fa-map-marker-alt" /> {{ item.venue }}</span>
+              <a v-else href="item.url"><i class="fas fa-map-marker-alt" /> {{ item.url }}</a>
+            </div>
           </div>
 
           <v-card-title primary-title>
             <div>
               <h3 class="headline mb-2">{{ item.title }}</h3>
-              <p class="card-text">{{ item.description }}</p>
+              <div class="card-text" v-html="item.description" />
             </div>
           </v-card-title>
 
@@ -86,6 +89,7 @@ export default {
 
 .container {
   padding: 0;
+  // backgrouond:
 
   h2 {
     font-size: 32px;
@@ -95,78 +99,89 @@ export default {
       color: #fa631c;
     }
   }
-}
-.card {
-  margin-bottom: 15px;
-}
-div.grid-card div.details {
-  font-size: 0.8rem;
-}
-div.grid-card div.card-description {
-  padding: 0px 15px 10px;
-  position: relative;
-}
-.card .card-text {
-  display: none;
-  font-size: 0.8rem;
-}
-.v-card__title--primary {
-  padding: 16px 20px 0 20px;
-}
-.v-card:hover .cover {
-  opacity: 1;
-}
-.card .cover {
-  position: absolute;
-  top: 0;
-  height: 200px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.75);
-  opacity: 0;
-  transition: opacity 0.7s ease-in-out;
-  font-size: 15px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.v-card .cover > div {
-  flex: 0 0 auto !important;
-  padding-bottom: 12px;
-  color: #444;
-}
-.v-card .cover i {
-  font-size: 21px;
-  margin-right: 3px;
-}
-.v-card .cover > div:first-child > span:first-child {
-  margin-right: 15px;
-}
-.v-card .cover i.fa-calendar {
-  color: #0067BB;
-}
-.v-card .cover i.fa-clock {
-  color: #C62828;
-}
-.v-card .cover i.fa-map-marker-alt {
-  color: #062657;
-}
-.card.active {
-  z-index: 100;
-  margin: 0 auto;
 
-  @media(min-width: 576px) {
-    width: 500px;
+  .card {
+    margin-bottom: 15px;
+
+    .card-text {
+      display: none;
+      font-size: 1rem;
+    }
+
+    .v-card__title--primary {
+      padding: 16px 20px 0 20px;
+    }
+
+    .cover {
+      position: absolute;
+      top: 0;
+      height: 200px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.75);
+      opacity: 0;
+      transition: opacity 0.7s ease-in-out;
+      font-size: 15px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      & > div {
+        flex: 0 0 auto !important;
+        padding-bottom: 12px;
+        color: #444;
+
+        &:first-child > span:first-child {
+          margin-right: 15px;
+        }
+      }
+
+      i {
+        font-size: 21px;
+        margin-right: 3px;
+      }
+      i.fa-calendar {
+        color: #0067BB;
+      }
+      i.fa-clock {
+        color: #C62828;
+      }
+      i.fa-map-marker-alt {
+        color: #062657;
+      }
+    }
+
+    &:hover .cover {
+      opacity: 1;
+    }
   }
 
-  @media(min-width: 768px) {
-    width: 620px;
-  }
+  .card.active {
+    z-index: 100;
+    margin: 0 auto;
 
-  @media(min-width: 1200px) {
-    width: 700px;
+    .cover {
+      height: 300px;
+    }
+
+    .card-text {
+      display: block;
+    }
+
+    @media only screen and (min-width: 576px) {
+      width: 500px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      width: 620px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      width: 700px;
+    }
   }
 }
-@media(min-width: 576px) {
+
+@media only screen and (min-width: 576px) {
   .col-md-6:nth-child(2n) .active {
     float: right;
   }
@@ -174,7 +189,8 @@ div.grid-card div.card-description {
     float: left;
   }
 }
-@media(min-width: 1200px) {
+
+@media only screen and (min-width: 1200px) {
   .col-xl-4:nth-child(3n) .active {
     float: right;
   }
@@ -186,9 +202,7 @@ div.grid-card div.card-description {
     float: left;
   }
 }
-.card.active .card-text {
-  display: block;
-}
+
 .row.active {
   background: rgba(255, 255, 255, 0.8);
 }
