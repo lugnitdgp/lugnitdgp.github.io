@@ -22,13 +22,14 @@ export default {
   },
   methods: {
     hideLoader (val) {
-      console.log(this.loadCount)
       if (val === true) {
         this.loadCount++
       }
       // Increase this value whenever you add $emit to any component
       if (this.loadCount === 2) {
         this.loader = false
+        document.getElementsByTagName('html')[0].style.overflow = 'auto'
+        document.getElementsByTagName('body')[0].style.overflow = 'auto'
       }
     }
   }
@@ -41,9 +42,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.loader{
-    height: 100vh;
-    width: 100vw;
-    background-color: #051429;
+.loader {
+  height: 100vh;
+  width: 100vw;
+  background-color: #051429;
+  overflow-y: auto;
 }
 </style>
