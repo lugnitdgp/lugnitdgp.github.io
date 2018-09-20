@@ -3,7 +3,7 @@
     <div v-show="loader" class="loader">
       <pre-loader />
     </div>
-    <router-view v-show="!loader" @hideloader="hideLoader" />
+    <router-view @hideloader="hideLoader" />
   </div>
 </template>
 
