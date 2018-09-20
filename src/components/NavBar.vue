@@ -26,7 +26,7 @@
             <a class="nav-link" @click="$vuetify.goTo('#BlogSection', options)">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact us</a>
+            <a class="nav-link" @click="$vuetify.goTo('#ContactUs', options)">Contact us</a>
           </li>
         </ul>
       </div>
@@ -40,7 +40,7 @@ export default {
     return {
       options: {
         duration: 1000,
-        offset: 350,
+        offset: 400,
         easing: 'easeInOutCubic'
       }
     }

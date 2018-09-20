@@ -16,9 +16,9 @@
           <div class="cover d-flex">
             <div class="d-inline-flex">
               <span><i class="far fa-calendar" aria-hidden="true" /> {{ item.date }}</span>
-              <span><i class="far fa-clock" /> {{ item.time }}</span>
+              <span><i class="fas fa-calendar-alt" /> {{ new Date(item.event_timing).toLocaleDateString() }}</span>
             </div>
-            <div><span><i class="fas fa-map-marker-alt" /> {{ item.venue }}</span></div>
+            <div><span><i class="far fa-clock" /> {{ new Date(item.event_timing).toLocaleTimeString() }}</span></div>
           </div>
 
           <v-card-title primary-title>
@@ -66,68 +66,16 @@
 import '../assets/css/global.css'
 
 export default {
-  data () {
-    return {
-      events: [
-        {
-          title: 'Card title',
-          description: 'This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when theyre not available etc.',
-          date: '25/07/2018',
-          time: '05:30 pm',
-          venue: 'DM Sen Audi 1',
-          image_url: 'https://cdn.vuetifyjs.com/images/cards/desert.jpg'
-        },
-        {
-          title: 'Card title',
-          subtitle: 'Image from unsplash.com',
-          description: 'This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when theyre not available etc.',
-          date: '25/07/2018',
-          time: '05:30 pm',
-          venue: 'DM Sen Audi 1',
-          image_url: 'https://cdn.vuetifyjs.com/images/cards/desert.jpg'
-        },
-        {
-          title: 'Card title',
-          subtitle: 'Image from unsplash.com',
-          description: 'This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when theyre not available etc.',
-          date: '25/07/2018',
-          time: '05:30 pm',
-          venue: 'DM Sen Audi 1',
-          image_url: 'https://cdn.vuetifyjs.com/images/cards/desert.jpg'
-        },
-        {
-          title: 'Card title',
-          subtitle: 'Image from unsplash.com',
-          description: 'This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when theyre not available etc.',
-          date: '25/07/2018',
-          time: '05:30 pm',
-          venue: 'DM Sen Audi 1',
-          image_url: 'https://cdn.vuetifyjs.com/images/cards/desert.jpg'
-        },
-        {
-          title: 'Card title',
-          subtitle: 'Image from unsplash.com',
-          description: 'This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when theyre not available etc.',
-          date: '25/07/2018',
-          time: '05:30 pm',
-          venue: 'DM Sen Audi 1',
-          image_url: 'https://cdn.vuetifyjs.com/images/cards/desert.jpg'
-        },
-        {
-          title: 'Card title',
-          subtitle: 'Image from unsplash.com',
-          description: 'This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when theyre not available etc.',
-          date: '25/07/2018',
-          time: '05:30 pm',
-          venue: 'DM Sen Audi 1',
-          image_url: 'https://cdn.vuetifyjs.com/images/cards/desert.jpg'
-        }
-      ],
-      active: null
+  props: {
+    'events': {
+      type: Array,
+      default: null
     }
   },
-  methods: {
-
+  data () {
+    return {
+      active: null
+    }
   }
 }
 
@@ -148,12 +96,19 @@ export default {
     }
   }
 }
-
 .card {
   margin-bottom: 15px;
 }
+div.grid-card div.details {
+  font-size: 0.8rem;
+}
+div.grid-card div.card-description {
+  padding: 0px 15px 10px;
+  position: relative;
+}
 .card .card-text {
   display: none;
+  font-size: 0.8rem;
 }
 .v-card__title--primary {
   padding: 16px 20px 0 20px;
@@ -173,9 +128,6 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.card.active .cover {
-  height: 300px;
 }
 .v-card .cover > div {
   flex: 0 0 auto !important;
@@ -233,9 +185,6 @@ export default {
   .col-xl-4:nth-child(3n + 1) .active {
     float: left;
   }
-}
-.card.inactive {
-  z-index: -1;
 }
 .card.active .card-text {
   display: block;
