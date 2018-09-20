@@ -5,6 +5,7 @@
     <about-us id="AboutUsSection" />
     <avishkar-section />
     <event-section id="EventsSection" :events="events" />
+    <linit-section />
     <team-section id="TeamSection" :profiles="profiles" />
     <blog-section id="BlogSection" :blog="blog" />
     <contact-us id="ContactUs" />
@@ -17,6 +18,7 @@ import NavBar from './NavBar'
 import HomeCarousel from './HomeCarousel'
 import AboutUs from './AboutUs'
 import AvishkarSection from './AvishkarSection'
+import LinitSection from './LinitSection'
 import TeamSection from './TeamSection'
 import BlogSection from './BlogSection'
 import EventSection from './EventSection'
@@ -30,6 +32,7 @@ export default {
     HomeCarousel,
     AboutUs,
     AvishkarSection,
+    LinitSection,
     TeamSection,
     BlogSection,
     EventSection,
