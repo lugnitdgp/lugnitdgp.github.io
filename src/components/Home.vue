@@ -3,9 +3,11 @@
     <nav-bar />
     <home-carousel />
     <about-us id="AboutUsSection" />
-    <event-section id="EventsSection" />
+    <event-section id="EventsSection" :events="events" />
     <team-section id="TeamSection" :profiles="profiles" />
-    <blog-section id="BlogSection" />
+    <blog-section id="BlogSection" :blog="blog" />
+    <contact-us id="ContactUs" />
+    <page-footer />
   </div>
 </template>
 
@@ -16,28 +18,43 @@ import AboutUs from './AboutUs'
 import TeamSection from './TeamSection'
 import BlogSection from './BlogSection'
 import EventSection from './EventSection'
+import ContactUs from './ContactUs'
+import PageFooter from './PageFooter'
 import common from '@/services/common.js'
 export default {
   name: 'Home',
-  components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection, NavBar },
+  components: { HomeCarousel, AboutUs, TeamSection, BlogSection, EventSection, NavBar, ContactUs, PageFooter },
   data () {
     return {
-      profiles: []
+      profiles: [],
+      events: [],
+      blog: []
     }
   },
   created () {
-    let count = 0
     common.getMembers()
       .then(response => {
         const team = response.data
-        console.log(team)
         team.forEach((mem) => {
           this.categorise(mem)
         })
-        count++
-        if (count === 1) {
-          this.$emit('hideloader', true)
-        }
+        this.$emit('hideloader', true)
+      })
+      .catch(e => {
+        console.log(e)
+      })
+    common.getEvents()
+      .then(response => {
+        this.events = response.data
+        this.$emit('hideloader', true)
+      })
+      .catch(e => {
+        console.log(e)
+      })
+    common.getBlogPosts()
+      .then(response => {
+        this.blog = response.data
+        this.$emit('hideloader', true)
       })
       .catch(e => {
         console.log(e)

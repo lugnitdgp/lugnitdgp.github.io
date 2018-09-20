@@ -3,7 +3,7 @@
     <div v-show="loader" class="loader">
       <pre-loader />
     </div>
-    <router-view @hideloader="hideLoader" />
+    <router-view v-show="!loader" @hideloader="hideLoader" />
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
         this.loadCount++
       }
       // Increase this value whenever you add $emit to any component
-      if (this.loadCount === 1) {
+      if (this.loadCount === 3) {
         this.loader = false
       }
     }
