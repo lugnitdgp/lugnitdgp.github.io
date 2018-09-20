@@ -1,31 +1,70 @@
 <template>
-  <div class="container-fluid events-section">
-    <h2 class="text-center font-weight-bold pt-5 pb-3">Fea<span class="highlighted">tur</span>ed <span class="highlighted">Eve</span>nts</h2>
-    <div class="cards" :class="{&quot;showing&quot;:isShowing}">
-      <div v-for="(item,index) in events" :key="index" :ref="index" class="grid-card" @click="ShowCard(index)">
-        <img :src="item.event_image" style="height:12rem;width:20rem">
-        <div class="card-title">
-          <a class="toggle-info btn">
-            <span class="left" />
-            <span class="right" />
-          </a>
-          <h5 class="font-weight-bold">{{ item.title }}</h5>
-          <div class="details">
-            <i class="fas fa-calendar-alt" /> {{ new Date(item.event_timing).toLocaleDateString() }}<br>
-            <i class="far fa-clock" /> {{ new Date(item.event_timing).toLocaleTimeString() }}<br>
-            <i class="fas fa-map-marker-alt" /> {{ item.venue||item.url }}<br>
+  <div class="container event-section-container">
+    <h2 class="text-center font-weight-bold pt-5 pb-3">Our E<span class="highlighted">ven</span>ts</h2>
+    <div :class="[active != null ? 'active' : '', 'row align-items-center']">
+      <div
+        v-for="(item, index) in events"
+        :key="index"
+        class="col-12 col-md-6 col-xl-4"
+      >
+        <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
+          <v-card-media
+            :src="item.image_url"
+            :height="index == active ? '300px' : '200px'"
+          />
+
+          <div class="cover d-flex">
+            <div class="d-inline-flex">
+              <span><i class="far fa-calendar" aria-hidden="true" /> {{ item.date }}</span>
+              <span><i class="fas fa-calendar-alt" /> {{ new Date(item.event_timing).toLocaleDateString() }}</span>
+            </div>
+            <div><span><i class="far fa-clock" /> {{ new Date(item.event_timing).toLocaleTimeString() }}</span></div>
           </div>
-        </div>
-        <div class="card-flap flap1">
-          <!--  <div class="card-description" v-html="item.description" />-->
-          <div class="card-description">{{ item.description }} </div>
-        </div>
+
+          <v-card-title primary-title>
+            <div>
+              <h3 class="headline mb-2">{{ item.title }}</h3>
+              <p class="card-text">{{ item.description }}</p>
+            </div>
+          </v-card-title>
+
+          <v-card-actions class="justify-content-between">
+            <v-btn v-if="active != index" flat color="orange" @click="active = index">Read More</v-btn>
+            <v-btn v-else flat color="orange" @click="active = null">Close</v-btn>
+            <social-sharing
+              url="https://vuejs.org/"
+              :title="item.title"
+              :hashtags="item.keywords || null"
+              inline-template
+              class="d-inline-flex justify-content-between social-share-container align-items-center"
+            >  <!-- Replace url by the actual blog link -->
+              <div>
+                <network network="facebook">
+                  <i class="fab fa-facebook-f d-inline-flex social-share-icons justify-content-center align-items-center" />
+                </network>
+                <network network="linkedin">
+                  <i class="fab fa-linkedin d-inline-flex social-share-icons justify-content-center align-items-center" />
+                </network>
+                <network network="reddit">
+                  <i class="fab fa-reddit d-inline-flex social-share-icons justify-content-center align-items-center" />
+                </network>
+                <network network="twitter">
+                  <i class="fab fa-twitter d-inline-flex social-share-icons justify-content-center align-items-center" />
+                </network>
+              </div>
+            </social-sharing>
+          </v-card-actions>
+
+        </v-card>
       </div>
     </div>
+
   </div>
 </template>
 
 <script>
+import '../assets/css/global.css'
+
 export default {
   props: {
     'events': {
@@ -35,195 +74,125 @@ export default {
   },
   data () {
     return {
-      isShowing: false,
-      Showing: null
+      active: null
     }
-  },
-  methods: {
-    ShowCard (id) {
-      if (this.$refs[id][0].classList.contains('show')) {
-        this.$refs[id][0].classList.remove('show')
-        this.isShowing = false
-        this.Showing = null
-      } else {
-        if (this.Showing !== null) {
-          this.$refs[this.Showing][0].classList.remove('show')
-          this.isShowing = false
-          this.Showing = null
-        }
-
-        this.$refs[id][0].classList.add('show')
-        this.isShowing = true
-        this.Showing = id
-      }
-      console.log(this.$refs[id][0])
-    }
-
   }
 }
 
 </script>
 
-<style scoped>
-h2 {
-  font-size: 32px;
-  text-transform: uppercase;
-}
-.highlighted {
-  color: #fa631c;
-}
-.events-section{
-  background-color: #f7f7f7 ;
-}
-/* Grid item */
-a.btn {
-  background: #fa631c;
-  border-radius: 4px;
-  box-shadow: 0 2px 0px 0 rgba(0,0,0,0.25);
-  color: #ffffff;
-  display: inline-block;
-  padding: 6px 30px 8px;
-  position: relative;
-  text-decoration: none;
-  transition: all 0.1s 0s ease-out;
-}
+<style lang="scss" scoped>
+@import '../../node_modules/bootstrap/scss/mixins';
 
-a.btn:hover {
-  box-shadow: 0px 8px 2px 0 rgba(0,0,0,0.075);
-  transform: translateY(-2px);
-  transition: all 0.25s 0s ease-out;
-}
-
-a.btn:active {
-  box-shadow: 0 1px 0px 0 rgba(255,255,255,0.25);
-  transform: translate3d(0,1px,0);
-  transition: all 0.025s 0s ease-out;
-}
-
-div.cards {
-  margin: auto;
-  max-width: 100%;
-  text-align: center;
-}
-
-div.grid-card {
-  background: #ffffff;
-  display: inline-block;
-  margin: 2vh 2vw;
-  perspective: 1000;
-  position: relative;
-  text-align: left;
-  transition: all 0.3s 0s ease-in;
-  z-index: 1;
-  cursor: pointer;
-}
-
-div.grid-card img {
-  width: 100%;
-}
-
-div.grid-card div.card-title {
-  padding: 6px 15px 10px;
-  position: relative;
-  z-index: 0;
-  margin: 0;
-}
-
-div.grid-card div.card-title a.toggle-info {
-  border-radius: 32px;
-  height: 32px;
+.container {
   padding: 0;
-  position: absolute;
-  right: 15px;
-  width: 34px;
-}
 
-div.grid-card div.card-title a.toggle-info span {
-  background: #ffffff;
-  height: 2px;
-  position: absolute;
-  top: 16px;
-  transition: all 0.15s 0s ease-out;
-  width: 12px;
-}
+  h2 {
+    font-size: 32px;
+    text-transform: uppercase;
 
-div.grid-card div.card-title a.toggle-info span.left {
-  right: 14px;
-  transform: rotate(45deg);
+    .highlighted {
+      color: #fa631c;
+    }
+  }
 }
-
-div.grid-card div.card-title a.toggle-info span.right {
-  left: 14px;
-  transform: rotate(-45deg);
+.card {
+  margin-bottom: 15px;
 }
-
 div.grid-card div.details {
   font-size: 0.8rem;
 }
-
 div.grid-card div.card-description {
   padding: 0px 15px 10px;
   position: relative;
+}
+.card .card-text {
   display: none;
   font-size: 0.8rem;
 }
-div.grid-card div.details{
-  color:#444;
+.v-card__title--primary {
+  padding: 16px 20px 0 20px;
 }
-div.grid-card div.details i{
-  font-weight: bold;
+.v-card:hover .cover {
+  opacity: 1;
 }
-div.grid-card div.card-actions {
-  box-shadow: 0 2px 0px 0 rgba(0,0,0,0.075);
-  padding: 10px 15px 20px;
-  text-align: center;
-}
-div.grid-card div.card-flap {
+.card .cover {
   position: absolute;
+  top: 0;
+  height: 200px;
   width: 100%;
-  transform-origin: top;
-  transform: rotateX(-90deg);
+  background: rgba(255, 255, 255, 0.75);
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  font-size: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-div.grid-card div.flap1 {
-  transition: all 0.3s 0.3s ease-out;
-  z-index: -1;
+.v-card .cover > div {
+  flex: 0 0 auto !important;
+  padding-bottom: 12px;
+  color: #444;
 }
+.v-card .cover i {
+  font-size: 21px;
+  margin-right: 3px;
+}
+.v-card .cover > div:first-child > span:first-child {
+  margin-right: 15px;
+}
+.v-card .cover i.fa-calendar {
+  color: #0067BB;
+}
+.v-card .cover i.fa-clock {
+  color: #C62828;
+}
+.v-card .cover i.fa-map-marker-alt {
+  color: #062657;
+}
+.card.active {
+  z-index: 100;
+  margin: 0 auto;
 
-div.cards.showing div.grid-card {
-  cursor: pointer;
-  opacity: 0.6;
-  transform: scale(0.88);
-}
-div.cards.showing div.grid-card:hover {
-  opacity: 0.94;
-  transform: scale(0.92);
-}
-div.grid-card.show {
-  opacity: 1 !important;
-  transform: scale(1) !important;
-  z-index: 10
-}
-div.grid-card.show div.card-title a.toggle-info {
-  background: #ff6666 !important;
-}
-div.grid-card.show div.card-title a.toggle-info span {
-  top: 15px;
-}
-div.grid-card.show div.card-title a.toggle-info span.left {
-  right: 10px;
-}
-div.grid-card.show div.card-title a.toggle-info span.right {
-  left: 10px;
-}
-div.grid-card.show div.card-flap {
-  background: #ffffff;
-  transform: rotateX(0deg);
-}
-div.grid-card.show div.flap1 {
-  transition: all 0.3s 0s ease-out;
-}
+  @media(min-width: 576px) {
+    width: 500px;
+  }
 
-div.grid-card.show div.card-description {
+  @media(min-width: 768px) {
+    width: 620px;
+  }
+
+  @media(min-width: 1200px) {
+    width: 700px;
+  }
+}
+@media(min-width: 576px) {
+  .col-md-6:nth-child(2n) .active {
+    float: right;
+  }
+  .col-md-6:nth-child(2n + 1) .active {
+    float: left;
+  }
+}
+@media(min-width: 1200px) {
+  .col-xl-4:nth-child(3n) .active {
+    float: right;
+  }
+  .col-xl-4:nth-child(3n + 2) .active {
+    float: left;
+    transform: translateX(-200px);
+  }
+  .col-xl-4:nth-child(3n + 1) .active {
+    float: left;
+  }
+}
+.card.active .card-text {
   display: block;
+}
+.row.active {
+  background: rgba(255, 255, 255, 0.8);
+}
+.row > div.active {
+  margin: 0 auto;
 }
 </style>
