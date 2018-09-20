@@ -9,14 +9,14 @@
       >
         <v-card class="card">
           <v-card-media
-            :src="item.image_url"
+            :src="item.thumbnail_image"
             height="200px"
           />
 
           <v-card-title primary-title>
             <div>
               <h3 class="headline mb-2">{{ item.title }}</h3>
-              <p class="card-text">{{ item.description }}</p>
+              <p class="card-text" v-html="item.content_body" />
             </div>
           </v-card-title>
 
@@ -58,37 +58,12 @@
 import '../assets/css/global.css'
 
 export default {
-
-  data () {
-    return {
-      // Temporary data: will be replace by data from API
-      blog: [
-        {
-          title: 'Kangaroo Valley Safari',
-          description: 'Located two hours south of Sydney in the Southern Highlands of New South Wales, ...',
-          image_url: 'https://cdn.vuetifyjs.com/images/cards/desert.jpg'
-        },
-        {
-          title: 'Kangaroo Valley Safari',
-          description: 'Located two hours south of Sydney in the Southern Highlands of New South Wales, ...',
-          image_url: 'https://cdn.vuetifyjs.com/images/cards/desert.jpg'
-        },
-        {
-          title: 'Kangaroo Valley Safari',
-          description: 'Located two hours south of Sydney in the Southern Highlands of New South Wales, ...',
-          image_url: 'https://cdn.vuetifyjs.com/images/cards/desert.jpg'
-        }
-      ]
+  props: {
+    'blog': {
+      type: Array,
+      default: null
     }
-  },
-
-  mounted () {
-  },
-
-  methods: {
-    // Add logic for api call to fetch blog details
   }
-
 }
 </script>
 

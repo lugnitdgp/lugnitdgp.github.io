@@ -5,7 +5,7 @@
     <about-us id="AboutUsSection" />
     <event-section id="EventsSection" :events="events" />
     <team-section id="TeamSection" :profiles="profiles" />
-    <blog-section id="BlogSection" />
+    <blog-section id="BlogSection" :blog="blog" />
     <contact-us id="ContactUs" />
     <page-footer />
   </div>
@@ -37,7 +37,8 @@ export default {
   data () {
     return {
       profiles: [],
-      events: []
+      events: [],
+      blog: []
     }
   },
   created () {
@@ -59,6 +60,11 @@ export default {
       })
       .catch(e => {
         console.log(e)
+      })
+    common.getBlogPosts()
+      .then(response => {
+        this.blog = response.data
+        this.$emit('hideloader', true)
       })
   },
   methods: {

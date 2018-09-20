@@ -64,19 +64,19 @@ h2 {
   background-color: #f5f5f5;
   border-bottom: 1px dashed #fa631c;
 }
-.contact-card{
+.contact-card {
   background-color: white;
   margin: 2vh 2vw;
   min-width: 50%;
   padding: 1rem;
   border-left: 0.8vw solid #444;
 }
-.Contact-footer--right{
+.Contact-footer--right {
   background-size: cover;
   color: white;
   line-height: normal;
   width: 100%;
-  height:100%;
+  height: 100%;
   font-size: 0.8rem;
 }
 .Contact-footer--right-content {
@@ -89,7 +89,7 @@ h2 {
 }
 .Contact-footer--right .Contact-footer--right-content > div {
   position: relative;
-  max-width: 70%;
+  max-width: 50%;
   padding: 36px 36px 36px 36px;
   margin: auto;
   background: #444;
