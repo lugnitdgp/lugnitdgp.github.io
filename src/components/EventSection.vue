@@ -17,8 +17,7 @@
           </div>
         </div>
         <div class="card-flap flap1">
-          <!--  <div class="card-description" v-html="item.description" />-->
-          <div class="card-description">{{ item.description }} </div>
+          <div class="card-description" v-html="item.description" />
         </div>
       </div>
     </div>

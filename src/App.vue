@@ -27,7 +27,7 @@ export default {
         this.loadCount++
       }
       // Increase this value whenever you add $emit to any component
-      if (this.loadCount === 2) {
+      if (this.loadCount === 3) {
         this.loader = false
       }
     }

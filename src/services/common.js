@@ -7,5 +7,8 @@ export default {
   },
   getEvents () {
     return Api().get('api/events/')
+  },
+  getBlogPosts () {
+    return Api().get('blog/posts/')
   }
 }
