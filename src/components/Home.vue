@@ -3,6 +3,7 @@
     <nav-bar />
     <home-carousel id="Carousel" />
     <about-us id="AboutUsSection" />
+    <avishkar-section />
     <event-section id="EventsSection" :events="events" />
     <team-section id="TeamSection" :profiles="profiles" />
     <blog-section id="BlogSection" :blog="blog" />
@@ -15,6 +16,7 @@
 import NavBar from './NavBar'
 import HomeCarousel from './HomeCarousel'
 import AboutUs from './AboutUs'
+import AvishkarSection from './AvishkarSection'
 import TeamSection from './TeamSection'
 import BlogSection from './BlogSection'
 import EventSection from './EventSection'
@@ -27,6 +29,7 @@ export default {
   components: {
     HomeCarousel,
     AboutUs,
+    AvishkarSection,
     TeamSection,
     BlogSection,
     EventSection,
