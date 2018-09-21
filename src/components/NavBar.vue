@@ -11,22 +11,22 @@
       <div id="navbar-links" class="collapse navbar-collapse ">
         <ul class="navbar-nav  ml-md-auto d-md-flex">
           <li class="nav-item active">
-            <a class="nav-link" @click="$vuetify.goTo('#Carousel', {duration: 1000, offset: 0, easing: 'easeInOutCubic'})">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" @click="$vuetify.goTo('#Carousel', {duration: 1000, offset: 0, easing: 'easeInOutCubic'})">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" @click="$vuetify.goTo('#AboutUsSection', options)">About us</a>
+            <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" @click="$vuetify.goTo('#AboutUsSection', options)">About us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" @click="$vuetify.goTo('#EventsSection', options)">Events</a>
+            <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" @click="$vuetify.goTo('#EventsSection', options)">Events</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" @click="$vuetify.goTo('#TeamSection', options)">Members</a>
+            <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" @click="$vuetify.goTo('#TeamSection', options)">Members</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" @click="$vuetify.goTo('#BlogSection', options)">Blog</a>
+            <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" @click="$vuetify.goTo('#BlogSection', options)">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" @click="$vuetify.goTo('#ContactUs', options)">Contact us</a>
+            <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" @click="$vuetify.goTo('#ContactUs', options)">Contact us</a>
           </li>
         </ul>
       </div>
@@ -69,7 +69,7 @@ export default {
       font-size:0.8rem;
       font-weight: 700;
       color: #9c9c9c;
-      letter-spacing: 0.5rem;
+      letter-spacing: 0.4rem;
     }
 
     .highlighted {

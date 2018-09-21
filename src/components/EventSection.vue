@@ -1,11 +1,11 @@
 <template>
   <div class="container event-section-container">
     <h2 class="text-center font-weight-bold pt-5 pb-5">Our Fe<span class="highlighted">atu</span>red E<span class="highlighted">ven</span>ts</h2>
-    <div :class="[active != null ? 'active' : '', 'row align-items-center']">
+    <div :class="[active != null ? 'active' : '', 'row align-items-center']" class="d-flex justify-content-center">
       <div
         v-for="(item, index) in events"
         :key="index"
-        class="col-12 col-md-6 col-xl-4"
+        class="col-11 col-md-6 col-xl-4 p-md-3"
       >
         <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
           <v-card-media

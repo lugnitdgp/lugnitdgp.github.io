@@ -60,6 +60,9 @@ h2 {
   font-size: 32px;
   text-transform: uppercase;
 }
+.highlighted {
+  color: #fa631c
+}
 .Contact-us{
   background-color: #f5f5f5;
   border-bottom: 1px dashed #fa631c;
@@ -89,7 +92,7 @@ h2 {
 }
 .Contact-footer--right .Contact-footer--right-content > div {
   position: relative;
-  max-width: 50%;
+  max-width: 70%;
   padding: 36px 36px 36px 36px;
   margin: auto;
   background: #444;
