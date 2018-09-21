@@ -10,19 +10,19 @@
         <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
           <v-card-media
             :src="item.event_image"
-            :height="index == active ? '300px' : '200px'"
-          />
-
-          <div class="cover d-flex">
-            <div class="d-inline-flex">
-              <span><i class="far fa-calendar" aria-hidden="true" /> {{ new Date(item.event_timing).toLocaleDateString() }}</span>
-              <span><i class="fas fa-clock" />{{ new Date(item.event_timing).toLocaleTimeString() }}</span>
+            :height="index == active ? '350px' : '200px'"
+          >
+            <div class="cover d-flex">
+              <div class="d-inline-flex">
+                <span><i class="far fa-calendar" aria-hidden="true" /> {{ new Date(item.event_timing).toLocaleDateString() }}</span>
+                <span><i class="fas fa-clock" />{{ new Date(item.event_timing).toLocaleTimeString() }}</span>
+              </div>
+              <div>
+                <span v-if="item.venue"><i class="fas fa-map-marker-alt" /> {{ item.venue }}</span>
+                <a v-else href="item.url"><i class="fas fa-map-marker-alt" /> {{ item.url }}</a>
+              </div>
             </div>
-            <div>
-              <span v-if="item.venue"><i class="fas fa-map-marker-alt" /> {{ item.venue }}</span>
-              <a v-else href="item.url"><i class="fas fa-map-marker-alt" /> {{ item.url }}</a>
-            </div>
-          </div>
+          </v-card-media>
 
           <v-card-title primary-title>
             <div>
@@ -104,8 +104,12 @@ export default {
     margin-bottom: 15px;
 
     .card-text {
-      display: none;
+      // display: none;
       font-size: 1rem;
+      height: 63px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: rgb(156, 156, 156);
     }
 
     .v-card__title--primary {
@@ -150,7 +154,7 @@ export default {
       }
     }
 
-    &:hover .cover {
+    .v-card__media:hover .cover {
       opacity: 1;
     }
   }
@@ -160,7 +164,7 @@ export default {
     margin: 0 auto;
 
     .cover {
-      height: 300px;
+      height: 350px;
     }
 
     .card-text {
@@ -178,6 +182,10 @@ export default {
     @media only screen and (min-width: 1200px) {
       width: 700px;
     }
+  }
+
+  .card.inactive {
+    z-index: -1;
   }
 }
 
