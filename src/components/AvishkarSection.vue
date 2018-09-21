@@ -13,7 +13,7 @@
         </div>
 
       </div>
-      <div class="col-lg-6 parallex-container" style="background-image: url('static/images/image3.jpg')" />
+      <div class="col-lg-6 parallex-container" style="background-image: url('static/images/image6.jpg')" />
     </div>
   </section>
 </template>
@@ -31,7 +31,7 @@ export default {
 .parallex-container {
     min-height: 60vh;
     background-attachment: fixed;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
 }

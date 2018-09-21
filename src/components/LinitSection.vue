@@ -2,12 +2,13 @@
   <section class="linit parallex-container" style="background-image: url('static/images/image5.jpeg')">
     <div class="container">
       <div class="row d-flex justify-content-center align-middle">
-        <div class="col-md-6 p-5">
+        <div class="col-md-6 pt-5 pb-5">
           <div class="linit-box">
             <a href="http://nitdgplug.org/linit/" class="text-dark"><i class="fas fa-2x fa-book" /></a>
-            <h3 class="highlighted font-weight-bold">LINIT</h3>
-            <h6 class="font-weight-bold">OUR ANNUAL MAGAZINE</h6>
-            <p class="caption">The read of open source at NITDGP</p>
+            <h2 class="highlighted font-weight-bold">LINIT</h2>
+            <h6 class="font-weight-bold">"The world is moving and a company that contents itself with present accomplishment soon falls behind."</h6>
+            <p class="caption">
+              To keep you thus, updated, GLUG publishes LINIT, the annual open source magazine of NIT Durgapur.A perfect specimen of a geek's creativity, this magazine gives us trending technologies at its best</p>
           </div>
 
         </div>
@@ -36,7 +37,7 @@ export default {
   background-size: cover;
 }
 .parallex-container::after {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.7);
   bottom: 0;
   content: "";
   left: 0;
