@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <h2 class="text-center font-weight-bold pt-5 pb-3">G<span class="highlighted">e</span>t in To<span class="highlighted">uc</span>h</h2>
+    <h2 class="text-center font-weight-bold pt-5 pb-3">G<span class="highlighted">et</span> in T<span class="highlighted">ouc</span>h</h2>
     <div class="row p-0 Contact-us">
       <div class="col-md-12 col-lg-5 m-0 pb-4 pt-4">
         <div class="row d-flex justify-content-center">
@@ -8,16 +8,25 @@
             <div class="contact-card">
               Devansh Goenka(President) <br>
               <i class="fas fa-phone" /> +91 96748 25450 <br>
-              <i class="fas fa-envelope" /> devanshgoenka97@gmail.com <br>
+              <i class="fas fa-envelope" /> president@nitdgplug.org <br>
             </div>
           </div>
         </div>
         <div class="row d-flex justify-content-center">
           <div class="col-11 font-weight-bold ">
             <div class="contact-card">
-              Arnav Kumar (Vice President) <br>
-              <i class="fas fa-phone" /> +91 79038 65654 <br>
-              <i class="fas fa-envelope" /> arnav.kr.grv@gmail.com <br>
+              Shreyashee Sinha (General Secretary) <br>
+              <i class="fas fa-phone" /> +91 70631 41513 <br>
+              <i class="fas fa-envelope" /> gs@nitdgplug.org <br>
+            </div>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <div class="col-11 font-weight-bold ">
+            <div class="contact-card">
+              Divyanshu Mehta (Treasurer) <br>
+              <i class="fas fa-phone" /> +91 94730 32011 <br>
+              <i class="fas fa-envelope" /> treasurer@nitdgplug.org <br>
             </div>
           </div>
         </div>
@@ -26,7 +35,7 @@
             <div class="contact-card">
               Deeksha Chandwani (Convener) <br>
               <i class="fas fa-phone" /> +91 90835 83214 <br>
-              <i class="fas fa-envelope" /> deekshachandvani@gmail.com <br>
+              <i class="fas fa-envelope" /> convenor@nitdgplug.org <br>
             </div>
           </div>
         </div>
@@ -61,7 +70,7 @@ h2 {
   text-transform: uppercase;
 }
 .highlighted {
-  color: #fa631c
+  color: #fa631c;
 }
 .Contact-us{
   background-color: #f5f5f5;
@@ -69,7 +78,7 @@ h2 {
 }
 .contact-card {
   background-color: white;
-  margin: 2vh 2vw;
+  margin: 5px 10px;
   min-width: 50%;
   padding: 1rem;
   border-left: 0.8vw solid #444;
