@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="container-fluid navbar-sec">
     <nav class="navbar fixed-top navbar-inverse navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         <span class="part1"><span class="highlighted">GNU</span>LINUX<br></span>
         <span class="part2">USERS' GROUP</span>
       </a>

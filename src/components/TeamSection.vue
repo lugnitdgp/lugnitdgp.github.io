@@ -9,7 +9,7 @@
               <img class="card-img-top rounded-0" :src="item.image" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title font-weight-bold">{{ displayheading(item.first_name+" "+item.last_name).first }}<span class="highlighted">{{ displayheading(item.first_name+" "+item.last_name).second }}</span>{{ displayheading(item.first_name+" "+item.last_name).third }}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{ item.alias }}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">{{ item.position||item.alias }}</h6>
                 <div class="icon-block text-center">
                   <a :href="item.facebook_link"><i class="fab fa-facebook-f" /></a>
                   <a :href="item.git_link"><i class="fab fa-github" /></a>
@@ -21,7 +21,7 @@
         </carousel>
       </div>
       <div class="row justify-content-center">
-        <p class="highlighted text-right m-0 mt-4 pb-1 col-9 col-sm-11 col-lg-12"><u><a> Meet all the members »</a></u></p>
+        <p class="text-right m-0 mt-4 pb-1 col-9 col-sm-11 col-lg-12"><a href="/team" class="highlighted"><u> Meet all the members »</u></a></p>
       </div>
     </div>
   </section>
