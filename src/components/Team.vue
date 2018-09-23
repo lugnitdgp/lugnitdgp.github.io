@@ -3,13 +3,15 @@
     <div v-for="EachYear in Allyears" :key="EachYear.name">
       <div v-if="EachYear.members.length" class="container">
         <div class="card bg-light">
-          <div class="card-header">
-            <h6 class="font-weight-bold text-uppercase nav nav-tabs card-header-tabs">{{ EachYear.name }}</h6>
+          <div class="card-header align-middle pt-1">
+            <h6 class="font-weight-bold text-uppercase nav nav-tabs card-header-tabs align-middle">{{ EachYear.name }}</h6>
           </div>
           <div class="row flex-wrap justify-content-center card-body">
             <div v-for="(member,index) in EachYear.members" :key="index">
-              <div data-toggle="modal" :data-target="'#'+member.user_name" class="Profile-avatar m-2 m-lg-4 " :style="{'background-image':'url('+member.image+')'}" />
-              <div :id="member.user_name" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div data-toggle="tooltip" :title="member.first_name">
+                <div data-toggle="modal" :data-target="'#user'+member.id" class="Profile-avatar m-2 m-lg-4 " :style="{'background-image':'url('+member.image+')'}" />
+              </div>
+              <div :id="'user'+member.id" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog ">
                   <div class="modal-body">
                     <div class="Profile p-0 m-0">
@@ -30,9 +32,9 @@
                       <div class="row">
                         <div class="col-12 text-center">
                           <div class="Profile-links fabs">
-                            <a :href="member.facebook_link"><i class="fab fa-lg fa-facebook-f" /></a>
-                            <a :href="member.git_link"><i class="fab fa-lg fa-github" /></a>
-                            <a :href="member.email" target="_blank"><i class="fa fa-lg fa-envelope" /></a>
+                            <a target="_blank" :href="member.facebook_link"><i class="fab fa-lg fa-facebook-f" /></a>
+                            <a target="_blank" :href="member.git_link"><i class="fab fa-lg fa-github" /></a>
+                            <a target="_blank" :href="'mailto:'+member.email"><i class="fa fa-lg fa-envelope" /></a>
                           </div>
                         </div>
                       </div>
@@ -170,5 +172,8 @@ blockquote:before {
 }
 blockquote p {
   display: inline;
+}
+.modal-dialog a {
+  pointer-events: auto;
 }
 </style>
