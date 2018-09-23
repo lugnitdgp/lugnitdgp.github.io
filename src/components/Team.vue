@@ -13,16 +13,18 @@
                 <div class="modal-dialog ">
                   <div class="modal-body">
                     <div class="Profile p-0 m-0">
-                      <div class="row m-0 p-0  mb-5">
+                      <div class="row m-0 p-0 mb-4">
                         <div class="col-12 Profile-back" :style="{'background-image':'url('+member.image+')'}">
                           <div class="Profile-avatar mt-5 mb-0" :style="{'background-image':'url('+member.image+')'}" style="transform:scale(1.3)" />
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-12 text-center">
-                          <h5 class="member-name font-weight-bold">{{ member.first_name + ' '+member.last_name }}</h5>
-                          <p v-if="member.position||member.alias">({{ member.position||member.alias }})</p>
-                          <p class="member-status" />
+                        <div class="col-12 text-center m-0">
+                          <h5 class="member-name font-weight-bold mb-0 pb-0">{{ member.first_name + ' '+member.last_name }}</h5>
+                          <span v-if="member.position||member.alias">({{ member.position||member.alias }})</span>
+                          <blockquote v-if="member.bio">
+                            <p class="font-italic" v-html="member.bio" />
+                          </blockquote>
                         </div>
                       </div>
                       <div class="row">
@@ -148,5 +150,24 @@ export default {
 .fabs i {
   color : #fa631c;
   margin: 1rem;
+}
+
+blockquote {
+  background: #f8f9fa;
+  border-left: 10px solid rgb(5,20,41);
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
 }
 </style>
