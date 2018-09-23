@@ -67,6 +67,7 @@ export default {
         const profiles = response.data
         console.log(profiles)
         profiles.forEach((member) => {
+          if (member.image === null) { member.image = 'https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png' }
           this.categorise(member)
         })
         this.$emit('hideloader', true)
