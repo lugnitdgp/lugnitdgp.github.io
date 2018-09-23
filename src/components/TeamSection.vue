@@ -21,7 +21,7 @@
         </carousel>
       </div>
       <div class="row justify-content-center">
-        <p class="text-right m-0 mt-4 pb-1 col-9 col-sm-11 col-lg-12"><a href="/team" class="highlighted"><u> Meet all the members »</u></a></p>
+        <p class="text-right m-0 mt-4 pb-1 col-9 col-sm-11 col-lg-12"><router-link :to="{ name: 'Team'}" class="highlighted"><u> Meet all the members »</u></router-link></p>
       </div>
     </div>
   </section>

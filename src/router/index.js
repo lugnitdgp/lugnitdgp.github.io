@@ -17,6 +17,5 @@ export default new Router({
       name: 'Team',
       component: Team
     }
-  ],
-  mode: 'history'
+  ]
 })
