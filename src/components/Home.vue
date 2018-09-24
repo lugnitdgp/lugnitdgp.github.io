@@ -1,6 +1,5 @@
 <template>
   <div id="home">
-    <nav-bar />
     <home-carousel id="Carousel" />
     <about-us id="AboutUsSection" />
     <avishkar-section />
@@ -9,12 +8,10 @@
     <team-section id="TeamSection" :profiles="profiles" />
     <blog-section id="BlogSection" :blog="blog" />
     <contact-us id="ContactUs" />
-    <page-footer />
   </div>
 </template>
 
 <script>
-import NavBar from './NavBar'
 import HomeCarousel from './HomeCarousel'
 import AboutUs from './AboutUs'
 import AvishkarSection from './AvishkarSection'
@@ -23,7 +20,6 @@ import TeamSection from './TeamSection'
 import BlogSection from './BlogSection'
 import EventSection from './EventSection'
 import ContactUs from './ContactUs'
-import PageFooter from './PageFooter'
 import common from '@/services/common.js'
 
 export default {
@@ -36,9 +32,7 @@ export default {
     TeamSection,
     BlogSection,
     EventSection,
-    NavBar,
-    ContactUs,
-    PageFooter
+    ContactUs
   },
   data () {
     return {
