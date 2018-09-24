@@ -3,8 +3,8 @@
     <div v-for="EachYear in Allyears" :key="EachYear.name">
       <div v-if="EachYear.members.length" class="container">
         <div class="card bg-light">
-          <div class="card-header align-middle pt-1">
-            <h6 class="font-weight-bold text-uppercase nav nav-tabs card-header-tabs align-middle">{{ EachYear.name }}</h6>
+          <div class="card-header p-2">
+            <h6 class="font-weight-bold text-uppercase mb-0">{{ EachYear.name }}</h6>
           </div>
           <div class="row flex-wrap justify-content-center card-body">
             <div v-for="(member,index) in EachYear.members" :key="index">
@@ -106,7 +106,7 @@ export default {
 .card-header {
   color: #9c9c9c;
   background-color: rgb(5,20,41);
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.4rem;
 }
 .Profile{
   display: block;
