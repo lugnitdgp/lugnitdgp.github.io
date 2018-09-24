@@ -1,9 +1,11 @@
 <template>
   <section class="Team container-fluid">
+    <h2 class="text-center font-weight-bold pt-3">MEET THE<span class="highlighted"> TEAM</span></h2>
+    <p class="text-center font-italic">"None of us is as smart as all of us"</p>
     <div v-for="EachYear in Allyears" :key="EachYear.name">
       <div v-if="EachYear.members.length" class="container">
         <div class="card bg-light">
-          <div class="card-header p-2">
+          <div class="card-header p-2 pl-3">
             <h6 class="font-weight-bold text-uppercase mb-0">{{ EachYear.name }}</h6>
           </div>
           <div class="row flex-wrap justify-content-center card-body">
