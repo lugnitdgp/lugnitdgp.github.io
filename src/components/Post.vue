@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="post container-fluid bg-light">
     <h6 class="highlighted text-right mt-2 prev-page" @click="$router.push({ name : 'Blog'})"><u>Go back to previous page</u></h6>
     <div class="card m-0 m-lg-5 mt-2 mb-2 post-card">
@@ -79,4 +80,15 @@ export default {
 .prev-page{
   cursor: pointer;
 }
+=======
+  <div class="Post container" />
+</template>
+
+<script>
+export default {
+}
+</script>
+
+<style>
+>>>>>>> Add component Post
 </style>
