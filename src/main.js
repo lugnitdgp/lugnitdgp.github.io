@@ -3,7 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+import aos from 'aos'
+import 'aos/dist/aos.css'
 import SocialSharing from 'vue-social-sharing'
 
 import Vuetify from 'vuetify'
@@ -19,5 +20,8 @@ new Vue({
   el: '#app',
   router,
   components: { App },
+  created () {
+    aos.init()
+  },
   template: '<App/>'
 })
