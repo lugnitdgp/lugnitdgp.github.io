@@ -30,7 +30,7 @@ export default new Router({
       component: Blog
     },
     {
-      path: '/blog/:post/:id',
+      path: '/blog/:post',
       name: 'Post',
       component: Post
     }
