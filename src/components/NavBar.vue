@@ -10,18 +10,18 @@
       </button>
       <div id="navbar-links" class="collapse navbar-collapse ">
         <ul class="navbar-nav  ml-md-auto d-md-flex">
-          <li class="nav-item active">
-            <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" @click="$vuetify.goTo('#Carousel', {duration: 1000, offset: 0, easing: 'easeInOutCubic'})">Home <span class="sr-only">(current)</span></a>
-          </li>
+          <router-link tag="li" class="nav-item active" to="/">
+            <a class="nav-link">Home</a>
+          </router-link>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" @click="$vuetify.goTo('#AboutUsSection', options)">About us</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" @click="$vuetify.goTo('#EventsSection', options)">Events</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" @click="$vuetify.goTo('#TeamSection', options)">Members</a>
-          </li>
+          <router-link tag="li" class="nav-item active" to="/events">
+            <a class="nav-link">Events</a>
+          </router-link>
+          <router-link tag="li" class="nav-item active" to="/team">
+            <a class="nav-link">Members</a>
+          </router-link>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" @click="$vuetify.goTo('#BlogSection', options)">Blog</a>
           </li>

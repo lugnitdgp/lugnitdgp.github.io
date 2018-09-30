@@ -81,7 +81,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style lang="scss" scoped>
@@ -168,7 +167,8 @@ export default {
     }
 
     .card-text {
-      display: block;
+      height: auto;
+      max-height: 200px;
     }
 
     @media only screen and (min-width: 576px) {

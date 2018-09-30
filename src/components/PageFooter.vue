@@ -55,7 +55,7 @@ section {
   color: #333;
 }
 #footer ul.social li a:hover{
-  color:#fa631c;
+  color: #fa631c;
 }
 
 </style>
