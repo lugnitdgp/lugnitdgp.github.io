@@ -28,15 +28,9 @@ export default {
   },
   methods: {
     hideLoader (val) {
-      if (val === true) {
-        this.loadCount++
-      }
-      // Increase this value whenever you add $emit to any component
-      if (this.loadCount === 3) {
-        this.loader = false
-        document.getElementsByTagName('html')[0].style.overflow = 'auto'
-        document.getElementsByTagName('body')[0].style.overflow = 'auto'
-      }
+      this.loader = false
+      document.getElementsByTagName('html')[0].style.overflow = 'auto'
+      document.getElementsByTagName('body')[0].style.overflow = 'auto'
     }
   }
 }

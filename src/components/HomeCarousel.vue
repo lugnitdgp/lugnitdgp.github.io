@@ -71,7 +71,7 @@ export default {
       ]
     }
   },
-  mounted () {
+  created () {
     var carouselItems = document.getElementsByClassName('carousel-item')
     var len = carouselItems.length
     for (var i = 0; i < len; i++) {
@@ -81,7 +81,7 @@ export default {
 
       var img = new Image()
       img.src = backgroundImageUrl
-      img.onload = () => this.$emit('hideloader', true)
+      img.onload = () => this.$emit('stoploader')
     }
   }
 }

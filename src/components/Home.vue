@@ -1,6 +1,7 @@
 <template>
   <div id="home">
-    <home-carousel id="Carousel" />
+    <nav-bar />
+    <home-carousel id="Carousel" @stoploader="stopLoader" />
     <about-us id="AboutUsSection" />
     <avishkar-section />
     <event-section id="EventsSection" :events="events" />
@@ -38,7 +39,8 @@ export default {
     return {
       profiles: [],
       events: [],
-      blog: []
+      blog: [],
+      loader_count: 0
     }
   },
   created () {
@@ -48,7 +50,7 @@ export default {
         team.forEach((mem) => {
           this.categorise(mem)
         })
-        this.$emit('hideloader', true)
+        this.stopLoader()
       })
       .catch(e => {
         console.log(e)
@@ -56,7 +58,7 @@ export default {
     common.getEvents()
       .then(response => {
         this.events = response.data
-        this.$emit('hideloader', true)
+        this.stopLoader()
       })
       .catch(e => {
         console.log(e)
@@ -64,13 +66,19 @@ export default {
     common.getBlogPosts()
       .then(response => {
         this.blog = response.data
-        this.$emit('hideloader', true)
+        this.stopLoader()
       })
   },
   methods: {
     categorise (mem) {
       if (mem.degree_name === 'BTECH' & mem.year_name === 4) {
         this.profiles.push(mem)
+      }
+    },
+    stopLoader () {
+      this.loader_count++
+      if (this.loader_count === 3) {
+        this.$emit('hideloader', true)
       }
     }
   }
