@@ -25,7 +25,7 @@
           <div class="container">
             <div class="carousel-caption text-left mb-5">
               <h1 class="carousel-heading">{{ item.heading }}</h1>
-              <p class="lead carousel-subtitle d-none d-md-block">{{ item.subtitle }}</p>
+              <p class="lead carousel-subtitle d-none d-md-block">{{ item.sub_heading }}</p>
               <a href="#" class="btn btn-custom text-uppercase d-none d-md-inline-block">Explore</a>
             </div>
           </div>
@@ -46,29 +46,10 @@
 <script>
 
 export default {
-
-  data () {
-    return {
-      carousel: [
-        {
-          image: 'static/images/image1.jpg',
-          heading: 'Heading One',
-          subtitle: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
-            similique quaerat odio accusamus quisquam laborum optio, amet sapiente quae hic.`
-        },
-        {
-          image: 'static/images/image2.jpg',
-          heading: 'Heading Two',
-          subtitle: `Lorem ipsum dolor, consectetur adipisicing elit. Consectetur
-            similique quaerat odio accusamus optio, amet sapiente quae hic.`
-        },
-        {
-          image: 'static/images/image3.jpg',
-          heading: 'Heading Three',
-          subtitle: `Lorem ipsum dolor sit amet, cdipisicing elit. Consectetur
-            similique quaer optio, met, cdipisicin amet sapiente quae hic.`
-        }
-      ]
+  props: {
+    'carousel': {
+      type: Array,
+      default: null
     }
   },
   created () {
@@ -91,7 +72,8 @@ export default {
 <style lang="scss" scoped>
 .carousel-item {
   height: 100vh;
-  background-size: cover;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 
   .cover {
     width: 100%;
