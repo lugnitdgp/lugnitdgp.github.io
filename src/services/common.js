@@ -10,5 +10,8 @@ export default {
   },
   getBlogPosts () {
     return Api().get('blog/posts/')
+  },
+  getPost (id) {
+    return Api().get(`blog/posts/${id}/`)
   }
 }
