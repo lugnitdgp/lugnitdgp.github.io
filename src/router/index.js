@@ -5,6 +5,8 @@ import Team from '@/components/Team'
 import Events from '@/components/Events'
 import Blog from '@/components/Blog'
 import Post from '@/components/Post'
+import PageNotFound from '@/components/PageNotFound'
+
 Vue.use(Router)
 
 export default new Router({
@@ -33,6 +35,11 @@ export default new Router({
       path: '/blog/:post',
       name: 'Post',
       component: Post
+    },
+    {
+      path: '*',
+      name: 'PageNotFound',
+      component: PageNotFound
     }
   ]
 })
