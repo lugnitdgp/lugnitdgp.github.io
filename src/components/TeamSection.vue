@@ -9,13 +9,16 @@
               <img class="card-img-top rounded-0" :src="item.image" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title font-weight-bold">{{ displayheading(item.first_name+" "+item.last_name).first }}<span class="highlighted">{{ displayheading(item.first_name+" "+item.last_name).second }}</span>{{ displayheading(item.first_name+" "+item.last_name).third }}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{ item.position||item.alias }}</h6>
+                <h6 class="card-subtitle mb-2 text-muted align-text-bottom">{{ item.position||item.alias }}</h6>
+              </div>
+              <div class="card-footer border-0">
                 <div class="icon-block text-center">
                   <a :href="item.facebook_link"><i class="fab fa-facebook-f" /></a>
                   <a :href="item.git_link"><i class="fab fa-github" /></a>
                   <a :href="item.email"><i class="fab fa-google-plus-g" /></a>
                 </div>
               </div>
+
             </div>
           </slide>
         </carousel>
@@ -104,7 +107,7 @@ export default {
 .card .icon-block {
   float: left;
   width: 100%;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 .card .icon-block a {
   text-decoration: none;
@@ -115,5 +118,11 @@ export default {
 h2 {
   font-size: 32px;
   text-transform: uppercase;
+}
+.card {
+  height: 100%;
+}
+.card-footer {
+  background-color: inherit;
 }
 </style>
