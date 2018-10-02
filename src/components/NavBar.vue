@@ -13,9 +13,6 @@
           <router-link tag="li" class="nav-item active" to="/">
             <a class="nav-link">Home</a>
           </router-link>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" @click="$vuetify.goTo('#AboutUsSection', options)">About us</a>
-          </li>
           <router-link tag="li" class="nav-item active" to="/events">
             <a class="nav-link">Events</a>
           </router-link>
@@ -25,9 +22,6 @@
           <router-link tag="li" class="nav-item active" to="/blog">
             <a class="nav-link">Blog</a>
           </router-link>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" @click="$vuetify.goTo('#ContactUs', options)">Contact us</a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -36,15 +30,7 @@
 
 <script>
 export default {
-  data () {
-    return {
-      options: {
-        duration: 1000,
-        offset: -50,
-        easing: 'easeInOutCubic'
-      }
-    }
-  }
+  name: 'NavBar'
 }
 </script>
 
