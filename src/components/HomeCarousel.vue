@@ -26,7 +26,7 @@
             <div class="carousel-caption text-left mb-5">
               <h1 class="carousel-heading">{{ item.heading }}</h1>
               <p class="lead carousel-subtitle d-none d-md-block">{{ item.sub_heading }}</p>
-              <a href="#" class="btn btn-custom text-uppercase d-none d-md-inline-block">Explore</a>
+              <a href="#" class="btn btn-custom text-uppercase d-none d-md-inline-block" @click="$vuetify.goTo('#AboutUsSection', {duration: 1000,offset: -50,easing: 'easeInOutCubic'})">Explore</a>
             </div>
           </div>
         </div>
