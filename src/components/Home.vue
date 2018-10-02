@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <nav-bar />
-    <home-carousel id="Carousel" @stoploader="stopLoader" />
+    <home-carousel id="Carousel" :carousel="carousel" @stoploader="stopLoader" />
     <about-us id="AboutUsSection" />
     <avishkar-section />
     <event-section id="EventsSection" :events="events" />
@@ -37,6 +37,7 @@ export default {
   },
   data () {
     return {
+      carousel: [],
       profiles: [],
       events: [],
       blog: [],
@@ -44,6 +45,15 @@ export default {
     }
   },
   created () {
+    common.getCarousel()
+      .then(response => {
+        this.carousel = response.data
+        console.log(response.data)
+        this.stopLoader()
+      })
+      .catch(e => {
+        console.log(e)
+      })
     common.getMembers()
       .then(response => {
         const team = response.data
@@ -77,7 +87,7 @@ export default {
     },
     stopLoader () {
       this.loader_count++
-      if (this.loader_count === 3) {
+      if (this.loader_count === 4) {
         this.$emit('hideloader', true)
       }
     }

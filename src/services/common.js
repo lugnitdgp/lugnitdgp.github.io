@@ -2,6 +2,9 @@ import Api from './Api'
 
 export default {
 
+  getCarousel () {
+    return Api().get('api/carousel/')
+  },
   getMembers () {
     return Api().get('api/profiles/')
   },
