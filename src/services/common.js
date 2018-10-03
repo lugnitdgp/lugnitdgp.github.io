@@ -16,5 +16,8 @@ export default {
   },
   getPost (id) {
     return Api().get(`blog/posts/${id}/`)
+  },
+  getLinits () {
+    return Api().get('api/linit/')
   }
 }
