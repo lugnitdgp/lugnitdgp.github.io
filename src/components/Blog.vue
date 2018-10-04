@@ -13,8 +13,8 @@
       prev-icon="fas fa-caret-left"
       next-icon="fas fa-caret-right"
     >
-      <div slot="item" slot-scope="props" class="col-sm-12 col-md-8 p-2" data-aos="fade-up" data-aos-duration="600">
-        <div class="card post bg-light">
+      <div slot="item" slot-scope="props" class="col-sm-12 col-md-8 p-2">
+        <div v-if="props.item.show_bool" class="card post bg-light" data-aos="fade-up" data-aos-duration="600">
           <div class="row">
             <div class="col-md-6 col-sm-12">
               <div class="card-img-bottom" :style="{'background-image':'url('+props.item.thumbnail_image+')'}" style="{background:center no-repeat}" />
