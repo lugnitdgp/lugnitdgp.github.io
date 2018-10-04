@@ -14,10 +14,12 @@
           </div>
           <div class="card-footer">
             <div class="row">
-              <router-link :to="{ name: 'Post' , params: { post: ConvertToKebabCase(item.title)} , query: {id : item.id}}"><v-btn flat color="orange" class="m-0">Read More</v-btn></router-link>
+              <router-link :to="{ name: 'Post' , params: { post: convertToKebabCase(item.title)} , query: {id : item.id}}">
+                <v-btn flat color="orange" class="m-0">Read More</v-btn>
+              </router-link>
               <v-spacer />
               <social-sharing
-                url="https://vuejs.org/"
+                :url="'https://nitdgplug.org/blog/' + convertToKebabCase(item.title) + '?id=' + item.id"
                 :title="item.title"
                 :description="item.description"
                 :hashtags="item.keywords || null"
@@ -58,7 +60,7 @@ export default {
     }
   },
   methods: {
-    ConvertToKebabCase (string) {
+    convertToKebabCase (string) {
       return string.replace(/([a-z])([A-Z])/g, '$1-$2')
         .replace(/\s+/g, '-')
         .toLowerCase()
@@ -67,29 +69,37 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 h2 {
   font-size: 32px;
   text-transform: uppercase;
-}
-.highlighted {
-  color: #fa631c;
+
+  .highlighted {
+    color: #fa631c;
+  }
 }
 .card {
   margin-bottom: 15px;
-}
-.headline {
-  font-size: 20px;
-}
-.card-text {
-  color: #9c9c9c;
-}
-.v-btn {
-  padding: 0 10px;
-}
-.card-text {
-  height: auto;
-  max-height: 60px;
-  overflow: hidden;
+
+  .card-body {
+    padding: 1.25rem 1.25rem 0.25rem;
+
+    .card-text {
+      color: #9c9c9c;
+      height: auto;
+      max-height: 62px;
+      overflow: hidden;
+    }
+  }
+
+  .card-footer {
+    border: none;
+    background-color: #fff;
+    padding: 0.5rem 1.5rem;
+
+    .v-btn {
+      padding: 0 10px;
+    }
+  }
 }
 </style>
