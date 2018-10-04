@@ -1,6 +1,6 @@
-# lugnitdgp-website
+GLUG Website
 
-Version 2 of the official GLUG website with Django and Vue
+Revamp of the official GLUG website with Django and Vue.js
 
 ## Build Setup
 
@@ -24,10 +24,10 @@ npm run deploy
 # Fork the repository
 
 # Clone your fork
-git clone https://github.com/<your_username>/lugnitdgp-website.git
+git clone https://github.com/<your_username>/lugnitdgp.github.io.git
 
 # Add a remote to the original repo as upstream
-git remote add upstream https:/github.com/lugnitdgp/lugnitdgp-website.git
+git remote add upstream https://github.com/lugnitdgp/lugnitdgp.github.io.git
 
 # Do your thing: solve a bug or create a new feature
 
@@ -36,7 +36,7 @@ git add .
 git commit -m "Good commit message"
 git push origin master
 
-# Create a pull request and when the PR gets merged update your fork 
+# Create a pull request and when the PR gets merged update your fork
 git pull upstream master --rebase
 git push origin master -f
 ```
