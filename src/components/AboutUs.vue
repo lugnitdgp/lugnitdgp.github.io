@@ -84,6 +84,7 @@
 
 <script>
 import AnimateNumber from './AnimateNumber'
+import common from '@/services/common.js'
 export default {
 
   components: {
@@ -108,12 +109,24 @@ export default {
         link: ' See how to join us»'
       },
       section4: [
-        { icon: 'fa-users ', content: 'Members', number: 120 },
-        { icon: 'fa-chess', content: 'Events', number: 48 },
-        { icon: 'fa-project-diagram', content: 'Projects', number: 23 }
+        { icon: 'fa-users ', content: 'Members', number: 52 },
+        { icon: 'fa-chess', content: 'Events', number: 32 },
+        { icon: 'fa-project-diagram', content: 'Projects', number: 10 }
       ],
       show: false
     }
+  },
+
+  created () {
+    common.getCount().then(
+      response => {
+        this.section4[0].number = response.data.members
+        this.section4[1].number = response.data.events
+        this.section4[2].number = response.data.projects
+      }
+    ).catch(e => {
+      console.log(e)
+    })
   },
 
   mounted () {
