@@ -13,7 +13,7 @@ export default {
 
   data () {
     return {
-      displayNumber: 10,
+      displayNumber: 0,
       interval: false,
       once: true
     }
@@ -37,7 +37,7 @@ export default {
           change = change >= 0 ? Math.ceil(change) : Math.floor(change)
           this.displayNumber = this.displayNumber + change
         }
-      }.bind(this), 80)
+      }.bind(this), 180)
     }
   },
   methods: {
@@ -56,7 +56,7 @@ export default {
       }
     },
     AnimateNumber () {
-      this.displayNumber = 10
+      this.displayNumber = 0
     }
   }
 }

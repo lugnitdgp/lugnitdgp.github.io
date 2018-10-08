@@ -16,5 +16,8 @@ export default {
   },
   getPost (id) {
     return Api().get(`blog/posts/${id}/`)
+  },
+  getCount () {
+    return Api().get('api/get_count/')
   }
 }
