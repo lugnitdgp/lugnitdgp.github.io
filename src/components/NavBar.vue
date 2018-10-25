@@ -22,6 +22,9 @@
           <router-link tag="li" class="nav-item active" to="/blog">
             <a class="nav-link">Blog</a>
           </router-link>
+          <router-link tag="li" class="nav-item active" to="/linit">
+            <a class="nav-link">Linit</a>
+          </router-link>
         </ul>
       </div>
     </nav>

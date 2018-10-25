@@ -4,7 +4,9 @@
       <div class="row d-flex justify-content-center align-middle">
         <div class="col-md-6 pt-5 pb-5">
           <div class="linit-box">
-            <a href="http://nitdgplug.org/linit/" class="text-dark"><i class="fas fa-2x fa-book" /></a>
+            <router-link to="/linit">
+              <a class="text-dark"><i class="fas fa-2x fa-book" /></a>
+            </router-link>
             <h2 class="highlighted font-weight-bold text-uppercase">Linit</h2>
             <h6 class="font-weight-bold">"The world is moving and a company that contents itself with present accomplishment soon falls behind."</h6>
             <p class="caption">To keep you thus, updated, GLUG publishes LINIT, the annual open source magazine of NIT Durgapur.A perfect specimen of a geek's creativity, this magazine gives us trending technologies at its best.
