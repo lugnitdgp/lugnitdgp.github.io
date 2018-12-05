@@ -19,5 +19,8 @@ export default {
   },
   getCount () {
     return Api().get('api/get_count/')
+  },
+  getLinits () {
+    return Api().get('api/linit/')
   }
 }

@@ -5,6 +5,7 @@ import Team from '@/components/Team'
 import Events from '@/components/Events'
 import Blog from '@/components/Blog'
 import Post from '@/components/Post'
+import Linit from '@/components/Linit'
 import PrivacyPolicy from '@/components/PrivacyPolicy'
 import PageNotFound from '@/components/PageNotFound'
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/blog/:post',
       name: 'Post',
       component: Post
+    },
+    {
+      path: '/linit',
+      name: 'Linit',
+      component: Linit
     },
     {
       path: '/privacy',
