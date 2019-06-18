@@ -8,21 +8,21 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" />
       </button>
-      <div id="navbar-links" class="collapse navbar-collapse ">
+      <div id="navbar-links" class="collapse navbar-collapse">
         <ul class="navbar-nav  ml-md-auto d-md-flex">
-          <router-link tag="li" class="nav-item active" to="/">
+          <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/">
             <a class="nav-link">Home</a>
           </router-link>
-          <router-link tag="li" class="nav-item active" to="/events">
+          <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/events">
             <a class="nav-link">Events</a>
           </router-link>
-          <router-link tag="li" class="nav-item active" to="/team">
+          <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/team">
             <a class="nav-link">Members</a>
           </router-link>
-          <router-link tag="li" class="nav-item active" to="/blog">
+          <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/blog">
             <a class="nav-link">Blog</a>
           </router-link>
-          <router-link tag="li" class="nav-item active" to="/linit">
+          <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/linit">
             <a class="nav-link">Linit</a>
           </router-link>
         </ul>
