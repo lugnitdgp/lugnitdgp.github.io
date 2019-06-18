@@ -76,6 +76,7 @@ export default {
     common.getBlogPosts()
       .then(response => {
         this.blog = response.data
+        if (this.blog.length > 3) this.blog = this.blog.splice(0, 3)
         this.stopLoader()
       })
   },
