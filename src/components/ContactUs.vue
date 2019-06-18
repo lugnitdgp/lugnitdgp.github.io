@@ -6,8 +6,8 @@
         <div class="row d-flex justify-content-center">
           <div class="col-11 font-weight-bold ">
             <div class="contact-card">
-              Devansh Goenka(President) <br>
-              <i class="fas fa-phone" /> +91 96748 25450 <br>
+              Shivam Singhal(President) <br>
+              <i class="fas fa-phone" /> +91 90932 44444 <br>
               <i class="fas fa-envelope" /> president@nitdgplug.org <br>
             </div>
           </div>
@@ -15,8 +15,8 @@
         <div class="row d-flex justify-content-center">
           <div class="col-11 font-weight-bold ">
             <div class="contact-card">
-              Shreyashee Sinha (General Secretary) <br>
-              <i class="fas fa-phone" /> +91 70631 41513 <br>
+              Vartika Arora (General Secretary) <br>
+              <i class="fas fa-phone" /> +91 85848 55577 <br>
               <i class="fas fa-envelope" /> gs@nitdgplug.org <br>
             </div>
           </div>
@@ -24,8 +24,8 @@
         <div class="row d-flex justify-content-center">
           <div class="col-11 font-weight-bold ">
             <div class="contact-card">
-              Divyanshu Mehta (Treasurer) <br>
-              <i class="fas fa-phone" /> +91 94730 32011 <br>
+              Ankan Poddar (Treasurer) <br>
+              <i class="fas fa-phone" /> +91 98045 17793 <br>
               <i class="fas fa-envelope" /> treasurer@nitdgplug.org <br>
             </div>
           </div>
@@ -33,8 +33,8 @@
         <div class="row d-flex justify-content-center">
           <div class="col-11 font-weight-bold ">
             <div class="contact-card">
-              Deeksha Chandwani (Convener) <br>
-              <i class="fas fa-phone" /> +91 90835 83214 <br>
+              Ashutosh Aggarwal (Convener) <br>
+              <i class="fas fa-phone" /> +91 98311 76750 <br>
               <i class="fas fa-envelope" /> convenor@nitdgplug.org <br>
             </div>
           </div>
