@@ -54,6 +54,7 @@ export default {
     common.getBlogPosts()
       .then(response => {
         this.blog = response.data
+        this.blog.sort(function (a, b) { return new Date(b.date_to_show) - new Date(a.date_to_show) })
         this.$emit('hideloader', true)
         this.$emit('hideloader', true)
         this.$emit('hideloader', true)
