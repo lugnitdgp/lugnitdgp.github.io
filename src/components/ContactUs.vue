@@ -74,7 +74,6 @@ h2 {
 }
 .Contact-us{
   background-color: #f5f5f5;
-  border-bottom: 1px dashed #fa631c;
 }
 .contact-card {
   background-color: white;

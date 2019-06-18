@@ -75,7 +75,6 @@ export default {
   background-size: cover;
   min-height: 100vh;
   padding-top: 5rem;
-  border-bottom: 1px dashed #fa631c;
 }
 .blog .btn{
   background-color: #fa631C;

@@ -1,6 +1,5 @@
 <template>
   <div id="home">
-    <nav-bar />
     <home-carousel id="Carousel" :carousel="carousel" @stoploader="stopLoader" />
     <about-us id="AboutUsSection" />
     <avishkar-section />

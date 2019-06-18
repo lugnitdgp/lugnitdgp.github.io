@@ -29,6 +29,7 @@ export default {
 <style scoped>
 /* Footer */
 section {
+    border-top: 1px dashed #fa631c;
     padding: 2vh 1vw;
 }
 

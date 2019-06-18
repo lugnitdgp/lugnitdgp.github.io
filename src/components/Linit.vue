@@ -54,7 +54,6 @@ export default {
   background-size: cover;
   min-height: 100vh;
   padding-top: 5rem;
-  border-bottom: 1px dashed #fa631c;
 }
 .linit h1{
   font-size:3rem;
