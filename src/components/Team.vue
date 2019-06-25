@@ -34,9 +34,11 @@
                       <div class="row">
                         <div class="col-12 text-center">
                           <div class="Profile-links fabs">
-                            <a target="_blank" :href="member.facebook_link"><i class="fab fa-lg fa-facebook-f" /></a>
-                            <a target="_blank" :href="member.git_link"><i class="fab fa-lg fa-github" /></a>
-                            <a target="_blank" :href="'mailto:'+member.email"><i class="fa fa-lg fa-envelope" /></a>
+                            <a v-if="member.facebook_link != null" target="_blank" :href="member.facebook_link"><i class="fab fa-lg fa-facebook-f" /></a>
+
+                            <a v-if="member.git_link != null" target="_blank" :href="member.git_link"><i class="fab fa-lg fa-github" /></a>
+
+                            <a v-if="member.email != null" target="_blank" :href="'mailto:'+member.email"><i class="fa fa-lg fa-envelope" /></a>
                           </div>
                         </div>
                       </div>

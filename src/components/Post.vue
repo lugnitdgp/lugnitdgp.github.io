@@ -12,7 +12,9 @@
         <p class="card-text" v-html="post.content_body" />
       </div>
     </div>
+    <vue-disqus shortname="glug-nitdgp" :identifier="this.$route.params.post" :url="geturl()"></vue-disqus>
   </div>
+
 </template>
 <script>
 import common from '@/services/common.js'
@@ -35,6 +37,7 @@ export default {
         console.log(e)
       })
   },
+
   methods: {
     displayheading (text) {
       var length = text.length
@@ -44,6 +47,25 @@ export default {
         first: text.substr(0, middle),
         second: text.substr(middle, highlighted),
         third: text.substr(highlighted + middle, length)
+      }
+    },
+    geturl () {
+      var response = window.location.href
+      // eslint-disable-next-line
+      if (response.indexOf('#') == -1) {
+        return response
+        // eslint-disable-next-line
+      }
+      else {
+        return this.removehash(response)
+      }
+    },
+    removehash (string) {
+      const a = string.indexOf('#')
+      var resp
+      if (a > -1) {
+        resp = string.substr(0, a - 1) + string.substr(a + 1)
+        return resp
       }
     }
   }

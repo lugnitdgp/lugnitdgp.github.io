@@ -6,12 +6,13 @@ import router from './router'
 import aos from 'aos'
 import 'aos/dist/aos.css'
 import SocialSharing from 'vue-social-sharing'
-
+import VueDisqus from 'vue-disqus'
 import Vuetify from 'vuetify'
 import('vuetify/dist/vuetify.min.css')
 
 Vue.use(Vuetify)
 Vue.use(SocialSharing)
+Vue.use(VueDisqus)
 
 Vue.config.productionTip = false
 
