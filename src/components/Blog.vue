@@ -46,7 +46,7 @@ export default {
       blog: [],
       rowsPerPageItems: [1],
       pagination: {
-        rowsPerPage: 5
+        rowsPerPage: 10
       }
     }
   },
