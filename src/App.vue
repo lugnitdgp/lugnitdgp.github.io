@@ -26,6 +26,11 @@ export default {
       loadCount: 0
     }
   },
+  watch: {
+    $route (to, from) {
+      this.loader = true
+    }
+  },
   methods: {
     hideLoader (val) {
       this.loader = false
