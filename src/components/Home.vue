@@ -47,7 +47,6 @@ export default {
     common.getCarousel()
       .then(response => {
         this.carousel = response.data
-        console.log(response.data)
         this.stopLoader()
       })
       .catch(e => {
@@ -74,14 +73,18 @@ export default {
       })
     common.getBlogPosts()
       .then(response => {
-        this.blog = response.data
-        if (this.blog.length > 3) this.blog = this.blog.splice(0, 3)
+        let tmp = response.data
+        for (var i = 0; i < tmp.length; i++) {
+          if (tmp[i].show_bool === true) { this.blog.push(tmp[i]) }
+        }
+        if (this.blog.length > 3) this.blog.splice(0, 3)
         this.stopLoader()
       })
   },
   methods: {
     categorise (mem) {
-      if (mem.degree_name === 'BTECH' & mem.year_name === 4) {
+      if (mem.degree_name === 'BTECH' && mem.year_name === 4) {
+        if (mem.image === null) { console.log(mem); mem.image = 'https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png' }
         this.profiles.push(mem)
       }
     },

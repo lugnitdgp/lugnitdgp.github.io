@@ -48,11 +48,6 @@ export default {
     console.log(this.profiles[0])
   },
   methods: {
-    categorise (mem) {
-      if (mem.degree_name === 'BTECH' & mem.year_name === '4') {
-        this.profiles.push(mem)
-      }
-    },
     displayheading (text) {
       var length = text.length
       var middle = length / 2
