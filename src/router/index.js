@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Team from '@/components/Team'
 import Events from '@/components/Events'
-import Timelines from '@/components/Timelines'
+import Timeline from '@/components/Timeline'
 import Blog from '@/components/Blog'
 import Post from '@/components/Post'
 import Linit from '@/components/Linit'
@@ -30,9 +30,9 @@ export default new Router({
       component: Events
     },
     {
-      path: '/timelines',
-      name: 'Timelines',
-      component: Timelines
+      path: '/timeline',
+      name: 'Timeline',
+      component: Timeline
     },
     {
       path: '/blog',

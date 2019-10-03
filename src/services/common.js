@@ -11,7 +11,7 @@ export default {
   getEvents () {
     return Api().get('api/events/')
   },
-  getTimelines () {
+  getTimeline () {
     return Api().get('api/timeline/')
   },
   getBlogPosts () {

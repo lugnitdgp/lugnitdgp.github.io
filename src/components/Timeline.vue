@@ -13,13 +13,21 @@
           <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
             <v-card-title primary-title>
               <div>
-                <h3 class="headline mb-2 text-center">{{ item.event_name }}</h3>
+                <h3 class="headline mb-2 text-center">
+                  <strong>  {{ item.event_name }} </strong>
+                </h3>
                 <div class="links">
-                  <span><i class="fas fa-clock" />{{ new Date(item.event_time).toLocaleTimeString() }}</span>
+                  <span><i class="fas fa-clock" />{{ format_date(item.event_time) }}</span>
                 </div>
                 <div class="card-text" v-html="item.detail" />
               </div>
             </v-card-title>
+
+            <v-card-actions class="justify-content-between">
+              <v-btn v-if="active != index" flat color="orange" @click="active = index">Read More</v-btn>
+              <v-btn v-else flat color="orange" @click="active = null">Close</v-btn>
+            </v-card-actions>
+
           </v-card>
         </div>
       </div>
@@ -31,9 +39,10 @@
 <script>
 import NavBar from './NavBar'
 import common from '@/services/common.js'
+import moment from 'moment'
 
 export default {
-  name: 'Timelines',
+  name: 'Timeline',
   components: {
     NavBar
   },
@@ -44,7 +53,7 @@ export default {
     }
   },
   created () {
-    common.getTimelines()
+    common.getTimeline()
       .then(response => {
         this.events = response.data
         this.$emit('hideloader', true)
@@ -60,12 +69,67 @@ export default {
         first: text.substr(0, 3),
         second: text.substr(3, length)
       }
+    },
+    format_date (value) {
+      /* eslint-disable */
+      var MonVal
+      var YearVal
+      var Str
+      var mon
+      if (value) {
+        var val = moment(String(value)).format('MM/YYYY')
+        MonVal = val[0] + val[1]
+        YearVal = val[3] + val[4] + val[5] + val[6]
+        if (MonVal == 0) {
+          mon = 'January'
+        }
+        if (MonVal == 1) {
+          mon = 'February'
+        }
+        if (MonVal == 2) {
+          mon = 'March'
+        }
+        if (MonVal == 3) {
+          mon = 'April'
+        }
+        if (MonVal == 4) {
+          mon = 'May'
+        }
+        if (MonVal == 5) {
+          mon = 'June'
+        }
+        if (MonVal == 6) {
+          mon = 'July'
+        }
+        if (MonVal == 7) {
+          mon = 'August'
+        }
+        if (MonVal == 8) {
+          mon = 'September'
+        }
+        if (MonVal == 9) {
+          mon = 'October'
+        }
+        if (MonVal == 10) {
+          mon = 'November'
+        }
+        if (MonVal == 11) {
+          mon = 'December'
+        }
+        Str = mon + ',' + YearVal
+        return Str
+      }
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
+#events {
+  background: rgba(247, 247, 247, 0.76);
+}
+
+
 h2 {
   margin-top: 40px;
   text-transform: uppercase;
@@ -77,10 +141,7 @@ span.highlighted {
 
 .card {
   margin-bottom: 20px;
-
-  .cover {
-    background: rgba(255, 255, 255, 0.2);
-    width: 100%;
+  background: rgba(255, 244, 227, 0.76);
 
     & > span {
       position: absolute;
@@ -108,22 +169,21 @@ span.highlighted {
     }
   }
 
-  .card-text {
-    font-size: 1rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: rgb(156, 156, 156);
-  }
+.card-text {
+  font-size: 1rem;
+  height: 42px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: black;
+}
 
   i {
     font-size: 18px;
     margin-right: 3px;
   }
+  
   i.fa-clock {
     color: #C62828;
-  }
-  i.fa-map-marker-alt {
-    color: #062657;
   }
 
   .links {
@@ -135,7 +195,6 @@ span.highlighted {
     span:first-child {
        margin-right: 20px;
     }
-  }
 }
 
 .card.active {
