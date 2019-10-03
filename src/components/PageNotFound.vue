@@ -8,6 +8,7 @@
         <p>Why don't you go to one of the following pages</p>
         <a href="/">Home</a>
         <a href="/events">Events</a>
+        <a href="/timelines">Timelines</a>
         <a href="/team">Members</a>
         <a href="/blog">Blog</a>
       </div>
