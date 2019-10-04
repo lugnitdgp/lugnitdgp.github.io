@@ -10,7 +10,7 @@
           :key="index"
           class="col-12 mx-auto"
         >
-          <!-- class="col-12 mx-auto" :class="[(index % 2 == 0) ? style='float:left' : style='float:right']" -->
+          <!-- class="col-12 mx-auto" :style="[(index % 2 == 0) ? float:left : float:right ]" -->
           <v-card class="containerWithin" :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
             <v-card-title primary-title>
               <div>
