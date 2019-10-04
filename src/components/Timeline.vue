@@ -8,9 +8,10 @@
         <div
           v-for="(item, index) in events"
           :key="index"
-          class="col-12 col-md-6 col-xl-4"
+          class="col-12 mx-auto"
         >
-          <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
+          <!-- class="col-12 mx-auto" :class="[(index % 2 == 0) ? style='float:left' : style='float:right']" -->
+          <v-card class="containerWithin" :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
             <v-card-title primary-title>
               <div>
                 <h3 class="headline mb-2 text-center">
@@ -119,7 +120,11 @@ export default {
         Str = mon + ',' + YearVal
         return Str
       }
-    }
+    }/*,
+    sorting (value, Str) {                    //SORTING THE DATE  Used "underscore.js" Not complete though.. Not SURE HOW TOO
+      var val = moment(String(value)).format('YYYY-MM-DD')
+      _.sortBy(val)
+    }*/
   }
 }
 </script>
@@ -139,9 +144,16 @@ span.highlighted {
   color: #fa631c;
 }
 
+.containerWithin {
+  border-left: 6px solid;
+  border-right: 6px solid;
+  border-right-color:  #45ABCD;
+}
+
 .card {
   margin-bottom: 20px;
   background: rgba(255, 244, 227, 0.76);
+  width: 100%;                        // sdslabs has 45% instead of 100%...
 
     & > span {
       position: absolute;
@@ -207,7 +219,6 @@ span.highlighted {
 
   .card-text {
     height: auto;
-    max-height: 200px;
   }
 
   @media only screen and (min-width: 576px) {
