@@ -8,16 +8,17 @@
         <div
           v-for="(item, index) in events"
           :key="index"
-          class="col-12 mx-auto"
+          class="hello col-12 mx-auto"
         >
-          <v-card class="containerWithin" :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
-            <v-card-title primary-title>
+
+          <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
+            <v-card-title primary-title class="time-card">
               <div>
                 <h3 class="headline mb-2 text-center">
                   <strong>  {{ item.event_name }} </strong>
                 </h3>
                 <div class="links">
-                  <span><i class="fas fa-clock" />{{ format_date(item.event_time) }}</span>
+                  <span><div id="eveTime">{{ format_date(item.event_time) }}</div><i class="fas fa-clock" /></span>
                 </div>
                 <div class="card-text" v-html="item.detail" />
               </div>
@@ -31,8 +32,8 @@
           </v-card>
         </div>
       </div>
-
     </div>
+
   </div>
 </template>
 
@@ -129,29 +130,36 @@ export default {
   background: rgba(247, 247, 247, 0.76);
 }
 
-
 h2 {
   margin-top: 40px;
   text-transform: uppercase;
+}
+
+h3{
+  float:left;
 }
 
 span.highlighted {
   color: #fa631c;
 }
 
-.containerWithin {
-  border-left: 6px solid;
-  border-right: 6px solid;
-  border-right-color:  #45ABCD;
-}
-
 .card {
+  position: relative;
+  overflow: hidden;
   margin-bottom: 20px;
-  background: rgba(255, 244, 227, 0.76);
-  width: 100%;                        // sdslabs has 45% instead of 100%...
+
+  @media only screen and (min-width: 1025px)  {
+  .time-card {
+    float: left;
+    width: 60%;
+    border-left: 6px solid;
+    border-right: 100px solid;
+    border-right-color:  #45ABCD;
+  }
+  }
 
     & > span {
-      position: absolute;
+      float: right;
       background: rgba(255, 255, 255, 0.75);
       bottom: 11px;
       height: 40px;
@@ -177,6 +185,7 @@ span.highlighted {
   }
 
 .card-text {
+  float: right;
   font-size: 1rem;
   height: 42px;
   overflow: hidden;
@@ -188,8 +197,13 @@ span.highlighted {
     font-size: 18px;
     margin-right: 3px;
   }
+  #eveTime {
+    float: right;
+  }
   
   i.fa-clock {
+    float: right;
+    white-space: pre-line;
     color: #C62828;
   }
 
@@ -200,7 +214,7 @@ span.highlighted {
     text-align: center;
 
     span:first-child {
-       margin-right: 20px;
+      margin-right: 20px;
     }
 }
 
@@ -235,22 +249,18 @@ span.highlighted {
 
 // Alignment of active cards
 @media only screen and (min-width: 576px) {
-  .col-md-6:nth-child(2n) .active {
-    float: right;
+  .card:nth-child(even) .active {
+    float: center;
   }
-  .col-md-6:nth-child(2n + 1) .active {
-    float: left;
+  .card:nth-child(odd) .active {
+    float: center;
   }
 }
 @media only screen and (min-width: 1200px) {
-  .col-xl-4:nth-child(3n) .active {
+  .hello:nth-child(even) .active {
     float: right;
   }
-  .col-xl-4:nth-child(3n + 2) .active {
-    float: left;
-    transform: translateX(-200px);
-  }
-  .col-xl-4:nth-child(3n + 1) .active {
+  .hello:nth-child(odd) .active {
     float: left;
   }
 }
@@ -261,4 +271,6 @@ span.highlighted {
 .row > div.active {
   margin: 0 auto;
 }
+
+
 </style>
