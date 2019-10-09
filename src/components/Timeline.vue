@@ -1,18 +1,18 @@
 <template>
   <div id="events">
     <nav-bar />
-    <div class="container event-section-container">
+    <div class="container timeline">
 
       <h2 class="text-center font-weight-bold pt-5 pb-5">Our <span class="highlighted">Time</span>line</h2>
       <div :class="[active != null ? 'active' : '', 'row align-items-center']">
         <div
           v-for="(item, index) in events"
           :key="index"
-          class="hello col-12 mx-auto"
+          class="col-12 mx-auto timeline-container"
         >
 
           <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
-            <v-card-title primary-title class="time-card">
+            <v-card-title primary-title class="timeline-card">
               <div>
                 <h3 class="headline mb-2 text-center">
                   <strong>  {{ item.event_name }} </strong>
@@ -24,7 +24,7 @@
               </div>
             </v-card-title>
 
-            <v-card-actions class="justify-content-between">
+            <v-card-actions class="justify-content-between overflow-content">
               <v-btn v-if="active != index" flat color="orange" @click="active = index">Read More</v-btn>
               <v-btn v-else flat color="orange" @click="active = null">Close</v-btn>
             </v-card-actions>
@@ -127,7 +127,7 @@ export default {
 
 <style scoped lang="scss">
 #events {
-  background: rgba(247, 247, 247, 0.76);
+  background: rgba(24, 21, 21, 0.76);
 }
 
 h2 {
@@ -143,19 +143,17 @@ span.highlighted {
   color: #fa631c;
 }
 
-.card {
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 20px;
+@media only screen and (max-width: 767px)  {
+  .card {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;  
 
-  @media only screen and (min-width: 1025px)  {
-  .time-card {
+  .timeline-card {
     float: left;
-    width: 60%;
     border-left: 6px solid;
-    border-right: 100px solid;
+    border-right: 6px solid;
     border-right-color:  #45ABCD;
-  }
   }
 
     & > span {
@@ -182,7 +180,6 @@ span.highlighted {
         color: #fa631c;
       }
     }
-  }
 
 .card-text {
   float: right;
@@ -191,6 +188,93 @@ span.highlighted {
   overflow: hidden;
   text-overflow: ellipsis;
   color: black;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+  
+  .timeline-container {
+    display: flex;
+    width: 100%;
+  }
+
+  .timeline-card {
+    text-align: center;
+    padding: 10px;
+    width: 42%;
+    background-color: rgba(24, 21, 21, 0.76);
+    color: white;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .timeline-container:nth-child(odd) {
+    .timeline-card {
+      transform: translate(5%, 0%);
+      float: left;
+    }
+    .timeline-card:before {
+      content: "";
+      position: absolute;
+      left: 101%;
+      margin-left: -3px;
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent transparent transparent rgba(24, 21, 21, 0.76);
+    }
+    .timeline-card:after {
+      position: absolute;
+      content: "";
+      background-color: red;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      z-index: 2;
+      left: 103%;
+      bottom: 60%;
+    }
+  }
+
+  .timeline-container:nth-child(even) {
+    flex-direction: row-reverse;
+    .timeline-card {
+      transform: translate(-5%, 0%);
+      float: right;
+    }
+    .timeline-card:before {
+      content: "";
+      position: absolute;
+      left: -3.5%;
+      margin-left: -10px;
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent rgba(24, 21, 21, 0.76) transparent transparent;
+    }
+  
+    .timeline-card:after {
+      position: absolute;
+      content: "";
+      background-color: blue;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      z-index: 2;
+      left: -12%;
+      bottom: 60%;
+    }
+  }
+
+  .timeline-container {
+    width: 100%;
+  }
+
+  .overflow-content {
+    display: none;
+  }
+
 }
 
   i {
