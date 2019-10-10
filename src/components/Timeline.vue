@@ -10,7 +10,7 @@
           :key="index"
           class="col-12 mx-auto timeline-container"
         >
-
+          <img id="mobi" src="static/images/glug-logo.png">
           <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
             <v-card-title primary-title class="timeline-card">
               <div>
@@ -23,13 +23,12 @@
                 <div class="card-text" v-html="item.detail" />
               </div>
             </v-card-title>
-
             <v-card-actions class="justify-content-between overflow-content">
               <v-btn v-if="active != index" flat color="orange" @click="active = index">Read More</v-btn>
               <v-btn v-else flat color="orange" @click="active = null">Close</v-btn>
             </v-card-actions>
-
           </v-card>
+          <img id="non-mobi" src="static/images/glug-logo.png">
         </div>
       </div>
     </div>
@@ -141,13 +140,40 @@ span.highlighted {
 
 @media only screen and (max-width: 767px)  {
   h3 {
+    color: rgba(231, 208, 208, 0.76);
     float:left;
+  }
+  .timeline-container:before {
+    position: absolute;
+    content: "";
+    margin-top: -10%;
+    height: 115%;
+    width: 4px;
+    left: 6%;
+    background: rgb(56, 54, 54);
+  }
+  
+  .timeline-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 3%;
+  }
+  img {
+    width: 12%;
+    height: 12%;
+    z-index: 2;
+    margin-left: -3%;
+  }
+  #non-mobi {
+    display: none;
   }
 
   .card {
     position: relative;
     overflow: hidden;
-    margin-bottom: 20px;  
+    margin-bottom: 20px;
+    background-color: rgba(24, 21, 21, 0.76);
+    color: white;
 
   .timeline-card {
     float: left;
@@ -183,22 +209,22 @@ span.highlighted {
 
 .card-text {
   float: right;
-  font-size: 16px;
+  font-size: 14px;
   height: 42px;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: black;
+  color: white;
     }
   }
 }
 
 @media only screen and (min-width: 768px) {
-  @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-  .timeline:before {
+  .timeline-container:before {
     position: absolute;
     content: "";
-    margin-top: 10%;
-    height: 100vh;
+    margin-top: -5%;
+    margin-bottom: 10%;
+    height: 116%;
     width: 4px;
     left: 50%;
     background: rgb(56, 54, 54);
@@ -207,6 +233,7 @@ span.highlighted {
   .timeline-container {
     display: flex;
     width: 100%;
+    margin-bottom: 2%;
   }
 
   .card {
@@ -243,19 +270,18 @@ span.highlighted {
       border-style: solid;
       border-color: transparent transparent transparent rgba(24, 21, 21, 0.76);
     }
-    .timeline-card:after {
-      position: absolute;
-      content: "";
-      background-color: red;
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      z-index: 2;
-      left: 108%;
-      bottom: 70%;
-    }
     #eveTime {
       color: rgba(18, 215, 230, 0.76);
+    }
+    img {
+      float: right;
+      width: 5%;
+      height: 5%;
+      z-index: 2;
+      margin-left: 3%;
+    }
+    #mobi {
+      display: none;
     }
   }
 
@@ -278,22 +304,20 @@ span.highlighted {
       border-style: solid;
       border-color: transparent rgba(24, 21, 21, 0.76) transparent transparent;
     }
-  
-    .timeline-card:after {
-      position: absolute;
-      content: "";
-      background-color: blue;
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      z-index: 2;
-      left: -15%;
-      bottom: 70%;
-    }
+
     #eveTime {
       float: left;
       color: rgba(18, 215, 230, 0.76);
     }
+    img {
+      width: 5%;
+      height: 5%;
+      z-index: 2;
+      margin-right: 2%;
+    }
+    #mobi {
+      display: none;
+    }    
     
     i.fa-clock {
       float: left;
@@ -341,7 +365,7 @@ span.highlighted {
 .card.active {
   z-index: 100;
   margin: 0 auto;
-  background-color: rgba(187, 166, 166, 0.76);
+  background-color: rgba(7, 6, 6, 0.76);
 
   .cover {
     height: 350px;
