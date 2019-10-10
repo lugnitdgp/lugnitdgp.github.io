@@ -135,15 +135,15 @@ h2 {
   text-transform: uppercase;
 }
 
-h3{
-  float:left;
-}
-
 span.highlighted {
   color: #fa631c;
 }
 
 @media only screen and (max-width: 767px)  {
+  h3 {
+    float:left;
+  }
+
   .card {
     position: relative;
     overflow: hidden;
@@ -183,7 +183,7 @@ span.highlighted {
 
 .card-text {
   float: right;
-  font-size: 1rem;
+  font-size: 16px;
   height: 42px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -194,33 +194,51 @@ span.highlighted {
 
 @media only screen and (min-width: 768px) {
   @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-
+  .timeline:before {
+    position: absolute;
+    content: "";
+    margin-top: 10%;
+    height: 100vh;
+    width: 4px;
+    left: 50%;
+    background: rgb(56, 54, 54);
+  }
   
   .timeline-container {
     display: flex;
     width: 100%;
   }
 
+  .card {
+    border-radius: 25px;
+    width: 45%;
+    background-color: rgba(78, 73, 73, 0.76);
+    color: white;
+  }
+
   .timeline-card {
     text-align: center;
-    padding: 10px;
-    width: 42%;
+    width: 100%;
     background-color: rgba(24, 21, 21, 0.76);
     color: white;
-    border-radius: 10px;
+    border-radius: 25px;
     font-family: "Roboto", sans-serif;
   }
 
   .timeline-container:nth-child(odd) {
+    h3 {
+      color: rgba(231, 208, 208, 0.76);
+      float:left;
+    }
     .timeline-card {
-      transform: translate(5%, 0%);
+      transform: translate(0%, 0%);
       float: left;
     }
     .timeline-card:before {
       content: "";
       position: absolute;
-      left: 101%;
-      margin-left: -3px;
+      left: 100%;
+      margin-left: 0px;
       border-width: 10px;
       border-style: solid;
       border-color: transparent transparent transparent rgba(24, 21, 21, 0.76);
@@ -229,26 +247,33 @@ span.highlighted {
       position: absolute;
       content: "";
       background-color: red;
-      height: 30px;
-      width: 30px;
+      height: 40px;
+      width: 40px;
       border-radius: 50%;
       z-index: 2;
-      left: 103%;
-      bottom: 60%;
+      left: 108%;
+      bottom: 70%;
+    }
+    #eveTime {
+      color: rgba(18, 215, 230, 0.76);
     }
   }
 
   .timeline-container:nth-child(even) {
     flex-direction: row-reverse;
+    h3 {
+      color: rgba(231, 208, 208, 0.76);
+      float:right;
+    }   
     .timeline-card {
-      transform: translate(-5%, 0%);
+      transform: translate(0%, 0%);
       float: right;
     }
     .timeline-card:before {
       content: "";
       position: absolute;
-      left: -3.5%;
-      margin-left: -10px;
+      left: 0%;
+      margin-left: -20px;
       border-width: 10px;
       border-style: solid;
       border-color: transparent rgba(24, 21, 21, 0.76) transparent transparent;
@@ -258,17 +283,28 @@ span.highlighted {
       position: absolute;
       content: "";
       background-color: blue;
-      height: 30px;
-      width: 30px;
+      height: 40px;
+      width: 40px;
       border-radius: 50%;
       z-index: 2;
-      left: -12%;
-      bottom: 60%;
+      left: -15%;
+      bottom: 70%;
     }
+    #eveTime {
+      float: left;
+      color: rgba(18, 215, 230, 0.76);
+    }
+    
+    i.fa-clock {
+      float: left;
+      white-space: pre-line;
+      color: #C62828;
+    }  
   }
 
-  .timeline-container {
-    width: 100%;
+  .card-text {
+    font-size: 16px;
+    text-align: left;
   }
 
   .overflow-content {
@@ -305,6 +341,7 @@ span.highlighted {
 .card.active {
   z-index: 100;
   margin: 0 auto;
+  background-color: rgba(187, 166, 166, 0.76);
 
   .cover {
     height: 350px;
@@ -312,6 +349,7 @@ span.highlighted {
 
   .card-text {
     height: auto;
+    font-size: 16px;
   }
 
   @media only screen and (min-width: 576px) {
