@@ -10,25 +10,29 @@
           :key="index"
           class="col-12 mx-auto timeline-container"
         >
-          <img id="mobi" src="static/images/glug-logo.png">
+          <img id="mobilogo" src="static/images/glug-logo.png">
           <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
             <v-card-title primary-title class="timeline-card">
               <div>
                 <h3 class="headline mb-2 text-center">
                   <strong>  {{ item.event_name }} </strong>
                 </h3>
-                <div class="links">
-                  <span><div id="eveTime">{{ format_date(item.event_time) }}</div><i class="fas fa-clock" /></span>
-                </div>
                 <div class="card-text" v-html="item.detail" />
               </div>
             </v-card-title>
             <v-card-actions class="justify-content-between overflow-content">
-              <v-btn v-if="active != index" flat color="orange" @click="active = index">Read More</v-btn>
-              <v-btn v-else flat color="orange" @click="active = null">Close</v-btn>
+              <div id="mobiDate">
+                <span><div id="DateMobi">{{ format_date(item.event_time) }}</div><i class="fas fa-clock" /></span>
+              </div>
             </v-card-actions>
           </v-card>
-          <img id="non-mobi" src="static/images/glug-logo.png">
+          <img id="non-mobilogo" src="static/images/glug-logo.png">
+          <div id="non-mobiDate">
+            <i class="fas fa-clock" />
+          </div>
+          <div id="non-mobiDate">
+            <span><div id="DateNonMobi">{{ format_date(item.event_time) }}</div></span>
+          </div>
         </div>
       </div>
     </div>
@@ -128,125 +132,99 @@ export default {
 #events {
   background: rgba(24, 21, 21, 0.76);
 }
-
 h2 {
   margin-top: 40px;
   text-transform: uppercase;
 }
-
 span.highlighted {
   color: #fa631c;
 }
 
-@media only screen and (max-width: 767px)  {
+@media only screen and (max-width: 955px)  {
   h3 {
+    width: 100%;
     color: rgba(231, 208, 208, 0.76);
     float:left;
   }
   .timeline-container:before {
     position: absolute;
     content: "";
-    margin-top: -10%;
-    height: 115%;
+    float:left;
+    margin-top: -2%;
+    height: 105%;
     width: 4px;
-    left: 6%;
+    left: 30px;
     background: rgb(56, 54, 54);
   }
-  
   .timeline-container {
     display: flex;
     width: 100%;
-    margin-bottom: 3%;
+    margin-bottom: 0%;
   }
   img {
-    width: 12%;
-    height: 12%;
+    width: 40px;
+    height: 40px;
     z-index: 2;
-    margin-left: -3%;
+    margin-left: 0px;
   }
-  #non-mobi {
+  #non-mobilogo {
     display: none;
   }
-
+  #non-mobiDate {
+    display: none;
+  }
   .card {
+    margin-left: 25px;
+    width: 100%;
     position: relative;
-    overflow: hidden;
     margin-bottom: 20px;
     background-color: rgba(24, 21, 21, 0.76);
     color: white;
-
+  }
   .timeline-card {
-    float: left;
+    width: 100%;
     border-left: 6px solid;
     border-right: 6px solid;
     border-right-color:  #45ABCD;
   }
-
-    & > span {
-      float: right;
-      background: rgba(255, 255, 255, 0.75);
-      bottom: 11px;
-      height: 40px;
-      line-height: 40px;
-      padding: 0 0 0 10px;
-
-      font-family: "Roboto", sans-serif;
-      font-size: 18px;
-      font-weight: bold;
-      letter-spacing: 0.7px;
-      color: #9c9c9c;
-
-      i {
-        font-size: 21px;
-        line-height: 40px;
-        padding: 0 10px 0 10px;
-        background: rgba(255, 255, 255, 0.9);
-        margin-right: 0;
-        margin-left: 10px;
-        color: #fa631c;
-      }
-    }
+  #DateMobi {
+    float: right;
+    color: rgba(18, 215, 230, 0.76);     
+  }
 
 .card-text {
-  float: right;
-  font-size: 14px;
-  height: 42px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  float: left;
+  font-size: 15px;
+  height: auto;
   color: white;
-    }
+  text-overflow: ellipsis;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 956px) {
   .timeline-container:before {
     position: absolute;
     content: "";
-    margin-top: -5%;
+    margin-top: -2%;
     margin-bottom: 10%;
-    height: 116%;
+    height: 105%;
     width: 4px;
     left: 50%;
     background: rgb(56, 54, 54);
   }
-  
   .timeline-container {
     display: flex;
     width: 100%;
-    margin-bottom: 2%;
+    margin-bottom: 0%;
   }
-
-  .card {
+  .card { /*Don't change its bg-color cause it's just the space-card . To change the color of the card, change bg-color of timeline-card*/
     border-radius: 25px;
     width: 45%;
-    background-color: rgba(78, 73, 73, 0.76);
     color: white;
   }
-
   .timeline-card {
-    text-align: center;
     width: 100%;
-    background-color: rgba(24, 21, 21, 0.76);
+    background-color: rgba(0, 0, 0, 0.904);
     color: white;
     border-radius: 25px;
     font-family: "Roboto", sans-serif;
@@ -254,6 +232,7 @@ span.highlighted {
 
   .timeline-container:nth-child(odd) {
     h3 {
+      width: 100%;
       color: rgba(231, 208, 208, 0.76);
       float:left;
     }
@@ -265,31 +244,44 @@ span.highlighted {
       content: "";
       position: absolute;
       left: 100%;
-      margin-left: 0px;
+      margin-left: 0%;
       border-width: 10px;
+      top: 25px;
       border-style: solid;
-      border-color: transparent transparent transparent rgba(24, 21, 21, 0.76);
+      border-color: transparent transparent transparent rgba(0, 0, 0, 0.904);
     }
-    #eveTime {
+    #DateNonMobi {
+      font-size: 16px;
       color: rgba(18, 215, 230, 0.76);
     }
     img {
       float: right;
-      width: 5%;
-      height: 5%;
+      width: 50px;
+      height: 50px;
       z-index: 2;
       margin-left: 3%;
+      margin-top: 20px;
     }
-    #mobi {
+    #mobilogo {
       display: none;
+    }
+    #mobiDate {
+      display: none;
+    }
+    #non-mobiDate {
+      margin-top: 30px;
+    }
+    i.fa-clock {
+      margin-left: 10px;
     }
   }
 
   .timeline-container:nth-child(even) {
     flex-direction: row-reverse;
     h3 {
+      width: 100%;
       color: rgba(231, 208, 208, 0.76);
-      float:right;
+      float: left;
     }   
     .timeline-card {
       transform: translate(0%, 0%);
@@ -302,25 +294,33 @@ span.highlighted {
       margin-left: -20px;
       border-width: 10px;
       border-style: solid;
-      border-color: transparent rgba(24, 21, 21, 0.76) transparent transparent;
+      border-color: transparent rgba(0, 0, 0, 0.904) transparent transparent;
+      top: 25px;
     }
-
-    #eveTime {
+    #DateNonMobi {
       float: left;
+      font-size: 16px;
       color: rgba(18, 215, 230, 0.76);
     }
     img {
-      width: 5%;
-      height: 5%;
+      width: 50px;
+      height: 50px;
       z-index: 2;
-      margin-right: 2%;
+      margin-right: 2.2%;
+      margin-top: 20px;
     }
-    #mobi {
+    #mobilogo {
       display: none;
-    }    
-    
+    }
+    #mobiDate {
+      display: none;
+    }
+    #non-mobiDate {
+      margin-top: 30px;
+    }
     i.fa-clock {
       float: left;
+      margin-right: 15px;
       white-space: pre-line;
       color: #C62828;
     }  
@@ -330,7 +330,6 @@ span.highlighted {
     font-size: 16px;
     text-align: left;
   }
-
   .overflow-content {
     display: none;
   }
@@ -341,82 +340,10 @@ span.highlighted {
     font-size: 18px;
     margin-right: 3px;
   }
-  #eveTime {
-    float: right;
-  }
-  
   i.fa-clock {
     float: right;
     white-space: pre-line;
     color: #C62828;
   }
-
-  .links {
-    line-height: 35px;
-    height: 35px;
-    width: 100%;
-    text-align: center;
-
-    span:first-child {
-      margin-right: 20px;
-    }
-}
-
-.card.active {
-  z-index: 100;
-  margin: 0 auto;
-  background-color: rgba(7, 6, 6, 0.76);
-
-  .cover {
-    height: 350px;
-  }
-
-  .card-text {
-    height: auto;
-    font-size: 16px;
-  }
-
-  @media only screen and (min-width: 576px) {
-    width: 500px;
-  }
-
-  @media only screen and (min-width: 768px) {
-    width: 620px;
-  }
-
-  @media only screen and (min-width: 1200px) {
-    width: 700px;
-  }
-}
-
-.card.inactive {
-  z-index: -1;
-}
-
-// Alignment of active cards
-@media only screen and (min-width: 576px) {
-  .card:nth-child(even) .active {
-    float: center;
-  }
-  .card:nth-child(odd) .active {
-    float: center;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .hello:nth-child(even) .active {
-    float: right;
-  }
-  .hello:nth-child(odd) .active {
-    float: left;
-  }
-}
-
-.row.active {
-  background: rgba(255, 255, 255, 0.8);
-}
-.row > div.active {
-  margin: 0 auto;
-}
-
 
 </style>
