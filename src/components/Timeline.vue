@@ -189,7 +189,7 @@ span.highlighted {
   }
   #DateMobi {
     float: right;
-    color: rgba(18, 215, 230, 0.76);     
+    color: rgba(18, 215, 230, 0.76);
   }
 
 .card-text {
@@ -282,7 +282,7 @@ span.highlighted {
       width: 100%;
       color: rgba(231, 208, 208, 0.76);
       float: left;
-    }   
+    }
     .timeline-card {
       transform: translate(0%, 0%);
       float: right;
@@ -323,7 +323,7 @@ span.highlighted {
       margin-right: 15px;
       white-space: pre-line;
       color: #C62828;
-    }  
+    }
   }
 
   .card-text {
@@ -345,5 +345,31 @@ span.highlighted {
     white-space: pre-line;
     color: #C62828;
   }
+
+.timeline-container:nth-child(odd) .card {
+  animation: left-to-right 3s ease-out;
+}
+
+.timeline-container:nth-child(even) .card {
+  animation: right-to-left 3s ease-out;
+}
+
+@keyframes left-to-right {
+  0% {
+    left: -10%;
+  }
+  50% {
+    left: 0%;
+  }
+}
+
+@keyframes right-to-left {
+  0% {
+    right: -10%;
+  }
+  50% {
+    right: 0%;
+  }
+}
 
 </style>
