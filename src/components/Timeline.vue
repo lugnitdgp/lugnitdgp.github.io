@@ -1,5 +1,5 @@
 <template>
-  <div id="events">
+  <div id="timeline">
     <nav-bar />
     <div class="container timeline">
 
@@ -31,7 +31,7 @@
             <i class="fas fa-clock" />
           </div>
           <div id="non-mobiDate">
-            <span><div id="DateNonMobi">{{ format_date(item.event_time) }}</div></span>
+            <span><div id="DateNonMobi"><strong>{{ format_date(item.event_time) }}</strong></div></span>
           </div>
         </div>
       </div>
@@ -129,7 +129,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#events {
+#timeline {
   background: rgba(24, 21, 21, 0.76);
 }
 h2 {
