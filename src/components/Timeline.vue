@@ -22,7 +22,7 @@
             </v-card-title>
             <v-card-actions class="justify-content-between overflow-content">
               <div id="mobiDate">
-                <span><div id="DateMobi">{{ format_date(item.event_time) }}</div><i class="fas fa-clock" /></span>
+                <span><div id="DateMobi"><strong>{{ format_date(item.event_time) }}</strong></div><i class="fas fa-clock" /></span>
               </div>
             </v-card-actions>
           </v-card>
@@ -130,7 +130,7 @@ export default {
 
 <style scoped lang="scss">
 #timeline {
-  background: rgba(24, 21, 21, 0.76);
+  background: #E9F0F5;
 }
 h2 {
   margin-top: 40px;
@@ -143,8 +143,9 @@ span.highlighted {
 @media only screen and (max-width: 955px)  {
   h3 {
     width: 100%;
-    color: rgba(231, 208, 208, 0.76);
+    color: black;
     float:left;
+    font-size: 21px!important;
   }
   .timeline-container:before {
     position: absolute;
@@ -154,7 +155,7 @@ span.highlighted {
     height: 105%;
     width: 4px;
     left: 30px;
-    background: rgb(56, 54, 54);
+    background: #d7e4ed;
   }
   .timeline-container {
     display: flex;
@@ -178,25 +179,34 @@ span.highlighted {
     width: 100%;
     position: relative;
     margin-bottom: 20px;
-    background-color: rgba(24, 21, 21, 0.76);
-    color: white;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
   }
   .timeline-card {
     width: 100%;
-    border-left: 6px solid;
-    border-right: 6px solid;
-    border-right-color:  #45ABCD;
+  }
+  .timeline-card:before {
+  flex-direction: row-reverse;
+    content: "";
+    position: absolute;
+    left: 0%;
+    margin-left: -20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+    top: 25px;
   }
   #DateMobi {
     float: right;
-    color: rgba(18, 215, 230, 0.76);
+    color: #7F8C97;
   }
 
 .card-text {
   float: left;
   font-size: 15px;
   height: auto;
-  color: white;
+  color: #7F8C97;
   text-overflow: ellipsis;
   }
 }
@@ -210,7 +220,7 @@ span.highlighted {
     height: 105%;
     width: 4px;
     left: 50%;
-    background: rgb(56, 54, 54);
+    background: #d7e4ed;
   }
   .timeline-container {
     display: flex;
@@ -224,8 +234,8 @@ span.highlighted {
   }
   .timeline-card {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.904);
-    color: white;
+    background-color: white;
+    color: rgba(8, 8, 8, 0.521);
     border-radius: 25px;
     font-family: "Roboto", sans-serif;
   }
@@ -233,7 +243,7 @@ span.highlighted {
   .timeline-container:nth-child(odd) {
     h3 {
       width: 100%;
-      color: rgba(231, 208, 208, 0.76);
+      color: black;
       float:left;
     }
     .timeline-card {
@@ -248,11 +258,11 @@ span.highlighted {
       border-width: 10px;
       top: 25px;
       border-style: solid;
-      border-color: transparent transparent transparent rgba(0, 0, 0, 0.904);
+      border-color: transparent transparent transparent white;
     }
     #DateNonMobi {
       font-size: 16px;
-      color: rgba(18, 215, 230, 0.76);
+      color: #7F8C97;
     }
     img {
       float: right;
@@ -280,7 +290,7 @@ span.highlighted {
     flex-direction: row-reverse;
     h3 {
       width: 100%;
-      color: rgba(231, 208, 208, 0.76);
+      color: black;
       float: left;
     }
     .timeline-card {
@@ -294,13 +304,13 @@ span.highlighted {
       margin-left: -20px;
       border-width: 10px;
       border-style: solid;
-      border-color: transparent rgba(0, 0, 0, 0.904) transparent transparent;
+      border-color: transparent white transparent transparent;
       top: 25px;
     }
     #DateNonMobi {
       float: left;
       font-size: 16px;
-      color: rgba(18, 215, 230, 0.76);
+      color: #7F8C97;
     }
     img {
       width: 50px;
@@ -322,7 +332,6 @@ span.highlighted {
       float: left;
       margin-right: 15px;
       white-space: pre-line;
-      color: #C62828;
     }
   }
 
@@ -343,7 +352,7 @@ span.highlighted {
   i.fa-clock {
     float: right;
     white-space: pre-line;
-    color: #C62828;
+    color: rgb(92, 171, 218);
   }
 
 .timeline-container:nth-child(odd) .card {
