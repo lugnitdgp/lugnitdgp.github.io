@@ -1,7 +1,7 @@
 <template>
   <div id="timeline">
     <nav-bar />
-    <div class="container timeline">
+    <div class="container-fluid timeline">
 
       <h2 class="text-center font-weight-bold pt-5 pb-5">Our <span class="highlighted">Time</span>line</h2>
       <div :class="[active != null ? 'active' : '', 'row align-items-center']">
@@ -27,11 +27,13 @@
             </v-card-actions>
           </v-card>
           <img id="non-mobilogo" src="static/images/glug-logo.png">
-          <div id="non-mobiDate">
-            <i class="fas fa-clock" />
-          </div>
-          <div id="non-mobiDate">
-            <span><div id="DateNonMobi"><strong>{{ format_date(item.event_time) }}</strong></div></span>
+          <div id="CombinedDayClock">
+            <div id="non-mobiClock">
+              <i class="fas fa-clock" />
+            </div>
+            <div id="non-mobiDate">
+              <span><div id="DateNonMobi"><strong>{{ format_date(item.event_time) }}</strong></div></span>
+            </div>
           </div>
         </div>
       </div>
@@ -41,6 +43,7 @@
 </template>
 
 <script>
+/* eslint-env jquery */
 import NavBar from './NavBar'
 import common from '@/services/common.js'
 import moment from 'moment'
@@ -65,6 +68,13 @@ export default {
       .catch(e => {
         console.log(e)
       })
+    $(function () {
+      $(window).on('load', function () {
+        $('#preloader').fadeOut('slow', function () {
+          $(this).remove()
+        })
+      })
+    })
   },
   methods: {
     displayheading (text) {
@@ -84,40 +94,40 @@ export default {
         var val = moment(String(value)).format('MM/YYYY')
         MonVal = val[0] + val[1]
         YearVal = val[3] + val[4] + val[5] + val[6]
-        if (MonVal == 0) {
+        if (MonVal == 1) {
           mon = 'January'
         }
-        if (MonVal == 1) {
+        if (MonVal == 2) {
           mon = 'February'
         }
-        if (MonVal == 2) {
+        if (MonVal == 3) {
           mon = 'March'
         }
-        if (MonVal == 3) {
+        if (MonVal == 4) {
           mon = 'April'
         }
-        if (MonVal == 4) {
+        if (MonVal == 5) {
           mon = 'May'
         }
-        if (MonVal == 5) {
+        if (MonVal == 6) {
           mon = 'June'
         }
-        if (MonVal == 6) {
+        if (MonVal == 7) {
           mon = 'July'
         }
-        if (MonVal == 7) {
+        if (MonVal == 8) {
           mon = 'August'
         }
-        if (MonVal == 8) {
+        if (MonVal == 9) {
           mon = 'September'
         }
-        if (MonVal == 9) {
+        if (MonVal == 10) {
           mon = 'October'
         }
-        if (MonVal == 10) {
+        if (MonVal == 11) {
           mon = 'November'
         }
-        if (MonVal == 11) {
+        if (MonVal == 12) {
           mon = 'December'
         }
         Str = mon + ',' + YearVal
@@ -131,6 +141,9 @@ export default {
 <style scoped lang="scss">
 #timeline {
   background: #E9F0F5;
+  position: relative;
+  padding: 2em 0;
+  margin-bottom: 2em;
 }
 h2 {
   margin-top: 40px;
@@ -140,7 +153,7 @@ span.highlighted {
   color: #fa631c;
 }
 
-@media only screen and (max-width: 955px)  {
+@media only screen and (max-width: 1150px)  {
   h3 {
     width: 100%;
     color: black;
@@ -148,34 +161,35 @@ span.highlighted {
     font-size: 21px!important;
   }
   .timeline-container:before {
+    content: '';
     position: absolute;
-    content: "";
-    float:left;
-    margin-top: -2%;
-    height: 105%;
+    top: 0;
+    left: 28px;
+    height: 100%;
     width: 4px;
-    left: 30px;
     background: #d7e4ed;
   }
   .timeline-container {
     display: flex;
-    width: 100%;
+    width: 90%;
     margin-bottom: 0%;
   }
   img {
+    position: absolute;
+    top: 15px;
+    left: 10px;
     width: 40px;
     height: 40px;
-    z-index: 2;
-    margin-left: 0px;
+    border-radius: 50%;
   }
   #non-mobilogo {
     display: none;
   }
-  #non-mobiDate {
-    display: none;
+  #CombinedDayClock{
+      display: none;
   }
   .card {
-    margin-left: 25px;
+    margin-left: 60px;
     width: 100%;
     position: relative;
     margin-bottom: 20px;
@@ -204,22 +218,23 @@ span.highlighted {
 
 .card-text {
   float: left;
-  font-size: 15px;
+  font-size: 18px;
   height: auto;
   color: #7F8C97;
   text-overflow: ellipsis;
+  font-family:'Roboto', sans-serif;
+  font-weight: 400;
   }
 }
-
-@media only screen and (min-width: 956px) {
+@media only screen and (min-width: 1151px) {
   .timeline-container:before {
+    content: '';
     position: absolute;
-    content: "";
-    margin-top: -2%;
-    margin-bottom: 10%;
-    height: 105%;
-    width: 4px;
+    top: 0;
     left: 50%;
+    margin-left: -2px;
+    height: 100%;
+    width: 4px;
     background: #d7e4ed;
   }
   .timeline-container {
@@ -256,7 +271,7 @@ span.highlighted {
       left: 100%;
       margin-left: 0%;
       border-width: 10px;
-      top: 25px;
+      top: 28px;
       border-style: solid;
       border-color: transparent transparent transparent white;
     }
@@ -265,12 +280,12 @@ span.highlighted {
       color: #7F8C97;
     }
     img {
-      float: right;
-      width: 50px;
-      height: 50px;
-      z-index: 2;
-      margin-left: 3%;
-      margin-top: 20px;
+      position: absolute;
+      top: 15px;
+      width: 60px;
+      height: 60px;
+      left: 50%;
+      margin-left: -30px;
     }
     #mobilogo {
       display: none;
@@ -279,10 +294,20 @@ span.highlighted {
       display: none;
     }
     #non-mobiDate {
-      margin-top: 30px;
+      position: absolute;
+      left: 25px;
+      padding: .8em 0;
+      opacity: 0.7;
+    }
+    #CombinedDayClock {
+      position: relative;
+      float: left;
+      left: 8%;
+      top: 20px;
     }
     i.fa-clock {
-      margin-left: 10px;
+      position: absolute;
+      top: 12px;
     }
   }
 
@@ -313,11 +338,12 @@ span.highlighted {
       color: #7F8C97;
     }
     img {
-      width: 50px;
-      height: 50px;
-      z-index: 2;
-      margin-right: 2.2%;
-      margin-top: 20px;
+      position: absolute;
+      top: 15px;
+      width: 60px;
+      height: 60px;
+      left: 50%;
+      margin-left: -30px;
     }
     #mobilogo {
       display: none;
@@ -326,12 +352,23 @@ span.highlighted {
       display: none;
     }
     #non-mobiDate {
-      margin-top: 30px;
+      position: relative;
+      left: -10px;
+      top: -5px;
+      padding: .8em 0;
+      opacity: 0.7;
+    }
+    #CombinedDayClock {
+      position: absolute;
+      float: right;
+      right: 54%;
+      top: 20px;
     }
     i.fa-clock {
-      float: left;
-      margin-right: 15px;
-      white-space: pre-line;
+      position: relative;
+      float: right;
+      top: 12px;
+      right: -16px;
     }
   }
 
