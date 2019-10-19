@@ -22,7 +22,7 @@
             </v-card-title>
             <v-card-actions class="justify-content-between overflow-content">
               <div id="mobiDate">
-                <span><div id="DateMobi"><strong>{{ format_date(item.event_time) }}</strong></div><i class="fas fa-clock" /></span>
+                <span><div id="DateMobi"><strong>{{ format_date(item.event_time) }}</strong></div><i class="fas fa-clock MobiClock" /></span>
               </div>
             </v-card-actions>
           </v-card>
@@ -153,11 +153,14 @@ span.highlighted {
   color: #fa631c;
 }
 
+
+
 @media only screen and (max-width: 1150px)  {
   h3 {
     width: 100%;
     color: black;
     float:left;
+    text-overflow: ellipsis;
     font-size: 21px!important;
   }
   .timeline-container:before {
@@ -218,12 +221,24 @@ span.highlighted {
 
 .card-text {
   float: left;
-  font-size: 18px;
+  font-size: 15px;
   height: auto;
   color: #7F8C97;
+  margin: 1em 0;
   text-overflow: ellipsis;
   font-family:'Roboto', sans-serif;
   font-weight: 400;
+  }
+}
+@media only screen and (max-width: 230px) {
+  h3 {
+    font-size: 15px!important;
+  }
+  .MobiClock {
+    display: none;
+  }
+  .card-text, #DateMobi {
+    font-size: 12px;
   }
 }
 @media only screen and (min-width: 1151px) {
