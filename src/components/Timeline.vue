@@ -153,8 +153,6 @@ span.highlighted {
   color: #fa631c;
 }
 
-
-
 @media only screen and (max-width: 1150px)  {
   h3 {
     width: 100%;
@@ -178,12 +176,17 @@ span.highlighted {
     margin-bottom: 0%;
   }
   img {
-    position: absolute;
-    top: 15px;
-    left: 10px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    // position: absolute;
+    // top: 15px;
+    // left: 10px;
+    // width: 40px;
+    // height: 40px;
+    // border-radius: 50%;
+      position: fixed;
+      left: 8px;
+      width: 45px;
+      height: 45px;
+      z-index: 100;
   }
   #non-mobilogo {
     display: none;
@@ -242,6 +245,9 @@ span.highlighted {
   }
 }
 @media only screen and (min-width: 1151px) {
+  .timeline-card:hover {
+    background-color:rgb(233, 246, 248);
+  }
   .timeline-container:before {
     content: '';
     position: absolute;
@@ -261,6 +267,12 @@ span.highlighted {
     border-radius: 25px;
     width: 45%;
     color: white;
+  }
+
+  .card:hover {
+    .timeline-card {
+    height: 107%!important;
+    }
   }
   .timeline-card {
     width: 100%;
@@ -295,12 +307,18 @@ span.highlighted {
       color: #7F8C97;
     }
     img {
-      position: absolute;
-      top: 15px;
+      // position: absolute;
+      // top: 15px;
+      // width: 60px;
+      // height: 60px;
+      // left: 50%;
+      // margin-left: -30px;
+      position: fixed;
+      left: 50%;
       width: 60px;
       height: 60px;
-      left: 50%;
       margin-left: -30px;
+      z-index: 100;
     }
     #mobilogo {
       display: none;
@@ -323,6 +341,11 @@ span.highlighted {
     i.fa-clock {
       position: absolute;
       top: 12px;
+    }
+    .card:hover {
+      .timeline-card:before {
+        border-color: transparent transparent transparent rgb(231, 246, 247)!important;
+      }
     }
   }
 
@@ -353,12 +376,13 @@ span.highlighted {
       color: #7F8C97;
     }
     img {
-      position: absolute;
-      top: 15px;
-      width: 60px;
-      height: 60px;
-      left: 50%;
-      margin-left: -30px;
+      // position: absolute;
+      // top: 15px;
+      // width: 60px;
+      // height: 60px;
+      // left: 50%;
+      // margin-left: -30px;
+      display: none;
     }
     #mobilogo {
       display: none;
@@ -385,6 +409,11 @@ span.highlighted {
       top: 12px;
       right: -16px;
     }
+    .card:hover {
+      .timeline-card:before {
+        border-color: transparent rgb(231, 246, 247) transparent transparent!important;
+      }
+    }
   }
 
   .card-text {
@@ -410,7 +439,6 @@ span.highlighted {
 .timeline-container:nth-child(odd) .card {
   animation: left-to-right 3s ease-out;
 }
-
 .timeline-container:nth-child(even) .card {
   animation: right-to-left 3s ease-out;
 }
