@@ -10,7 +10,6 @@
           :key="index"
           class="col-12 mx-auto timeline-container"
         >
-          <img id="mobilogo" src="static/images/glug-logo.png">
           <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
             <v-card-title primary-title class="timeline-card">
               <div>
@@ -26,7 +25,7 @@
               </div>
             </v-card-actions>
           </v-card>
-          <img id="non-mobilogo" src="static/images/glug-logo.png">
+          <img class="logo" src="static/images/glug-logo.png">
           <div id="CombinedDayClock">
             <div id="non-mobiClock">
               <i class="fas fa-clock" />
@@ -169,12 +168,19 @@ span.highlighted {
     height: 100%;
     width: 4px;
     background: #d7e4ed;
+    z-index: 5;
   }
   .timeline-container {
     display: flex;
     width: 90%;
     margin-bottom: 0%;
   }
+  
+  .timeline-container:not(:first-child){ //for all childs except first one
+  img {
+    display: none;
+  }}
+  .timeline-container:first-child {
   img {
     // position: absolute;
     // top: 15px;
@@ -184,13 +190,11 @@ span.highlighted {
     // border-radius: 50%;
       position: fixed;
       left: 8px;
+      margin-top: 0%;
       width: 45px;
       height: 45px;
-      z-index: 100;
-  }
-  #non-mobilogo {
-    display: none;
-  }
+      z-index: 1;
+  }}
   #CombinedDayClock{
       display: none;
   }
@@ -320,9 +324,6 @@ span.highlighted {
       margin-left: -30px;
       z-index: 100;
     }
-    #mobilogo {
-      display: none;
-    }
     #mobiDate {
       display: none;
     }
@@ -382,9 +383,6 @@ span.highlighted {
       // height: 60px;
       // left: 50%;
       // margin-left: -30px;
-      display: none;
-    }
-    #mobilogo {
       display: none;
     }
     #mobiDate {
