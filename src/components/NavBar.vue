@@ -16,6 +16,9 @@
           <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/events">
             <a class="nav-link">Events</a>
           </router-link>
+          <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/timeline">
+            <a class="nav-link">Timeline</a>
+          </router-link>
           <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/team">
             <a class="nav-link">Members</a>
           </router-link>
