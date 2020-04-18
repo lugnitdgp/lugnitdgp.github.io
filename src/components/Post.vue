@@ -8,7 +8,7 @@
           <span class="card-title font-italic sub m-0 mb-0 ml-md-5">{{ post.author_name }}</span>
           <span class="card-title font-italic sub">&#8226; {{ new Date(post.date_to_show).toLocaleDateString() }}</span>
           <div class="row flex-wrap justify-content-center mt-2 mb-2">
-            <div class="card-img" :style="{'background-image':'url('+post.thumbnail_image+')'}" style="{background:center no-repeat}" />
+            <img class="card-img col-md-10 col-sm-12" :src="post.thumbnail_image" />
           </div>
           <p class="card-text m-0 ml-md-5 mr-md-5 " v-html="post.content_body" />
         </div>
@@ -108,10 +108,6 @@ export default {
 }
 .card-img {
   color: #fff;
-  width: 100vw;
-  height: 100%;
-  min-height: 40rem;
-  background-size: cover;
 }
 .prev-page{
   cursor: pointer;

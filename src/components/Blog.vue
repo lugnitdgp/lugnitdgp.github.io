@@ -17,7 +17,7 @@
         <div v-if="props.item.show_bool" class="card post bg-light" data-aos="fade-up" data-aos-duration="600">
           <div class="row">
             <div class="col-md-6 col-sm-12">
-              <div class="card-img-bottom" :style="{'background-image':'url('+props.item.thumbnail_image+')'}" style="{background:center no-repeat}" />
+              <img class="card-img-bottom" :src="props.item.thumbnail_image" />
             </div>
             <div class="col-md-6 col-sm-12">
               <div class="card-block">
