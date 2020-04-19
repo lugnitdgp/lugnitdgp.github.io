@@ -146,6 +146,7 @@ export default {
   transition: 0.4s ease-in-out;
   cursor: pointer;
   border-radius: 50%;
+  background-color:lightgrey;
 }
 .fabs {
   position: relative;
