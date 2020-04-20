@@ -6,7 +6,7 @@
         <carousel :navigation-enabled="true" :loop="true" :autoplay="true" :pagination-enabled="false" :per-page-custom="[[260,1],[576,2],[800, 3],[1264, 4]]" :navigation-next-label="`<i class=&quot;fas fa-chevron-circle-right fa-2x ; aria-hidden=&quot;true&quot;></i>`" :navigation-prev-label="`<i class=&quot;fas fa-chevron-circle-left fa-2x ; aria-hidden=&quot;true&quot; />`" :autoplay-hover-pause="true" class="col-9 col-sm-11 col-lg-12 p-0">
           <slide v-for="(item,index) in profiles" :key="index" class="p-1">
             <div class="card rounded-0">
-              <img class="card-img-top rounded-0" :src="item.image" alt="Card image cap">
+              <img class="card-img-top rounded-0" :src="item.image" alt="Card image Cap">
               <div class="card-body">
                 <h5 class="card-title font-weight-bold">{{ displayheading(item.first_name+" "+item.last_name).first }}<span class="highlighted">{{ displayheading(item.first_name+" "+item.last_name).second }}</span>{{ displayheading(item.first_name+" "+item.last_name).third }}</h5>
                 <h6 class="card-subtitle mb-2 text-muted align-text-bottom">{{ item.position||item.alias }}</h6>

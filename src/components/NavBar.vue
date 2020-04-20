@@ -47,7 +47,7 @@ export default {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 10;
+  z-index: 9999;
 
   .navbar-brand {
     line-height: 1rem;

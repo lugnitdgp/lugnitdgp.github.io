@@ -193,7 +193,7 @@ span.highlighted {
       margin-top: 0%;
       width: 45px;
       height: 45px;
-      z-index: 1;
+      z-index: 100;
   }}
   #CombinedDayClock{
       display: none;

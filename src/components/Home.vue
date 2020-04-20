@@ -84,7 +84,7 @@ export default {
   methods: {
     categorise (mem) {
       if (mem.degree_name === 'BTECH' && mem.year_name === 4) {
-        if (mem.image === null) { console.log(mem); mem.image = 'https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png' }
+        if (mem.image === null) { console.log(mem); mem.image = 'static/images/Linux-Avatar.png' }
         this.profiles.push(mem)
       }
     },

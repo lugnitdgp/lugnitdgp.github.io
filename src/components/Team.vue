@@ -73,7 +73,7 @@ export default {
         const profiles = response.data
         console.log(profiles)
         profiles.forEach((member) => {
-          if (member.image === null) { member.image = 'https://www.tenforums.com/geek/gars/images/2/types/thumb__ser.png' }
+          if (member.image === null) { member.image = 'static/images/Linux-Avatar.png' }
           this.categorise(member)
         })
         this.$emit('hideloader', true)
@@ -146,6 +146,7 @@ export default {
   transition: 0.4s ease-in-out;
   cursor: pointer;
   border-radius: 50%;
+  /* background-color:lightgrey; */
 }
 .fabs {
   position: relative;
