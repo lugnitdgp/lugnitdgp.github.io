@@ -8,7 +8,8 @@
         class="col-11 col-md-6 col-xl-4 p-md-3"
       >
         <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
-          <v-card-media
+          <v-img
+            :contain="true"
             :src="item.event_image"
             :height="index == active ? '350px' : '200px'"
           >
@@ -22,7 +23,7 @@
                 <a v-else href="item.url"><i class="fas fa-map-marker-alt" /> {{ item.url }}</a>
               </div>
             </div>
-          </v-card-media>
+          </v-img>
 
           <v-card-title primary-title>
             <div>
@@ -153,7 +154,7 @@ export default {
       }
     }
 
-    .v-card__media:hover .cover {
+    .v-image:hover .cover {
       opacity: 1;
     }
   }

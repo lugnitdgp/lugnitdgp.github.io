@@ -11,7 +11,8 @@
           class="col-12 col-md-6 col-xl-4"
         >
           <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
-            <v-card-media
+            <v-img
+              :contain="true"
               :src="item.event_image"
               :height="index == active ? '350px' : '250px'"
             >
@@ -21,7 +22,7 @@
                   <i class="far fa-calendar-alt" aria-hidden="true" />
                 </span>
               </div>
-            </v-card-media>
+            </v-img>
 
             <v-card-title primary-title>
               <div>

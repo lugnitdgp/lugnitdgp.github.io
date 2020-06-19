@@ -102,14 +102,20 @@ export default {
   font-size: 1rem;
   font-weight: lighter;
 }
-.card-text img{
+.card-text >>> img{
   width: 100% !important;
   height: 100% !important;
 }
 .card-img {
+  width: 100%;
+  height: auto;
   color: #fff;
 }
 .prev-page{
   cursor: pointer;
+}
+.card-text /deep/ p /deep/ img{
+  width: 100%;
+  height: auto;
 }
 </style>
