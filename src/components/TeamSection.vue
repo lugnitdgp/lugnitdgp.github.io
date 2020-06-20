@@ -3,7 +3,7 @@
     <div class="container">
       <h2 class="text-center font-weight-bold pt-3 pb-3">Our <span class="highlighted">Tea</span>m</h2>
       <div class="row justify-content-center">
-        <carousel :navigation-enabled="true" :loop="true" :autoplay="true" :pagination-enabled="false" :per-page-custom="[[260,1],[576,2],[800, 3],[1264, 4]]" :navigation-next-label="`<i class=&quot;fas fa-chevron-circle-right fa-2x ; aria-hidden=&quot;true&quot;></i>`" :navigation-prev-label="`<i class=&quot;fas fa-chevron-circle-left fa-2x ; aria-hidden=&quot;true&quot; />`" :autoplay-hover-pause="true" class="col-9 col-sm-11 col-lg-12 p-0">
+        <carousel :navigation-enabled="true" :loop="true" :autoplay="true" :pagination-enabled="false" :per-page-custom="[[260,1],[576,3],[800, 4],[1264, 6]]" :navigation-next-label="`<i class=&quot;fas fa-chevron-circle-right fa-2x ; aria-hidden=&quot;true&quot;></i>`" :navigation-prev-label="`<i class=&quot;fas fa-chevron-circle-left fa-2x ; aria-hidden=&quot;true&quot; />`" :autoplay-hover-pause="true" class="col-9 col-sm-11 col-lg-12 p-0">
           <slide v-for="(item,index) in profiles" :key="index" class="p-1">
             <div class="card rounded-0">
               <img class="card-img-top rounded-0" :src="item.image" alt="Card image Cap">
@@ -64,7 +64,7 @@ export default {
 
 <style lang="scss" scoped>
 .card img {
-  height: 18rem;
+  height: 15rem;
 }
 .card .overlay-image {
   background-color: #fa631c;
@@ -119,5 +119,11 @@ h2 {
 }
 .card-footer {
   background-color: inherit;
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    width: 375px;
+  }
 }
 </style>

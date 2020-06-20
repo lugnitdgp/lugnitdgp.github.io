@@ -27,6 +27,11 @@ module.exports = {
     "vue/html-self-closing": 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'vue/max-attributes-per-line' : 'off'
+    'vue/max-attributes-per-line' : 'off',
+    'quotes': 'off',
+    'no-trailing-spaces': 'off',
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/multiline-html-element-content-newline': 'off',
+    'vue/html-indent': 'off'
   }
 }
