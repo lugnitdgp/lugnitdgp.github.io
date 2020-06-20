@@ -22,7 +22,7 @@
     "vue-disqus": "^3.0.5",
     "vue-router": "^3.0.1",
     "vue-social-sharing": "^2.3.3",
-    "vuetify": "^1.1.13"
+    "vuetify": "^1.5.24"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

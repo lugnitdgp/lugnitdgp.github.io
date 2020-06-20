@@ -11,7 +11,8 @@
           class="col-12 col-md-6 col-xl-4"
         >
           <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
-            <v-card-media
+            <v-img
+              :contain="true"
               :src="item.event_image"
               :height="index == active ? '350px' : '250px'"
             >
@@ -21,7 +22,7 @@
                   <i class="far fa-calendar-alt" aria-hidden="true" />
                 </span>
               </div>
-            </v-card-media>
+            </v-img>
 
             <v-card-title primary-title>
               <div>
@@ -194,17 +195,37 @@ span.highlighted {
     max-height: 200px;
   }
 
-  @media only screen and (min-width: 576px) {
-    width: 500px;
-  }
+    @media only screen and (max-width: 514px){
+      .card-text{
+        height: auto;
+        max-height: 300px;
+      }
+    }
 
-  @media only screen and (min-width: 768px) {
-    width: 620px;
-  }
+    @media only screen and (min-width: 576px) {
+      width: 500px;
+      margin: 0 auto;
+    }
 
-  @media only screen and (min-width: 1200px) {
-    width: 700px;
-  }
+    @media only screen and (min-width: 766px){
+      width: 620px;
+      margin: 0 15%;
+    }
+
+    @media only screen and (min-width: 960px){
+      width: 620px;
+      margin: 0 33%;
+    }
+
+    @media only screen and (min-width: 1264px) {
+      width: 750px;
+      margin: 0 60%;
+    }
+
+    @media only screen and (min-width: 1200px) and (max-width: 1264px){
+      width: 700px;
+      margin: 0 40%;
+    }
 }
 
 .card.inactive {
@@ -226,10 +247,19 @@ span.highlighted {
   }
   .col-xl-4:nth-child(3n + 2) .active {
     float: left;
-    transform: translateX(-200px);
+    transform: translateX(-400px);
+    margin: 0 58%;
   }
   .col-xl-4:nth-child(3n + 1) .active {
     float: left;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1264px)
+{
+  .col-xl-4:nth-child(3n + 2) .active {
+    float: left;
+    transform: translateX(-400px);
+    margin: 0 70%;
   }
 }
 
