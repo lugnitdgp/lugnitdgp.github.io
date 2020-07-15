@@ -19,8 +19,9 @@
           v-for="(item, index) in carousel"
           :key="index"
           :class="[index == 0 ? 'active' : '', 'carousel-item']"
-          :style="{ background: 'url(' + item.image + ')' }"
         >
+          <div class="image-container"></div>
+          <img :src="item.image" class="responsive">
           <div class="cover" />
           <div class="container">
             <div class="carousel-caption text-left mb-5">
@@ -70,6 +71,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .carousel-item {
   height: 100vh;
   background-size: cover !important;
@@ -173,5 +175,22 @@ export default {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.responsive
+{
+  width: 100%;
+  height:100vh;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center;
+}
+
+.image-container{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #000;
+  opacity: 0.6;
 }
 </style>

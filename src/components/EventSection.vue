@@ -8,7 +8,8 @@
         class="col-11 col-md-6 col-xl-4 p-md-3"
       >
         <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
-          <v-card-media
+          <v-img
+            :contain="true"
             :src="item.event_image"
             :height="index == active ? '350px' : '200px'"
           >
@@ -22,7 +23,7 @@
                 <a v-else href="item.url"><i class="fas fa-map-marker-alt" /> {{ item.url }}</a>
               </div>
             </div>
-          </v-card-media>
+          </v-img>
 
           <v-card-title primary-title>
             <div>
@@ -88,7 +89,6 @@ export default {
 
 .container {
   padding: 0;
-  // backgrouond:
 
   h2 {
     font-size: 32px;
@@ -101,9 +101,9 @@ export default {
 
   .card {
     margin-bottom: 15px;
+    transition: all 0.4s ease-in-out;
 
     .card-text {
-      // display: none;
       font-size: 1rem;
       height: 63px;
       overflow: hidden;
@@ -153,7 +153,7 @@ export default {
       }
     }
 
-    .v-card__media:hover .cover {
+    .v-image:hover .cover {
       opacity: 1;
     }
   }
@@ -161,7 +161,7 @@ export default {
   .card.active {
     z-index: 100;
     margin: 0 auto;
-
+    transition: all 0.4s ease-in-out;
     .cover {
       height: 350px;
     }
@@ -171,16 +171,36 @@ export default {
       max-height: 200px;
     }
 
+    @media only screen and (max-width: 514px){
+      .card-text{
+        height: auto;
+        max-height: 300px;
+      }
+    }
+
     @media only screen and (min-width: 576px) {
       width: 500px;
+      margin: 0 auto;
     }
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 766px){
       width: 620px;
+      margin: 0 15%;
     }
 
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 960px){
+      width: 620px;
+      margin: 0 33%;
+    }
+
+    @media only screen and (min-width: 1264px) {
+      width: 750px;
+      margin: 0 60%;
+    }
+
+    @media only screen and (min-width: 1200px) and (max-width: 1264px){
       width: 700px;
+      margin: 0 40%;
     }
   }
 
@@ -204,10 +224,20 @@ export default {
   }
   .col-xl-4:nth-child(3n + 2) .active {
     float: left;
-    transform: translateX(-200px);
+    transform: translateX(-400px);
+    margin: 0 58%;
   }
   .col-xl-4:nth-child(3n + 1) .active {
     float: left;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1264px)
+{
+  .col-xl-4:nth-child(3n + 2) .active {
+    float: left;
+    transform: translateX(-400px);
+    margin: 0 70%;
   }
 }
 
