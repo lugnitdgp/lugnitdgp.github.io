@@ -77,6 +77,12 @@ export default {
   background-size: cover !important;
   background-repeat: no-repeat !important;
 
+@media only screen and (max-width: 600px) {
+  body {
+    height: 10vh;
+  }
+}
+
   .cover {
     width: 100%;
     height: 100%;
