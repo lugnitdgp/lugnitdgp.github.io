@@ -20,8 +20,8 @@
     "vue": "^2.6.11",
     "vue-carousel": "^0.10.0",
     "vue-disqus": "^3.0.5",
-    "vue-router": "^3.3.4",
-    "vue-social-sharing": "^2.4.7",
+    "vue-router": "^3.0.1",
+    "vue-social-sharing": "^2.3.3",
     "vuetify": "^1.5.24"
   },
   "devDependencies": {

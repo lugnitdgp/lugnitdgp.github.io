@@ -10,7 +10,7 @@
           <div class="row flex-wrap justify-content-center mt-2 mb-2">
             <img class="card-img col-md-10 col-sm-12" :src="post.thumbnail_image" />
           </div>
-          <p class="card-text m-0 ml-md-5 mr-md-5 " v-html="post.content_body" />
+          <p class=" dexription card-text m-0 ml-md-5 mr-md-5 " v-html="post.content_body" />
         </div>
         <div class="card-footer">
           <vue-disqus shortname="nitdgplug" :identifier="this.$route.params.post" :url="geturl()"></vue-disqus>
