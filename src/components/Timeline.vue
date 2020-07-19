@@ -37,8 +37,7 @@
         </div>
       </div>
     </div>
-
-  </div>
+</div>
 </template>
 
 <script>
@@ -175,7 +174,7 @@ span.highlighted {
     width: 90%;
     margin-bottom: 0%;
   }
-  
+
   .timeline-container:not(:first-child){ //for all childs except first one
   img {
     display: none;
