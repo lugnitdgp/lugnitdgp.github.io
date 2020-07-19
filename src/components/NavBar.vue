@@ -26,7 +26,7 @@
             <a class="nav-link">Blog</a>
           </router-link>
           <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/linit">
-            <a class="nav-link">Linit</a>
+            <a class="nav-link">Linit </a>
           </router-link>
         </ul>
       </div>
