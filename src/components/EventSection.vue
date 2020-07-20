@@ -1,6 +1,8 @@
 <template>
   <div class="container event-section-container">
-    <h2 class="text-center font-weight-bold pt-5 pb-5">Our Fe<span class="highlighted">atu</span>red E<span class="highlighted">ven</span>ts</h2>
+    <h2 class="text-center font-weight-bold pt-5 pb-5">
+      Our Fe<span class="highlighted">atu</span>red E<span class="highlighted">ven</span>ts
+    </h2>
     <div :class="[active != null ? 'active' : '', 'row align-items-center']" class="d-flex justify-content-center">
       <div
         v-for="(item, index) in events"
@@ -27,21 +29,28 @@
 
           <v-card-title primary-title>
             <div>
-              <h3 class="headline mb-2">{{ item.title }}</h3>
+              <h3 class="headline mb-2">
+                {{ item.title }}
+              </h3>
               <div class="card-text" v-html="item.description" />
             </div>
           </v-card-title>
 
           <v-card-actions class="justify-content-between">
-            <v-btn v-if="active != index" flat color="orange" @click="active = index">Read More</v-btn>
-            <v-btn v-else flat color="orange" @click="active = null">Close</v-btn>
+            <v-btn v-if="active != index" flat color="orange" @click="active = index">
+              Read More
+            </v-btn>
+            <v-btn v-else flat color="orange" @click="active = null">
+              Close
+            </v-btn>
             <social-sharing
               url="https://vuejs.org/"
               :title="item.title"
               :hashtags="item.keywords || null"
               inline-template
               class="d-inline-flex justify-content-between social-share-container align-items-center"
-            >  <!-- Replace url by the actual blog link -->
+            >
+              <!-- Replace url by the actual blog link -->
               <div>
                 <network network="facebook">
                   <i class="fab fa-facebook-f d-inline-flex social-share-icons justify-content-center align-items-center" />
@@ -58,11 +67,9 @@
               </div>
             </social-sharing>
           </v-card-actions>
-
         </v-card>
       </div>
     </div>
-
   </div>
 </template>
 

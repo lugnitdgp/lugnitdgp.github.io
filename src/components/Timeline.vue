@@ -2,8 +2,9 @@
   <div id="timeline">
     <nav-bar />
     <div class="container-fluid timeline">
-
-      <h2 class="text-center font-weight-bold pt-5 pb-5">Our <span class="highlighted">Time</span>line</h2>
+      <h2 class="text-center font-weight-bold pt-5 pb-5">
+        Our <span class="highlighted">Time</span>line
+      </h2>
       <div :class="[active != null ? 'active' : '', 'row align-items-center']">
         <div
           v-for="(item, index) in events"
@@ -37,7 +38,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 

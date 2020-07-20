@@ -1,5 +1,7 @@
 <template>
-  <h3 v-scroll="AnimateNumNow">{{ displaynumber(displayNumber).first }}<span class="highlighted">{{ displaynumber(displayNumber).second }}</span></h3>
+  <h3 v-scroll="AnimateNumNow">
+    {{ displaynumber(displayNumber).first }}<span class="highlighted">{{ displaynumber(displayNumber).second }}</span>
+  </h3>
 </template>
 
 <script>

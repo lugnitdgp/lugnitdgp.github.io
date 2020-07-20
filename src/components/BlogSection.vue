@@ -1,6 +1,8 @@
 <template>
   <div class="container blog-section-container">
-    <h2 class="text-center font-weight-bold pt-5 pb-3">Our B<span class="highlighted">lo</span>g</h2>
+    <h2 class="text-center font-weight-bold pt-5 pb-3">
+      Our B<span class="highlighted">lo</span>g
+    </h2>
     <div class="row align-middle d-flex flex-wrap">
       <div v-for="(item, index) in blog"
            :key="index"
@@ -9,13 +11,17 @@
         <div class="card" style="width:100%;height:100%">
           <img class="card-img-top" :src="item.thumbnail_image" alt="Card image cap" height="200px">
           <div class="card-body">
-            <h4 class="card-title font-weight-bold">{{ item.title }}</h4>
+            <h4 class="card-title font-weight-bold">
+              {{ item.title }}
+            </h4>
             <div class="card-text" v-html="item.content_body" />
           </div>
           <div class="card-footer">
             <div class="row">
               <router-link :to="{ name: 'Post' , params: { post: convertToKebabCase(item.title)} , query: {id : item.id}}">
-                <v-btn flat color="orange" class="m-0">Read More</v-btn>
+                <v-btn flat color="orange" class="m-0">
+                  Read More
+                </v-btn>
               </router-link>
               <v-spacer />
               <social-sharing

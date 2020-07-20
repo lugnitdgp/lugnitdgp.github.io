@@ -1,10 +1,14 @@
 <template>
   <div class="post container-fluid pl-0 pr-0 pb-0 pl-md-5 pr-md-5">
-    <h6 class="highlighted text-right mt-2 prev-page" @click="$router.push({ name : 'Blog'})"><u>Go back to previous page</u></h6>
+    <h6 class="highlighted text-right mt-2 prev-page" @click="$router.push({ name : 'Blog'})">
+      <u>Go back to previous page</u>
+    </h6>
     <div class="container p-0 pl-md-5 pr-md-5">
       <div class="card m-0 m-lg-5 mt-2 post-card">
         <div class="card-body">
-          <h1 class="card-title font-weight-bold m-0 mb-0 ml-md-5">{{ post.title }}</h1>
+          <h1 class="card-title font-weight-bold m-0 mb-0 ml-md-5">
+            {{ post.title }}
+          </h1>
           <span class="card-title font-italic sub m-0 mb-0 ml-md-5">{{ post.author_name }}</span>
           <span class="card-title font-italic sub">&#8226; {{ new Date(post.date_to_show).toLocaleDateString() }}</span>
           <div class="row flex-wrap justify-content-center mt-2 mb-2">

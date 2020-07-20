@@ -2,12 +2,20 @@
   <section class="aavishkar container-fluid mt-5 mb-4">
     <div class="row">
       <div class="col-lg-6 justify-content-center">
-        <h3 class="sub-1 text-center pt-5">We believe in</h3>
-        <h1 class="sub-2 font-weight-bold text-center highlighted p-0">Aavishkar</h1>
-        <p class="sub-3 text-justify">A tech fest that is not just an arena to exhibit but also an environment to learn. Our motto is to unveil in this college a fantasy world of technology. From organising prestigious events like Hackathon, to creating an entire tournament for the cricket and football fans and a series of online, mind throbbing and addictive events, this fest is known for its diverse nature. This fest is a witness to some of the most inspiring speeches delivered by  men of eminence in this field. It is an escape from the daily mundane of college life and opens a door to three days of complete insanity.</p>
+        <h3 class="sub-1 text-center pt-5">
+          We believe in
+        </h3>
+        <h1 class="sub-2 font-weight-bold text-center highlighted p-0">
+          Aavishkar
+        </h1>
+        <p class="sub-3 text-justify">
+          A tech fest that is not just an arena to exhibit but also an environment to learn. Our motto is to unveil in this college a fantasy world of technology. From organising prestigious events like Hackathon, to creating an entire tournament for the cricket and football fans and a series of online, mind throbbing and addictive events, this fest is known for its diverse nature. This fest is a witness to some of the most inspiring speeches delivered by  men of eminence in this field. It is an escape from the daily mundane of college life and opens a door to three days of complete insanity.
+        </p>
         <div class="row ">
           <div class="col-12 d-flex align-right ">
-            <v-btn flat color="orange" @click="redirectTo('https://avskr.in/')">Take a tour!</v-btn>
+            <v-btn flat color="orange" @click="redirectTo('https://avskr.in/')">
+              Take a tour!
+            </v-btn>
           </div>
         </div>
       </div>

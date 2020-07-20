@@ -1,7 +1,11 @@
 <template>
   <section class="container-fluid blog">
-    <h1 class="text-center font-weight-bold pt-3">TO <span class="highlighted"> BLOG</span></h1>
-    <p class="text-center font-weight-bold">To share.To connect.To create.To inspire.</p>
+    <h1 class="text-center font-weight-bold pt-3">
+      TO <span class="highlighted"> BLOG</span>
+    </h1>
+    <p class="text-center font-weight-bold">
+      To share.To connect.To create.To inspire.
+    </p>
     <v-data-iterator
       content-tag="div"
       content-class="row flex-wrap justify-content-center d-flex p-2"
@@ -21,14 +25,19 @@
             </div>
             <div class="col-md-6 col-sm-12">
               <div class="card-block">
-                <h4 class="card-title font-weight-bold pl-3 pt-3 pr-3 mb-1">{{ props.item.title }}</h4>
-                <p class="card-text pl-3 m-0"><i class="fas fa-calendar-alt" /> {{ new Date(props.item.date_to_show).toLocaleDateString() }}<br>
+                <h4 class="card-title font-weight-bold pl-3 pt-3 pr-3 mb-1">
+                  {{ props.item.title }}
+                </h4>
+                <p class="card-text pl-3 m-0">
+                  <i class="fas fa-calendar-alt" /> {{ new Date(props.item.date_to_show).toLocaleDateString() }}<br>
                   <i class="fas fa-pen" /> {{ props.item.author_name }}
                 </p>
                 <div class="content pl-3">
                   <p class="font-italic" v-html="props.item.content_body" />
                 </div>
-                <router-link :to="{ name: 'Post' , params: { post: ConvertToKebabCase(props.item.title)} , query: {id : props.item.id}}" class="btn btn-md m-3" color="orange">Read</router-link>
+                <router-link :to="{ name: 'Post' , params: { post: ConvertToKebabCase(props.item.title)} , query: {id : props.item.id}}" class="btn btn-md m-3" color="orange">
+                  Read
+                </router-link>
               </div>
             </div>
           </div>

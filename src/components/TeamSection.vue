@@ -1,15 +1,21 @@
 <template>
   <section class="team-section">
     <div class="container">
-      <h2 class="text-center font-weight-bold pt-3 pb-3">Our <span class="highlighted">Tea</span>m</h2>
+      <h2 class="text-center font-weight-bold pt-3 pb-3">
+        Our <span class="highlighted">Tea</span>m
+      </h2>
       <div class="row justify-content-center">
         <carousel :navigation-enabled="true" :loop="true" :autoplay="true" :pagination-enabled="false" :per-page-custom="[[260,1],[576,3],[800, 4],[1264, 6]]" :navigation-next-label="`<i class=&quot;fas fa-chevron-circle-right fa-2x ; aria-hidden=&quot;true&quot;></i>`" :navigation-prev-label="`<i class=&quot;fas fa-chevron-circle-left fa-2x ; aria-hidden=&quot;true&quot; />`" :autoplay-hover-pause="true" class="col-9 col-sm-11 col-lg-12 p-0">
           <slide v-for="(item,index) in profiles" :key="index" class="p-1">
             <div class="card rounded-0">
               <img class="card-img-top rounded-0" :src="item.image" alt="Card image Cap">
               <div class="card-body">
-                <h5 class="card-title font-weight-bold">{{ displayheading(item.first_name+" "+item.last_name).first }}<span class="highlighted">{{ displayheading(item.first_name+" "+item.last_name).second }}</span>{{ displayheading(item.first_name+" "+item.last_name).third }}</h5>
-                <h6 class="card-subtitle mb-2 text-muted align-text-bottom">{{ item.position||item.alias }}</h6>
+                <h5 class="card-title font-weight-bold">
+                  {{ displayheading(item.first_name+" "+item.last_name).first }}<span class="highlighted">{{ displayheading(item.first_name+" "+item.last_name).second }}</span>{{ displayheading(item.first_name+" "+item.last_name).third }}
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted align-text-bottom">
+                  {{ item.position||item.alias }}
+                </h6>
               </div>
               <div class="card-footer border-0">
                 <div class="icon-block text-center">
@@ -18,13 +24,16 @@
                   <a :href="item.email"><i class="fab fa-google-plus-g" /></a>
                 </div>
               </div>
-
             </div>
           </slide>
         </carousel>
       </div>
       <div class="row justify-content-center">
-        <p class="text-right m-0 mt-4 pb-1 col-9 col-sm-11 col-lg-12"><router-link :to="{ name: 'Team'}" class="highlighted"><u> Meet all the members »</u></router-link></p>
+        <p class="text-right m-0 mt-4 pb-1 col-9 col-sm-11 col-lg-12">
+          <router-link :to="{ name: 'Team'}" class="highlighted">
+            <u> Meet all the members »</u>
+          </router-link>
+        </p>
       </div>
     </div>
   </section>

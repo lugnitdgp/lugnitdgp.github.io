@@ -13,9 +13,6 @@
           <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/">
             <a class="nav-link">Home</a>
           </router-link>
-          <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/alumni">
-            <a class="nav-link">Alumni</a>
-          </router-link>
           <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/events">
             <a class="nav-link">Events</a>
           </router-link>
