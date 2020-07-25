@@ -1,7 +1,6 @@
 <template>
   <section id="showcase">
     <div id="homeCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
-
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li
@@ -25,8 +24,12 @@
           <div class="cover" />
           <div class="container">
             <div class="carousel-caption text-left mb-5">
-              <h1 class="carousel-heading">{{ item.heading }}</h1>
-              <p class="lead carousel-subtitle d-none d-md-block">{{ item.sub_heading }}</p>
+              <h1 class="carousel-heading">
+                {{ item.heading }}
+              </h1>
+              <p class="lead carousel-subtitle d-none d-md-block">
+                {{ item.sub_heading }}
+              </p>
               <a href="#" class="btn btn-custom text-uppercase d-none d-md-inline-block" @click="$vuetify.goTo('#AboutUsSection', {duration: 1000,offset: -50,easing: 'easeInOutCubic'})">Explore</a>
             </div>
           </div>

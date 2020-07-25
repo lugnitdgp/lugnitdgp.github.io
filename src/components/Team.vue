@@ -1,12 +1,18 @@
 <template>
   <section class="Team container-fluid">
-    <h2 class="text-center font-weight-bold pt-3">MEET THE<span class="highlighted"> TEAM</span></h2>
-    <p class="text-center font-italic">"None of us is as smart as all of us"</p>
+    <h2 class="text-center font-weight-bold pt-3">
+      MEET THE<span class="highlighted"> TEAM</span>
+    </h2>
+    <p class="text-center font-italic">
+      "None of us is as smart as all of us"
+    </p>
     <div v-for="EachYear in Allyears" :key="EachYear.name">
       <div v-if="EachYear.members.length" class="container">
         <div class="card bg-light">
           <div class="card-header p-2 pl-3">
-            <h6 class="font-weight-bold text-uppercase mb-0">{{ EachYear.name }}</h6>
+            <h6 class="font-weight-bold text-uppercase mb-0">
+              {{ EachYear.name }}
+            </h6>
           </div>
           <div class="row flex-wrap justify-content-center card-body">
             <div v-for="(member,index) in EachYear.members" :key="index">
@@ -24,7 +30,9 @@
                       </div>
                       <div class="row">
                         <div class="col-12 text-center m-0">
-                          <h5 class="member-name font-weight-bold mb-0 pb-0">{{ member.first_name + ' '+member.last_name }}</h5>
+                          <h5 class="member-name font-weight-bold mb-0 pb-0">
+                            {{ member.first_name + ' '+member.last_name }}
+                          </h5>
                           <span v-if="member.position||member.alias">({{ member.position||member.alias }})</span>
                           <blockquote v-if="member.bio">
                             <p class="font-italic" v-html="member.bio" />

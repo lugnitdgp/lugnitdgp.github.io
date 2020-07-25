@@ -2,8 +2,9 @@
   <div id="events">
     <nav-bar />
     <div class="container event-section-container">
-
-      <h2 class="text-center font-weight-bold pt-5 pb-5">Our <span class="highlighted">Eve</span>nts</h2>
+      <h2 class="text-center font-weight-bold pt-5 pb-5">
+        Our <span class="highlighted">Eve</span>nts
+      </h2>
       <div :class="[active != null ? 'active' : '', 'row align-items-center']">
         <div
           v-for="(item, index) in events"
@@ -26,7 +27,9 @@
 
             <v-card-title primary-title>
               <div>
-                <h3 class="headline mb-2 text-center">{{ item.title }}</h3>
+                <h3 class="headline mb-2 text-center">
+                  {{ item.title }}
+                </h3>
                 <div class="links">
                   <span><i class="fas fa-clock" />{{ new Date(item.event_timing).toLocaleTimeString() }}</span>
                   <span v-if="item.venue" class="text-right"><i class="fas fa-map-marker-alt" /> {{ item.venue }}</span>
@@ -37,15 +40,20 @@
             </v-card-title>
 
             <v-card-actions class="justify-content-between">
-              <v-btn v-if="active != index" flat color="orange" @click="active = index">Read More</v-btn>
-              <v-btn v-else flat color="orange" @click="active = null">Close</v-btn>
+              <v-btn v-if="active != index" flat color="orange" @click="active = index">
+                Read More
+              </v-btn>
+              <v-btn v-else flat color="orange" @click="active = null">
+                Close
+              </v-btn>
               <social-sharing
                 url="https://vuejs.org/"
                 :title="item.title"
                 :hashtags="item.keywords || null"
                 inline-template
                 class="d-inline-flex justify-content-between social-share-container align-items-center"
-              >  <!-- Replace url by the actual blog link -->
+              >
+                <!-- Replace url by the actual blog link -->
                 <div>
                   <network network="facebook">
                     <i class="fab fa-facebook-f d-inline-flex social-share-icons justify-content-center align-items-center" />
@@ -62,11 +70,9 @@
                 </div>
               </social-sharing>
             </v-card-actions>
-
           </v-card>
         </div>
       </div>
-
     </div>
   </div>
 </template>

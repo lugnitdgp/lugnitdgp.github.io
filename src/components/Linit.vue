@@ -1,8 +1,12 @@
 <template>
   <section class="container-fluid linit ">
-    <h1 class="text-center font-weight-bold pt-3">LI<span class="highlighted">NI</span>T</h1>
+    <h1 class="text-center font-weight-bold pt-3">
+      LI<span class="highlighted">NI</span>T
+    </h1>
     <blockquote class="text-center">
-      <p class="font-italic">The read of open source at NITDGP</p>
+      <p class="font-italic">
+        The read of open source at NITDGP
+      </p>
     </blockquote>
     <div class="row flex-wrap justify-content-center">
       <div v-for="(linit, index) in linits" :key="index" class="col-xs-11 col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-2" data-aos="fade-up">
