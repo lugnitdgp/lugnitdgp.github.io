@@ -1,3 +1,5 @@
+![Node.js CI](https://github.com/lugnitdgp/lugnitdgp.github.io/workflows/Node%2Ejs%20CI/badge.svg?branch=development)
+
 GLUG Website
 
 Revamp of the official GLUG website with Django and Vue.js
