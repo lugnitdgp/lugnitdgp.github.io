@@ -1,6 +1,5 @@
 <template>
   <div class="container about-us-container">
-
     <div class="row">
       <div class="col-md-4 border-right border-md-none">
         <div class="row">
@@ -16,7 +15,6 @@
                   </p>
                 </div>
               </transition>
-
             </div>
           </div>
         </div>
@@ -62,8 +60,12 @@
         <div id="bottom-section">
           <div class="row justify-content-center">
             <blockquote class="blockquote text-center">
-              <p class="mb-0 mt-4 text-light ">Software is like information, it's better when it's free!.</p>
-              <footer class="blockquote-footer font-italic">Someone not so famous</footer>
+              <p class="mb-0 mt-4 text-light ">
+                Software is like information, it's better when it's free!.
+              </p>
+              <footer class="blockquote-footer font-italic">
+                Someone not so famous
+              </footer>
             </blockquote>
           </div>
           <div class="d-flex flex-row bd-highlight ">

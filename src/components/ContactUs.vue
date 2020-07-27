@@ -1,41 +1,16 @@
 <template>
   <div class="container-fluid">
-    <h2 class="text-center font-weight-bold pt-5 pb-3">G<span class="highlighted">et</span> in T<span class="highlighted">ouc</span>h</h2>
+    <h2 class="text-center font-weight-bold pt-5 pb-3">
+      G<span class="highlighted">et</span> in T<span class="highlighted">ouc</span>h
+    </h2>
     <div class="row p-0 Contact-us">
       <div class="col-md-12 col-lg-5 m-0 pb-4 pt-4">
-        <div class="row d-flex justify-content-center">
+        <div v-for="(contact,index) in contacts" :key="index" class="row d-flex justify-content-center">
           <div class="col-11 font-weight-bold ">
             <div class="contact-card">
-              Shivam Singhal(President) <br>
-              <i class="fas fa-phone" /> +91 90932 44444 <br>
-              <i class="fas fa-envelope" /> president@nitdgplug.org <br>
-            </div>
-          </div>
-        </div>
-        <div class="row d-flex justify-content-center">
-          <div class="col-11 font-weight-bold ">
-            <div class="contact-card">
-              Vartika Arora (General Secretary) <br>
-              <i class="fas fa-phone" /> +91 85848 55577 <br>
-              <i class="fas fa-envelope" /> gs@nitdgplug.org <br>
-            </div>
-          </div>
-        </div>
-        <div class="row d-flex justify-content-center">
-          <div class="col-11 font-weight-bold ">
-            <div class="contact-card">
-              Ankan Poddar (Treasurer) <br>
-              <i class="fas fa-phone" /> +91 98045 17793 <br>
-              <i class="fas fa-envelope" /> treasurer@nitdgplug.org <br>
-            </div>
-          </div>
-        </div>
-        <div class="row d-flex justify-content-center">
-          <div class="col-11 font-weight-bold ">
-            <div class="contact-card">
-              Ashutosh Aggarwal (Convener) <br>
-              <i class="fas fa-phone" /> +91 98311 76750 <br>
-              <i class="fas fa-envelope" /> convenor@nitdgplug.org <br>
+              {{ contact.name }} <br>
+              <i class="fas fa-phone" /> {{ contact.phone }} <br>
+              <i class="fas fa-envelope" /> {{ contact.mail }} <br>
             </div>
           </div>
         </div>
@@ -60,6 +35,16 @@
 
 <script>
 export default {
+  data () {
+    return {
+      contacts: [
+        {name: 'Liman Rahman (President)', phone: '+91 94755 22304', mail: 'president@nitdgplug.org'},
+        {name: 'Akshat Jain (General Secretary)', phone: '+91 80049 37056', mail: 'gs@nitdgplug.org'},
+        {name: 'Ayush Shukla (Treasurer)', phone: '+91 80015 07060', mail: 'treasurer@nitdgplug.org'},
+        {name: 'Archana Choudhary (Convener)', phone: '+91 70447 91608', mail: 'convenor@nitdgplug.org'}
+      ]
+    }
+  }
 }
 </script>
 
