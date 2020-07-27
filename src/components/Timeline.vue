@@ -38,8 +38,6 @@
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-</div>
 =======
   </div>
 >>>>>>> upstream/development

@@ -35,8 +35,9 @@
                 <div class="content pl-3">
                   <p class="font-italic" v-html="props.item.content_body" />
                 </div>
-<<<<<<< HEAD
-                <router-link :to="{ name: 'Post' , params: { post: ConvertToKebabCase(props.item.title)} , query: {id : props.item.id}}" class="btn btn-md m-3" color="orange">READ</router-link>
+                <router-link :to="{ name: 'Post' , params: { post: ConvertToKebabCase(props.item.title)} , query: {id : props.item.id}}" class="btn btn-md m-3" color="orange">
+                  Read
+                </router-link>
 =======
                 <router-link :to="{ name: 'Post' , params: { post: ConvertToKebabCase(props.item.title)} , query: {id : props.item.id}}" class="btn btn-md m-3" color="orange">
                   Read
