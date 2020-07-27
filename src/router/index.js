@@ -9,11 +9,12 @@ import Post from '@/components/Post'
 import Linit from '@/components/Linit'
 import PrivacyPolicy from '@/components/PrivacyPolicy'
 import PageNotFound from '@/components/PageNotFound'
+import AlumniSection from '@/components/AlumniSection'
 
 Vue.use(Router)
 
 export default new Router({
-  mode: "history",
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -54,6 +55,11 @@ export default new Router({
       path: '/privacy',
       name: 'PrivacyPolicy',
       component: PrivacyPolicy
+    },
+    {
+      path: '/alumni',
+      name: 'AlumniSection',
+      component: AlumniSection
     },
     {
       path: '*',

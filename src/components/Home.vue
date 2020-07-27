@@ -14,7 +14,7 @@
 <script>
 import HomeCarousel from './HomeCarousel'
 import AboutUs from './AboutUs'
-import AvishkarSection from './AvishkarSection'
+// import AvishkarSection from './AvishkarSection'
 import LinitSection from './LinitSection'
 import TeamSection from './TeamSection'
 import BlogSection from './BlogSection'
@@ -27,7 +27,7 @@ export default {
   components: {
     HomeCarousel,
     AboutUs,
-    AvishkarSection,
+    // AvishkarSection,
     LinitSection,
     TeamSection,
     BlogSection,
