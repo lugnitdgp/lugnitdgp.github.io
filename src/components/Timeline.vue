@@ -40,7 +40,6 @@
     </div>
 =======
   </div>
->>>>>>> upstream/development
 </template>
 
 <script>

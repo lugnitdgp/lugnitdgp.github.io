@@ -1,251 +1,121 @@
 <template>
-<!-- Section: Team v.4 -->
-<section class="my-5">
+
+<section class="team-section text-center my-5">
 <br>
-<div class="heading-wrapper">
- <!-- Section heading -->
- <h2 class="h1-responsive font-weight-bold text-center my-5">Our Amazing Alumnis</h2>
- <!-- Section description -->
- <p class="grey-text text-center w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur
-   adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas
-   nostrum quisquam eum porro a pariatur veniam.</p>
-</div>
+  <!-- Section heading -->
+  <h2 class="h1-responsive font-weight-bold my-5">Our Amazing Alumnis</h2>
+  <!-- Section description -->
+  <p class="grey-text w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
+    eum porro a pariatur veniam.</p>
 
- <!-- Grid row -->
- <div class="row">
+  <!-- Grid row -->
+  <div class="row">
 
-   <!-- Grid column -->
-   <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+      <div class="avatar mx-auto">
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle z-depth-1"
+          alt="Sample avatar">
+      </div>
+      <h5 class="font-weight-bold mt-4 mb-3">Anna Williams</h5>
+      <p class="text-uppercase blue-text"><strong>Graphic designer</strong></p>
+      <p class="grey-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+        adipisci sed quia non numquam modi tempora eius.</p>
+      <ul class="list-unstyled mb-0">
+        <!-- Facebook -->
+        <a class="p-2 fa-lg fb-ic">
+          <i class="fab fa-facebook-f blue-text"> </i>
+        </a>
+        <!-- Twitter -->
+        <a class="p-2 fa-lg tw-ic">
+          <i class="fab fa-twitter blue-text"> </i>
+        </a>
+        <!-- Instagram -->
+        <a class="p-2 fa-lg ins-ic">
+          <i class="fab fa-instagram blue-text"> </i>
+        </a>
+      </ul>
+    </div>
+    <!-- Grid column -->
 
-     <!-- Rotating card -->
-     <div class="card-wrapper">
-       <div id="card-1" class="card card-rotating text-center">
-         <!-- Front Side -->
-         <div class="face front">
-           <!-- Image -->
-           <div class="card-up">
-             <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/19.jpg" alt="Team member card image">
-           </div>
-           <!-- Avatar -->
-           <div class="avatar mx-auto white">
-             <img src="https://mdbootstrap.com/img/Photos/Avatars/img(10).jpg" class="rounded-circle img-fluid"
-               alt="First sample avatar image">
-           </div>
-           <!-- Content -->
-           <div class="card-body">
-             <h4 class="font-weight-bold mt-1 mb-3">Maria Kate</h4>
-             <p class="font-weight-bold dark-grey-text">Photographer</p>
-             <!-- Triggering button -->
-             <a class="rotate-btn grey-text" data-card="card-1">
-             </a>
-           </div>
-         </div>
-         <!-- Front Side -->
-         <!-- Back Side -->
-         <div class="face back">
-           <!-- Content -->
-           <div class="card-body">
-             <!-- Content -->
-             <h4 class="font-weight-bold mt-4 mb-2">
-               <strong>About me</strong>
-             </h4>
-             <hr>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quae, dolores dicta.
-               Blanditiis rem amet repellat, dolores nihil quae in mollitia asperiores ut rerum repellendus,
-               voluptatum eum, officia laudantium quaerat?
-             </p>
-             <hr>
-             <!-- Social Icons -->
-             <ul class="list-inline list-unstyled">
-               <li class="list-inline-item">
-                 <a class="p-2 fa-lg fb-ic">
-                   <i class="fab fa-facebook-f"></i>
-                 </a>
-               </li>
-               <li class="list-inline-item">
-                 <a class="p-2 fa-lg pin-ic">
-                   <i class="fab fa-pinterest"> </i>
-                 </a>
-               </li>
-               <li class="list-inline-item">
-                 <a class="p-2 fa-lg ins-ic">
-                   <i class="fab fa-instagram"> </i>
-                 </a>
-               </li>
-               <li class="list-inline-item">
-                 <a class="p-2 fa-lg tw-ic">
-                   <i class="fab fa-twitter"> </i>
-                 </a>
-               </li>
-             </ul>
-             <!-- Triggering button -->
-             <a class="rotate-btn grey-text" data-card="card-1">
-             </a>
-           </div>
-         </div>
-         <!-- Back Side -->
-       </div>
-     </div>
-     <!-- Rotating card -->
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+      <div class="avatar mx-auto">
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg" class="rounded-circle z-depth-1"
+          alt="Sample avatar">
+      </div>
+      <h5 class="font-weight-bold mt-4 mb-3">John Doe</h5>
+      <p class="text-uppercase blue-text"><strong>Web developer</strong></p>
+      <p class="grey-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem ipsa accusantium
+        doloremque rem laudantium totam aperiam.</p>
+      <ul class="list-unstyled mb-0">
+        <!-- Facebook -->
+        <a class="p-2 fa-lg fb-ic">
+          <i class="fab fa-facebook-f blue-text"> </i>
+        </a>
+        <!-- Instagram -->
+        <a class="p-2 fa-lg ins-ic">
+          <i class="fab fa-instagram blue-text"> </i>
+        </a>
+      </ul>
+    </div>
+    <!-- Grid column -->
 
-   </div>
-   <!-- Grid column -->
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6 mb-md-0 mb-5">
+      <div class="avatar mx-auto">
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle z-depth-1"
+          alt="Sample avatar">
+      </div>
+      <h5 class="font-weight-bold mt-4 mb-3">Maria Smith</h5>
+      <p class="text-uppercase blue-text"><strong>Photographer</strong></p>
+      <p class="grey-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim est fugiat nulla id eu laborum.</p>
+      <ul class="list-unstyled mb-0">
+        <!-- Facebook -->
+        <a class="p-2 fa-lg fb-ic">
+          <i class="fab fa-facebook-f blue-text"> </i>
+        </a>
+        <!-- Instagram -->
+        <a class="p-2 fa-lg ins-ic">
+          <i class="fab fa-instagram blue-text"> </i>
+        </a>
+        <!-- Dribbble -->
+        <a class="p-2 fa-lg ins-ic">
+          <i class="fab fa-dribbble blue-text"> </i>
+        </a>
+      </ul>
+    </div>
+    <!-- Grid column -->
 
-   <!-- Grid column -->
-   <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-     <!-- Rotating card -->
-     <div class="card-wrapper">
-       <div id="card-2" class="card card-rotating text-center">
-         <!-- Front Side -->
-         <div class="face front">
-           <!-- Image -->
-           <div class="card-up">
-             <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/82.jpg" alt="Team member card image">
-           </div>
-           <!-- Avatar -->
-           <div class="avatar mx-auto white">
-             <img src="https://mdbootstrap.com/img/Photos/Avatars/img(20).jpg" class="rounded-circle" alt="Second sample avatar image">
-           </div>
-           <!-- Content -->
-           <div class="card-body">
-             <h4 class="font-weight-bold mt-1 mb-3">Anna Deynah</h4>
-             <p class="font-weight-bold dark-grey-text">Web Designer</p>
-             <!-- Triggering button -->
-             <a class="rotate-btn grey-text" data-card="card-2">
-             </a>
-           </div>
-         </div>
-         <!-- Front Side -->
-         <!-- Back Side -->
-         <div class="face back">
-           <!-- Content -->
-           <div class="card-body">
-             <!-- Content -->
-             <h4 class="font-weight-bold mt-4 mb-2">
-               <strong>About me</strong>
-             </h4>
-             <hr>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quae, dolores dicta.
-               Blanditiis rem amet repellat, dolores nihil quae in mollitia asperiores ut rerum repellendus,
-               voluptatum eum, officia laudantium quaerat?
-             </p>
-             <hr>
-             <!-- Social Icons -->
-             <ul class="list-inline list-unstyled">
-               <li class="list-inline-item">
-                 <a class="p-2 fa-lg fb-ic">
-                   <i class="fab fa-facebook-f"></i>
-                 </a>
-               </li>
-               <li class="list-inline-item">
-                 <a class="p-2 fa-lg pin-ic">
-                   <i class="fab fa-pinterest"> </i>
-                 </a>
-               </li>
-               <li class="list-inline-item">
-                 <a class="p-2 fa-lg ins-ic">
-                   <i class="fab fa-instagram"> </i>
-                 </a>
-               </li>
-               <li class="list-inline-item">
-                 <a class="p-2 fa-lg tw-ic">
-                   <i class="fab fa-twitter"> </i>
-                 </a>
-               </li>
-             </ul>
-             <!-- Triggering button -->
-             <a class="rotate-btn grey-text" data-card="card-2">
-             </a>
-           </div>
-         </div>
-         <!-- Back Side -->
-       </div>
-     </div>
-     <!-- Rotating card -->
-   </div>
-   <!-- Grid column -->
+    <!-- Grid column -->
+    <div class="col-lg-3 col-md-6">
+      <div class="avatar mx-auto">
+        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg" class="rounded-circle z-depth-1"
+          alt="Sample avatar">
+      </div>
+      <h5 class="font-weight-bold mt-4 mb-3">Tom Adams</h5>
+      <p class="text-uppercase blue-text"><strong>Backend developer</strong></p>
+      <p class="grey-text">Perspiciatis repellendus ad odit consequuntur, eveniet earum nisi qui consectetur
+        totam officia voluptates perferendis voluptatibus aut.</p>
+      <ul class="list-unstyled mb-0">
+        <!-- Facebook -->
+        <a class="p-2 fa-lg fb-ic">
+          <i class="fab fa-facebook-f blue-text"> </i>
+        </a>
+        <!-- Github -->
+        <a class="p-2 fa-lg ins-ic">
+          <i class="fab fa-github blue-text"> </i>
+        </a>
+      </ul>
+    </div>
+    <!-- Grid column -->
 
-   <!-- Grid column -->
-   <div class="col-lg-4 col-md-12">
-     <!-- Rotating card -->
-     <div class="card-wrapper">
-       <div id="card-3" class="card card-rotating text-center">
-         <!-- Front Side -->
-         <div class="face front">
-           <!-- Image -->
-           <div class="card-up">
-             <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(14).jpg"
-               alt="Team member card image">
-           </div>
-           <!-- Avatar -->
-           <div class="avatar mx-auto white">
-             <img src="https://mdbootstrap.com/img/Photos/Avatars/img(8).jpg" class="rounded-circle img-fluid"
-               alt="Third sample avatar image">
-           </div>
-           <!-- Content -->
-           <div class="card-body">
-             <h4 class="font-weight-bold mt-1 mb-3">John Doe</h4>
-             <p class="font-weight-bold dark-grey-text">Front-end Developer</p>
-             <!-- Triggering button -->
-             <a class="rotate-btn grey-text" data-card="card-3">
-             </a>
-           </div>
-         </div>
-         <!-- Front Side -->
-         <!-- Back Side -->
-         <div class="face back">
-           <!-- Content -->
-           <div class="card-body">
-             <!-- Content -->
-             <h4 class="font-weight-bold mt-4 mb-2">
-               <strong>About me</strong>
-             </h4>
-             <hr>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quae, dolores dicta.
-               Blanditiis rem amet repellat, dolores nihil quae in mollitia asperiores ut rerum repellendus,
-               voluptatum eum, officia laudantium quaerat?
-             </p>
-             <hr>
-             <!-- Social Icons -->
-             <ul class="list-inline list-unstyled">
-               <li class="list-inline-item">
-                 <a class="p-2 fa-lg fb-ic">
-                   <i class="fab fa-facebook-f"></i>
-                 </a>
-               </li>
-               <li class="list-inline-item">
-                 <a class="p-2 fa-lg pin-ic">
-                   <i class="fab fa-pinterest"> </i>
-                 </a>
-               </li>
-               <li class="list-inline-item">
-                 <a class="p-2 fa-lg ins-ic">
-                   <i class="fab fa-instagram"> </i>
-                 </a>
-               </li>
-               <li class="list-inline-item">
-                 <a class="p-2 fa-lg tw-ic">
-                   <i class="fab fa-twitter"> </i>
-                 </a>
-               </li>
-             </ul>
-             <!-- Triggering button -->
-             <a class="rotate-btn grey-text" data-card="card-3">
-             </a>
-           </div>
-         </div>
-         <!-- Back Side -->
-       </div>
-     </div>
-     <!-- Rotating card -->
-   </div>
-   <!-- Grid column -->
-
- </div>
- <!-- Grid row -->
+  </div>
+  <!-- Grid row -->
 
 </section>
-<!-- Section: Team v.4 -->
 </template>
 
 <script>
