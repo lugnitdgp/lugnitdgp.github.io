@@ -27,6 +27,6 @@ export default {
     return Api().get('api/linit/')
   },
   getAlumni () {
-    return Api().get('api/alumni')
+    return Api().get('api/alumni/')
   }
 }
