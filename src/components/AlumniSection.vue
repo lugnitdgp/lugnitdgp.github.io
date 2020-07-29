@@ -1,120 +1,61 @@
 <template>
+<section class="Team container-fluid">
+  <h2 class="text-center font-weight-bold pt-3">
+    MEET THE<span class="highlighted"> ALUMNIS</span>
+  </h2>
+  <p class="text-center font-italic">
+    "None of us is as smart as all of us"
+  </p>
+  <div v-for="alumni in profile" :key="alumni.name">
+    <div v-if="alumni.member.length" class="container">
+      <div class="card bg-light">
+        <div class="card-header p-2 pl-3">
+        </div>
+        <div class="row flex-wrap justify-content-center card-body">
+          <div v-for="(member,index) in EachYear.members" :key="index">
+            <div data-toggle="tooltip" :title="member.first_name">
+              <div data-toggle="modal" :data-target="'#user'+member.id" class="Profile-avatar m-2 m-lg-4 " :style="{'background-image':'url('+member.image+')'}" />
+            </div>
+            <div :id="'user'+alumni.id" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog ">
+                <div class="modal-body">
+                  <div class="Profile p-0 m-0">
+                    <div class="row m-0 p-0 mb-4">
+                      <div class="col-12 Profile-back" :style="{'background-image':'url('+member.image+')'}">
+                        <div class="Profile-avatar mt-5 mb-0" :style="{'background-image':'url('+member.image+')'}" style="transform:scale(1.3)" />
+                      </div>
+                </div>
+                    <div class="row">
+                      <div class="col-12 text-center m-0">
+                        <h5 class="member-name font-weight-bold mb-0 pb-0">
+                          {{ alumni.first_name + ' '+alumni.last_name }}
+                        </h5>
+                        <span v-if="member.passout_year||member.alias">({{ member.passout_year||member.alias }})</span>
+                        <blockquote v-if="member.bio">
+                          <p class="font-italic" v-html="member.bio" />
+                        </blockquote>
+                      </div>
+                    </div>
+              <div class="row">
+                      <div class="col-12 text-center">
+                        <div class="Profile-links fabs">
+                          <a v-if="member.facebook_link != null" target="_blank" :href="member.facebook_link"><i class="fab fa-lg fa-facebook-f" /></a>
 
-<section class="team-section text-center my-5">
-<br>
-  <!-- Section heading -->
-  <h2 class="h1-responsive font-weight-bold my-5">Our Amazing Alumnis</h2>
-  <!-- Section description -->
-  <p class="grey-text w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
-    eum porro a pariatur veniam.</p>
+                          <a v-if="member.git_link != null" target="_blank" :href="member.git_link"><i class="fab fa-lg fa-github" /></a>
 
-  <!-- Grid row -->
-  <div class="row">
-
-    <!-- Grid column -->
-    <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
-      <div class="avatar mx-auto">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle z-depth-1"
-          alt="Sample avatar">
+                          <a v-if="member.email != null" target="_blank" :href="'mailto:'+member.email"><i class="fa fa-lg fa-envelope" /></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <h5 class="font-weight-bold mt-4 mb-3">Anna Williams</h5>
-      <p class="text-uppercase blue-text"><strong>Graphic designer</strong></p>
-      <p class="grey-text">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-        adipisci sed quia non numquam modi tempora eius.</p>
-      <ul class="list-unstyled mb-0">
-        <!-- Facebook -->
-        <a class="p-2 fa-lg fb-ic">
-          <i class="fab fa-facebook-f blue-text"> </i>
-        </a>
-        <!-- Twitter -->
-        <a class="p-2 fa-lg tw-ic">
-          <i class="fab fa-twitter blue-text"> </i>
-        </a>
-        <!-- Instagram -->
-        <a class="p-2 fa-lg ins-ic">
-          <i class="fab fa-instagram blue-text"> </i>
-        </a>
-      </ul>
     </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-    <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
-      <div class="avatar mx-auto">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg" class="rounded-circle z-depth-1"
-          alt="Sample avatar">
-      </div>
-      <h5 class="font-weight-bold mt-4 mb-3">John Doe</h5>
-      <p class="text-uppercase blue-text"><strong>Web developer</strong></p>
-      <p class="grey-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem ipsa accusantium
-        doloremque rem laudantium totam aperiam.</p>
-      <ul class="list-unstyled mb-0">
-        <!-- Facebook -->
-        <a class="p-2 fa-lg fb-ic">
-          <i class="fab fa-facebook-f blue-text"> </i>
-        </a>
-        <!-- Instagram -->
-        <a class="p-2 fa-lg ins-ic">
-          <i class="fab fa-instagram blue-text"> </i>
-        </a>
-      </ul>
-    </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-    <div class="col-lg-3 col-md-6 mb-md-0 mb-5">
-      <div class="avatar mx-auto">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" class="rounded-circle z-depth-1"
-          alt="Sample avatar">
-      </div>
-      <h5 class="font-weight-bold mt-4 mb-3">Maria Smith</h5>
-      <p class="text-uppercase blue-text"><strong>Photographer</strong></p>
-      <p class="grey-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim est fugiat nulla id eu laborum.</p>
-      <ul class="list-unstyled mb-0">
-        <!-- Facebook -->
-        <a class="p-2 fa-lg fb-ic">
-          <i class="fab fa-facebook-f blue-text"> </i>
-        </a>
-        <!-- Instagram -->
-        <a class="p-2 fa-lg ins-ic">
-          <i class="fab fa-instagram blue-text"> </i>
-        </a>
-        <!-- Dribbble -->
-        <a class="p-2 fa-lg ins-ic">
-          <i class="fab fa-dribbble blue-text"> </i>
-        </a>
-      </ul>
-    </div>
-    <!-- Grid column -->
-
-    <!-- Grid column -->
-    <div class="col-lg-3 col-md-6">
-      <div class="avatar mx-auto">
-        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg" class="rounded-circle z-depth-1"
-          alt="Sample avatar">
-      </div>
-      <h5 class="font-weight-bold mt-4 mb-3">Tom Adams</h5>
-      <p class="text-uppercase blue-text"><strong>Backend developer</strong></p>
-      <p class="grey-text">Perspiciatis repellendus ad odit consequuntur, eveniet earum nisi qui consectetur
-        totam officia voluptates perferendis voluptatibus aut.</p>
-      <ul class="list-unstyled mb-0">
-        <!-- Facebook -->
-        <a class="p-2 fa-lg fb-ic">
-          <i class="fab fa-facebook-f blue-text"> </i>
-        </a>
-        <!-- Github -->
-        <a class="p-2 fa-lg ins-ic">
-          <i class="fab fa-github blue-text"> </i>
-        </a>
-      </ul>
-    </div>
-    <!-- Grid column -->
-
   </div>
-  <!-- Grid row -->
-
 </section>
 </template>
 
@@ -122,77 +63,119 @@
 import common from '@/services/common.js'
 export default {
   data () {
+    /* return {
+      alumnis: [
+        {first_name: 'shivam', last_name: 'singhal', year: '2020'},
+        {first_name: 'aritra', last_name: 'karmakar', year: '2020'},
+        {first_name: 'vartika', last_name: 'arora', year: '2020'},
+        {first_name: 'avinash', last_name: 'aggarwal', year: '2020'}
+    ] */
     return {
-      linits: []
+      profile: []
     }
   },
   created () {
-    common.getLinits()
+    common.getAlumni()
       .then(response => {
-        this.linits = response.data
-        this.linits.sort(function (a, b) {
-          return parseFloat(b.year_edition) - parseFloat(a.year_edition)
+        const profiles = response.data
+        console.log(profiles)
+        profiles.forEach((member) => {
+          if (member.image === null) { member.image = 'static/images/Linux-Avatar.png' }
         })
         this.$emit('hideloader', true)
         this.$emit('hideloader', true)
         this.$emit('hideloader', true)
+      })
+      .catch(e => {
+        console.log(e)
       })
   }
 }
 </script>
 
 <style scoped>
-.linit {
+.Team {
   background-size: cover;
   min-height: 100vh;
   padding-top: 5rem;
-}
-.linit h1{
-  font-size:3rem;
+  border-bottom: 1px dashed #fa631c;
 }
 
-.highlighted{
-  color:#fa631c;
+.member-name {
+  color: rgb(5, 20, 41);
 }
-.card {
-  box-shadow: 0 0 10px #aaa;
+
+.highlighted {
+  color: #fa631c;
 }
-.card:hover{
-  box-shadow: 0 0 20px #aaa;
+
+.card-header {
+  color: #9c9c9c;
+  background-color: rgb(5, 20, 41);
+  letter-spacing: 0.4rem;
 }
-.book-cover{
-  border-width:2px !important;
-  height: 280px;
-  width:100%;
+
+.Profile {
+  display: block;
+  position: relative;
+  margin: 50px auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.2s ease-in-out;
+  background: white;
 }
-.overlay {
-  height: 295px;
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: inherit;
-  opacity: 0;
-  transition: all 0.6s;
-  -webkit-transition: all 0.6s;
-  -moz-transition: all 0.6s;
-  -o-transition: all 0.6s;
-  -ms-transition: all 0.6s;
-  background-color: rgba(5, 20, 41, 0.65);
+
+.Profile-avatar:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
-.overlay-content{
+
+.Profile-back {
+  background-size: cover;
+  background-position: center;
+}
+
+.Profile-back::before {
+  background-color: rgba(5, 20, 41, 0.8);
+  content: "";
   height: 100%;
-  width:100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
 }
-.card:hover .overlay{
-  opacity: 1;
+
+.Profile-avatar {
+  z-index: 1;
+  margin: auto;
+  height: 7rem;
+  width: 7rem;
+  background-size: cover;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  border-radius: 50%;
+  /* background-color:lightgrey; */
 }
-.card:hover .overlay-content{
-  border:2px solid #fa631c;
+
+.fabs {
+  position: relative;
+  overflow: hidden;
+  transition: 1s ease-in-out;
+  margin-top: 0px;
+  background: white;
 }
+
+.fabs i {
+  color: #fa631c;
+  margin: 1rem;
+}
+
 blockquote {
+  background: #f8f9fa;
+  border-left: 10px solid rgb(5, 20, 41);
+  margin: 1.5em 10px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
+
 blockquote:before {
   color: #ccc;
   content: open-quote;
@@ -201,16 +184,12 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
+
 blockquote p {
   display: inline;
-  color:#9c9c9c;
 }
-a{
-  text-decoration:none;
-  color:inherit;
-}
-a:hover{
-  color:#fa631c;
-  text-decoration:none;
+
+.modal-dialog a {
+  pointer-events: auto;
 }
 </style>
