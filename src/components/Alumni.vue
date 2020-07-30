@@ -10,7 +10,6 @@
   <div v-for="alumni in profiles" :key="alumni.id">
     <div v-if="alumni.length" class="container">
       <div class="card bg-light">
-      <h5>alumni.first_name</h5>
         <div class="row flex-wrap justify-content-center card-body">
          // <div v-for="(member,id) in alumni.members" :key="id">
             <div data-toggle="tooltip" :title="alumni.first_name">
