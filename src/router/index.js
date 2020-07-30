@@ -9,7 +9,7 @@ import Post from '@/components/Post'
 import Linit from '@/components/Linit'
 import PrivacyPolicy from '@/components/PrivacyPolicy'
 import PageNotFound from '@/components/PageNotFound'
-import AlumniSection from '@/components/AlumniSection'
+import AlumniSection from '@/components/Alumni'
 
 Vue.use(Router)
 

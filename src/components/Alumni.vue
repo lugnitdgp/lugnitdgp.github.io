@@ -5,24 +5,24 @@
   </h2>
   <p class="text-center font-italic">
     "None of us is as smart as all of us"
+    {{ profiles }}
   </p>
-  <div v-for="alumni in profile" :key="alumni.name">
-    <div v-if="alumni.member.length" class="container">
+  <div v-for="alumni in profiles" :key="alumni.id">
+    <div v-if="alumni.length" class="container">
       <div class="card bg-light">
-        <div class="card-header p-2 pl-3">
-        </div>
+      <h5>alumni.first_name</h5>
         <div class="row flex-wrap justify-content-center card-body">
-          <div v-for="(member,index) in EachYear.members" :key="index">
-            <div data-toggle="tooltip" :title="member.first_name">
-              <div data-toggle="modal" :data-target="'#user'+member.id" class="Profile-avatar m-2 m-lg-4 " :style="{'background-image':'url('+member.image+')'}" />
+         // <div v-for="(member,id) in alumni.members" :key="id">
+            <div data-toggle="tooltip" :title="alumni.first_name">
+              <div data-toggle="modal" :data-target="'#user'+alumni.id" class="Profile-avatar m-2 m-lg-4 " :style="{'background-image':'url('+alumni.image+')'}" />
             </div>
             <div :id="'user'+alumni.id" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
               <div class="modal-dialog ">
                 <div class="modal-body">
                   <div class="Profile p-0 m-0">
                     <div class="row m-0 p-0 mb-4">
-                      <div class="col-12 Profile-back" :style="{'background-image':'url('+member.image+')'}">
-                        <div class="Profile-avatar mt-5 mb-0" :style="{'background-image':'url('+member.image+')'}" style="transform:scale(1.3)" />
+                      <div class="col-12 Profile-back" :style="{'background-image':'url('+alumni.image+')'}">
+                        <div class="Profile-avatar mt-5 mb-0" :style="{'background-image':'url('+alumni.image+')'}" style="transform:scale(1.3)" />
                       </div>
                 </div>
                     <div class="row">
@@ -30,20 +30,20 @@
                         <h5 class="member-name font-weight-bold mb-0 pb-0">
                           {{ alumni.first_name + ' '+alumni.last_name }}
                         </h5>
-                        <span v-if="member.passout_year||member.alias">({{ member.passout_year||member.alias }})</span>
-                        <blockquote v-if="member.bio">
-                          <p class="font-italic" v-html="member.bio" />
+                        <span v-if="alumni.passout_year||alumni.alias">({{ alumni.passout_year||alumni.alias }})</span>
+                        <blockquote v-if="alumni.bio">
+                          <p class="font-italic" v-html="alumni.bio" />
                         </blockquote>
                       </div>
                     </div>
               <div class="row">
                       <div class="col-12 text-center">
                         <div class="Profile-links fabs">
-                          <a v-if="member.facebook_link != null" target="_blank" :href="member.facebook_link"><i class="fab fa-lg fa-facebook-f" /></a>
+                          <a v-if="alumni.facebook_link != null" target="_blank" :href="alumni.facebook_link"><i class="fab fa-lg fa-facebook-f" /></a>
 
-                          <a v-if="member.git_link != null" target="_blank" :href="member.git_link"><i class="fab fa-lg fa-github" /></a>
+                          <a v-if="alumni.git_link != null" target="_blank" :href="alumni.git_link"><i class="fab fa-lg fa-github" /></a>
 
-                          <a v-if="member.email != null" target="_blank" :href="'mailto:'+member.email"><i class="fa fa-lg fa-envelope" /></a>
+                          <a v-if="alumni.email != null" target="_blank" :href="'mailto:'+alumni.email"><i class="fa fa-lg fa-envelope" /></a>
                         </div>
                       </div>
                     </div>
@@ -63,23 +63,16 @@
 import common from '@/services/common.js'
 export default {
   data () {
-    /* return {
-      alumnis: [
-        {first_name: 'shivam', last_name: 'singhal', year: '2020'},
-        {first_name: 'aritra', last_name: 'karmakar', year: '2020'},
-        {first_name: 'vartika', last_name: 'arora', year: '2020'},
-        {first_name: 'avinash', last_name: 'aggarwal', year: '2020'}
-    ] */
     return {
-      profile: []
+      profiles: []
     }
   },
   created () {
     common.getAlumni()
       .then(response => {
-        const profiles = response.data
-        console.log(profiles)
-        profiles.forEach((member) => {
+        this.profiles = response.data
+        console.log(response.data)
+        this.profiles.forEach((member) => {
           if (member.image === null) { member.image = 'static/images/Linux-Avatar.png' }
         })
         this.$emit('hideloader', true)
