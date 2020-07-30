@@ -20,7 +20,10 @@
           :class="[index == 0 ? 'active' : '', 'carousel-item']"
         >
           <div class="image-container"></div>
-          <img :src="item.image" class="responsive">
+          <picture>
+            <source media="(max-width: 576px)" :srcset="item.mobile_image" class="responsive">
+            <img :src="item.image" class="responsive">
+          </picture>
           <div class="cover" />
           <div class="container">
             <div class="carousel-caption text-left mb-5">
@@ -76,7 +79,7 @@ export default {
 <style lang="scss" scoped>
 
 .carousel-item {
-  height: 100vh;
+  height: 98vh;
   background-size: cover !important;
   background-repeat: no-repeat !important;
 
@@ -189,7 +192,7 @@ export default {
 .responsive
 {
   width: 100%;
-  height:100vh;
+  height:98vh;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: center;

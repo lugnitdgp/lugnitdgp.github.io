@@ -1,5 +1,6 @@
 <template>
   <div id="home">
+    <br>
     <home-carousel id="Carousel" :carousel="carousel" @stoploader="stopLoader" />
     <about-us id="AboutUsSection" />
     <event-section id="EventsSection" :events="events" />
