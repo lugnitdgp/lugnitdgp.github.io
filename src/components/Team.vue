@@ -33,7 +33,7 @@
                           <h5 class="member-name font-weight-bold mb-0 pb-0">
                             {{ member.first_name + ' '+member.last_name }}
                           </h5>
-                          <span v-if="member.position||member.alias">({{ member.position||member.alias }})</span>
+                          <span v-if="member.position||member.alias">{{ member.alias }}</span>
                           <blockquote v-if="member.bio">
                             <p class="font-italic" v-html="member.bio" />
                           </blockquote>

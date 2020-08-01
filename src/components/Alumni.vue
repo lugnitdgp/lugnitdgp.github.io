@@ -1,21 +1,28 @@
 <template>
 <section class="Team container-fluid">
   <h2 class="text-center font-weight-bold pt-3">
-    MEET THE<span class="highlighted"> ALUMNIS</span>
+    MEET THE<span class="highlighted"> ALUMNI</span>
   </h2>
   <p class="text-center font-italic">
-    "None of us is as smart as all of us"
+    "If we have seen further, it is by standing on the shoulders of giants"
   </p>
-  <div v-for="alumni in profiles" :key="alumni.id">
-    <div class="container">
-    <div class="row flex-wrap justify-content-center card-body"> 
+  <div class="progress">
+  <div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="container">
+<div class="card bg-light">
+ <div class="row flex-wrap justify-content-center card-body ">
+    <div v-for="alumni in profiles" :key="alumni.id">
+    <div class="container-fluid">
+    <div class="row flex-wrap justify-content-center card-body">
          <div data-toggle="tooltip" :title="alumni.first_name">
              <div data-toggle="modal" :data-target="'#user'+alumni.id" class="Profile-avatar m-2 m-lg-4 " :style="{'background-image':'url('+alumni.image+')'}" />
          </div>
           <div :id="'user'+alumni.id" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                <div class="modal-dialog ">
+                <div class="modal-dialog modal-dialog-centered ">
                   <div class="modal-body">
                     <div class="Profile p-0 m-0">
+                          <div class="card border-danger mb-3">
                       <div class="row m-0 p-0 mb-4">
                         <div class="col-12 Profile-back" :style="{'background-image':'url('+alumni.image+')'}">
                           <div class="Profile-avatar mt-5 mb-0" :style="{'background-image':'url('+alumni.image+')'}" style="transform:scale(1.3)" />
@@ -26,7 +33,7 @@
                           <h5 class="member-name font-weight-bold mb-0 pb-0">
                             {{ alumni.first_name + ' '+alumni.last_name }}
                           </h5>
-                          <span v-if="alumni.position||alumni.alias">({{ alumni.position||alumni.alias }})</span>
+                          <span v-if="alumni.position||alumni.alias">{{ alumni.alias }}</span>
                           <blockquote v-if="alumni.bio">
                             <p class="font-italic" v-html="alumni.bio" />
                           </blockquote>
@@ -42,18 +49,20 @@
                             <a v-if="alumni.email != null" target="_blank" :href="'mailto:'+alumni.email"><i class="fa fa-lg fa-envelope" /></a>
                           </div>
                         </div>
-                      </div>
                     </div>
+                   </div>
                   </div>
+                  </div>
+                 </div>
                 </div>
-              </div>
-       </div                 
+          </div> 
     </div>
+   </div>
   </div>
 </div>
-</div>
-</div>
-  </section>
+      
+    </div>
+</section>
 </template>
 
 <script>
