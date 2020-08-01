@@ -5,57 +5,55 @@
   </h2>
   <p class="text-center font-italic">
     "None of us is as smart as all of us"
-    {{ profiles }}
   </p>
   <div v-for="alumni in profiles" :key="alumni.id">
-    <div v-if="alumni.length" class="container">
-      <div class="card bg-light">
-        <div class="row flex-wrap justify-content-center card-body">
-         // <div v-for="(member,id) in alumni.members" :key="id">
-            <div data-toggle="tooltip" :title="alumni.first_name">
-              <div data-toggle="modal" :data-target="'#user'+alumni.id" class="Profile-avatar m-2 m-lg-4 " :style="{'background-image':'url('+alumni.image+')'}" />
-            </div>
-            <div :id="'user'+alumni.id" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-              <div class="modal-dialog ">
-                <div class="modal-body">
-                  <div class="Profile p-0 m-0">
-                    <div class="row m-0 p-0 mb-4">
-                      <div class="col-12 Profile-back" :style="{'background-image':'url('+alumni.image+')'}">
-                        <div class="Profile-avatar mt-5 mb-0" :style="{'background-image':'url('+alumni.image+')'}" style="transform:scale(1.3)" />
+    <div class="container">
+    <div class="row flex-wrap justify-content-center card-body"> 
+         <div data-toggle="tooltip" :title="alumni.first_name">
+             <div data-toggle="modal" :data-target="'#user'+alumni.id" class="Profile-avatar m-2 m-lg-4 " :style="{'background-image':'url('+alumni.image+')'}" />
+         </div>
+          <div :id="'user'+alumni.id" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog ">
+                  <div class="modal-body">
+                    <div class="Profile p-0 m-0">
+                      <div class="row m-0 p-0 mb-4">
+                        <div class="col-12 Profile-back" :style="{'background-image':'url('+alumni.image+')'}">
+                          <div class="Profile-avatar mt-5 mb-0" :style="{'background-image':'url('+alumni.image+')'}" style="transform:scale(1.3)" />
+                        </div>
                       </div>
-                </div>
-                    <div class="row">
-                      <div class="col-12 text-center m-0">
-                        <h5 class="member-name font-weight-bold mb-0 pb-0">
-                          {{ alumni.first_name + ' '+alumni.last_name }}
-                        </h5>
-                        <span v-if="alumni.passout_year||alumni.alias">({{ alumni.passout_year||alumni.alias }})</span>
-                        <blockquote v-if="alumni.bio">
-                          <p class="font-italic" v-html="alumni.bio" />
-                        </blockquote>
+                      <div class="row">
+                        <div class="col-12 text-center m-0">
+                          <h5 class="member-name font-weight-bold mb-0 pb-0">
+                            {{ alumni.first_name + ' '+alumni.last_name }}
+                          </h5>
+                          <span v-if="alumni.position||alumni.alias">({{ alumni.position||alumni.alias }})</span>
+                          <blockquote v-if="alumni.bio">
+                            <p class="font-italic" v-html="alumni.bio" />
+                          </blockquote>
+                        </div>
                       </div>
-                    </div>
-              <div class="row">
-                      <div class="col-12 text-center">
-                        <div class="Profile-links fabs">
-                          <a v-if="alumni.facebook_link != null" target="_blank" :href="alumni.facebook_link"><i class="fab fa-lg fa-facebook-f" /></a>
+                        <div class="row">
+                        <div class="col-12 text-center">
+                          <div class="Profile-links fabs">
+                            <a v-if="alumni.facebook_link != null" target="_blank" :href="alumni.facebook_link"><i class="fab fa-lg fa-facebook-f" /></a>
 
-                          <a v-if="alumni.git_link != null" target="_blank" :href="alumni.git_link"><i class="fab fa-lg fa-github" /></a>
+                            <a v-if="alumni.git_link != null" target="_blank" :href="alumni.git_link"><i class="fab fa-lg fa-github" /></a>
 
-                          <a v-if="alumni.email != null" target="_blank" :href="'mailto:'+alumni.email"><i class="fa fa-lg fa-envelope" /></a>
+                            <a v-if="alumni.email != null" target="_blank" :href="'mailto:'+alumni.email"><i class="fa fa-lg fa-envelope" /></a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+       </div                 
     </div>
   </div>
-</section>
+</div>
+</div>
+</div>
+  </section>
 </template>
 
 <script>

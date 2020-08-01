@@ -2,7 +2,7 @@
   <section class="Team container-fluid">
     <h2 class="text-center font-weight-bold pt-3">
       MEET THE<span class="highlighted"> TEAM</span>
-    </h2>
+    </h2> 
     <p class="text-center font-italic">
       "None of us is as smart as all of us"
     </p>
