@@ -132,7 +132,7 @@ export default {
         Str = mon + ',' + YearVal
         return Str
       }
-    }                 // Sorting Done in the BACKEND itself :)
+    } // Sorting Done in the BACKEND itself :)
   }
 }
 </script>
@@ -151,6 +151,11 @@ h2 {
 span.highlighted {
   color: #fa631c;
 }
+
+.timeline-container:not(:first-child){ //for all childs except first one
+  img {
+    display: none;
+  }}
 
 @media only screen and (max-width: 1150px)  {
   h3 {
@@ -175,19 +180,8 @@ span.highlighted {
     width: 90%;
     margin-bottom: 0%;
   }
-
-  .timeline-container:not(:first-child){ //for all childs except first one
-  img {
-    display: none;
-  }}
   .timeline-container:first-child {
   img {
-    // position: absolute;
-    // top: 15px;
-    // left: 10px;
-    // width: 40px;
-    // height: 40px;
-    // border-radius: 50%;
       position: fixed;
       left: 8px;
       margin-top: 0%;
@@ -311,12 +305,6 @@ span.highlighted {
       color: #7F8C97;
     }
     img {
-      // position: absolute;
-      // top: 15px;
-      // width: 60px;
-      // height: 60px;
-      // left: 50%;
-      // margin-left: -30px;
       position: fixed;
       left: 50%;
       width: 60px;

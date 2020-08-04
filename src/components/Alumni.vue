@@ -1,23 +1,29 @@
 <template>
 <section class="Team container-fluid">
-  <h2 class="text-center font-weight-bold pt-3">
+  <h1 class="text-center font-weight-bold pt-3">
     MEET THE<span class="highlighted"> ALUMNI</span>
-  </h2>
+  </h1>
   <p class="text-center font-italic">
     "If we have seen further, it is by standing on the shoulders of giants"
   </p>
-  <div class="progress">
-  <div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
+ 
 <div class="container">
 <div class="card bg-light">
  <div class="row flex-wrap justify-content-center card-body ">
     <div v-for="alumni in profiles" :key="alumni.id">
     <div class="container-fluid">
+          <div class="card-group">
     <div class="row flex-wrap justify-content-center card-body">
+          <div class="col-xl-6 col-lg-12 mb-5 d-md-flex justify-content-between">
          <div data-toggle="tooltip" :title="alumni.first_name">
+    
              <div data-toggle="modal" :data-target="'#user'+alumni.id" class="Profile-avatar m-2 m-lg-4 " :style="{'background-image':'url('+alumni.image+')'}" />
+              <h4 class="font-weight-bold dark-grey-text my-4">  {{ alumni.first_name }}<br /> <span class="highlighted"> {{ alumni.last_name }}</span></h4>
+              Passout Year-<span class="highlighted"> {{ alumni.passout_year }}</span>
+              
+  </div>
          </div>
+     </div>
           <div :id="'user'+alumni.id" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered ">
                   <div class="modal-body">
@@ -55,12 +61,11 @@
                   </div>
                  </div>
                 </div>
-          </div> 
-    </div>
+        </div> 
    </div>
   </div>
+  </div>
 </div>
-      
     </div>
 </section>
 </template>
