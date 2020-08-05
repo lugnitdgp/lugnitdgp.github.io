@@ -1,6 +1,5 @@
 <template>
   <div id="timeline">
-    <nav-bar />
     <div class="container-fluid timeline">
       <h2 class="text-center font-weight-bold pt-5 pb-5">
         Our <span class="highlighted">Time</span>line
@@ -43,15 +42,11 @@
 
 <script>
 /* eslint-env jquery */
-import NavBar from './NavBar'
 import common from '@/services/common.js'
 import moment from 'moment'
 
 export default {
   name: 'Timeline',
-  components: {
-    NavBar
-  },
   data () {
     return {
       events: [],

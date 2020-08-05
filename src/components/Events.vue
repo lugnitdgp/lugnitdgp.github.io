@@ -1,6 +1,5 @@
 <template>
   <div id="events">
-    <nav-bar />
     <div class="container event-section-container">
       <h2 class="text-center font-weight-bold pt-5 pb-5">
         Our <span class="highlighted">Eve</span>nts
@@ -78,14 +77,10 @@
 </template>
 
 <script>
-import NavBar from './NavBar'
 import common from '@/services/common.js'
 
 export default {
   name: 'Events',
-  components: {
-    NavBar
-  },
   data () {
     return {
       events: [],
