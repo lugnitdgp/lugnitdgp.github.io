@@ -7,21 +7,33 @@
     "If we have seen further, it is by standing on the shoulders of giants"
   </p>
 <div v-for="EachYear in Allyears" :key="EachYear.name">
-<div class="container">
-<div class="card bg-light">
-     <div class="card-header p-2 pl-3">
-            <h6 class="font-weight-bold text-uppercase mb-0">
-              {{ EachYear.name }}-Graduates
+    <div class="container">
+     
+         <div class="card-header ">
+            <h6 class="font-weight-bold text-uppercase">
+               {{ EachYear.name }}-Graduates
+             
             </h6>
           </div>
-          <div class="card-group">
-          <div class="row flex-wrap justify-content-center card-body">
+          <div class="card text-center">
+           <div class="row flex-wrap justify-content-center card-body ">
+      
             <div v-for="alumni in EachYear.members" :key="alumni.id">
-             <div class="col-xl-6 col-lg-12 mb-5 d-md-flex justify-content-between">
+
+                  <div class="container-fluid">
+
+          <div class="card-group">
+              <div class="col-xl-6 col-lg-12 mb-5 d-md-flex justify-content-between">
+
               <div data-toggle="tooltip" :title="alumni.first_name">
+                   
                 <div data-toggle="modal" :data-target="'#user'+alumni.id" class="Profile-avatar m-2 m-lg-4 " :style="{'background-image':'url('+alumni.image+')'}" />
-              </div> 
-              <h4 class="font-weight-bold dark-grey-text my-4">  {{ alumni.first_name }}<br /> <span class="highlighted"> {{ alumni.last_name }}</span></h4>
+                
+                        <h4 class="font-weight-bold dark-grey-text my-4">  {{ alumni.first_name }}<br /><span class="highlighted"> {{ alumni.last_name }}</span></h4>
+              </div>                    
+           </div>
+       </div>
+   </div>
               <div :id="'user'+alumni.id" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered ">
                   <div class="modal-body">
@@ -57,10 +69,9 @@
                     </div>
                   </div>
                 </div>
-            </div>
-</div>
-</div>
-</div>
+      </div>  
+      
+  </div>
 </div>
 </div>
 </div>
