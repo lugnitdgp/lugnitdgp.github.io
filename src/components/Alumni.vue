@@ -7,8 +7,9 @@
       "If we have seen further, it is by standing on the shoulders of giants"
     </p>
     <div v-for="EachYear in Allyears" :key="EachYear.name">
-      <div class="container-fluid"> 
-        <div class="card-header ">
+        <div class="container">
+      <div class="card bg-light">
+        <div class="card-header p-2 pl-3">
           <h6 class="font-weight-bold text-uppercase">
             {{ EachYear.name }}.Graduates 
           </h6>
@@ -64,6 +65,7 @@
             </div>
           </div>
         </div>
+       </div>
       </div>
     </div>   
   </section>
