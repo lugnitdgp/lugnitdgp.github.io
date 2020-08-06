@@ -19,14 +19,12 @@
             <div v-for="alumni in EachYear.members" :key="alumni.id">
               <div class="container-fluid">
                 <div class="card-group">
-                  <div class="col-xl-6 col-lg-12 mb-5 d-md-flex justify-content-between">
-                    <div data-toggle="tooltip" :title="alumni.first_name">     
+                <div data-toggle="tooltip" :title="alumni.first_name">     
                       <div data-toggle="modal" :data-target="'#user'+alumni.id" class="Profile-avatar m-2 m-lg-4 " :style="{'background-image':'url('+alumni.image+')'}" />
                         <h5 class="font-weight-bold dark-grey-text my-4">  {{ alumni.first_name }}<br /><span class="highlighted"> {{ alumni.last_name }}</span></h5>
                     </div>                    
                   </div>
-                </div>
-              </div>
+                 </div>
               <div :id="'user'+alumni.id" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog ">
                   <div class="modal-body">
