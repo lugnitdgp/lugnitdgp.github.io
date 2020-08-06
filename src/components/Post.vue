@@ -111,9 +111,15 @@ export default {
   height: 100% !important;
 }
 .card-img {
+  width: 100%;
+  height: auto;
   color: #fff;
 }
 .prev-page{
   cursor: pointer;
+}
+.card-text /deep/ p /deep/ img{
+  width: 100%;
+  height: auto;
 }
 </style>

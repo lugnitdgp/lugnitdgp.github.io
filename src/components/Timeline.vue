@@ -175,7 +175,6 @@ span.highlighted {
     width: 90%;
     margin-bottom: 0%;
   }
-
   .timeline-container:first-child {
   img {
       position: fixed;

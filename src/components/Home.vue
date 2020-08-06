@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+<div id="home">
     <br>
     <home-carousel id="Carousel" :carousel="carousel" @stoploader="stopLoader" />
     <about-us id="AboutUsSection" />
@@ -8,7 +8,7 @@
     <team-section id="TeamSection" :profiles="profiles" />
     <blog-section id="BlogSection" :blog="blog" />
     <contact-us id="ContactUs" />
-  </div>
+</div>
 </template>
 
 <script>
