@@ -10,7 +10,10 @@
           :key="index"
           class="col-12 mx-auto timeline-container"
         >
-          <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']">
+          <v-card :class="[index == active ? 'active' : '', active != null && index != active ? 'inactive' : '', 'card']"
+                  :data-aos="index%2 == 0 ? 'fade-right' : 'fade-left'"
+                  data-aos-duration="600"
+          >
             <v-card-title primary-title class="timeline-card">
               <div>
                 <h3 class="headline mb-2 text-center">
@@ -26,7 +29,10 @@
             </v-card-actions>
           </v-card>
           <img class="logo" src="static/images/glug-logo.png">
-          <div id="CombinedDayClock">
+          <div id="CombinedDayClock"
+               :data-aos="index%2 == 1 ? 'fade-right' : 'fade-left'"
+               data-aos-duration="600"
+          >
             <div id="non-mobiClock">
               <i class="fas fa-clock" />
             </div>
@@ -261,12 +267,6 @@ span.highlighted {
     width: 45%;
     color: white;
   }
-
-  .card:hover {
-    .timeline-card {
-    height: 107%!important;
-    }
-  }
   .timeline-card {
     width: 100%;
     background-color: white;
@@ -360,12 +360,6 @@ span.highlighted {
       color: #7F8C97;
     }
     img {
-      // position: absolute;
-      // top: 15px;
-      // width: 60px;
-      // height: 60px;
-      // left: 50%;
-      // margin-left: -30px;
       display: none;
     }
     #mobiDate {
@@ -423,23 +417,4 @@ span.highlighted {
 .timeline-container:nth-child(even) .card {
   animation: right-to-left 3s ease-out;
 }
-
-@keyframes left-to-right {
-  0% {
-    left: -10%;
-  }
-  50% {
-    left: 0%;
-  }
-}
-
-@keyframes right-to-left {
-  0% {
-    right: -10%;
-  }
-  50% {
-    right: 0%;
-  }
-}
-
 </style>
