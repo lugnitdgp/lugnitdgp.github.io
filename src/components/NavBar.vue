@@ -19,14 +19,14 @@
           <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/timeline">
             <a class="nav-link">Timeline</a>
           </router-link>
-          <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/team">
-            <a class="nav-link">Members</a>
-          </router-link>
           <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/blog">
             <a class="nav-link">Blog</a>
           </router-link>
           <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/linit">
             <a class="nav-link">Linit </a>
+          </router-link>
+           <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/team">
+            <a class="nav-link">Members</a>
           </router-link>
           <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/alumni">
             <a class="nav-link">Alumni</a>
