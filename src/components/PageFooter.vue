@@ -22,6 +22,12 @@
             <li class="list-inline-item">
               <a href="mailto:contact@nitdgplug.org" target="_blank"><i class="fa fa-envelope" /></a>
             </li>
+            <li class="list-inline-item">
+              <a href="https://in.linkedin.com/company/lugnitdgp"><i class="fab fa-linkedin-in" /></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://dev.to/nitdgplug"><i class="fab fa-dev" /></a>
+            </li>
           </ul>
         </div>
       </div>
