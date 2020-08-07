@@ -39,10 +39,6 @@
                   Read
                 </router-link>
 
-                <router-link :to="{ name: 'Post' , params: { post: ConvertToKebabCase(props.item.title)} , query: {id : props.item.id}}" class="btn btn-md m-3" color="orange">
-                  Read
-                </router-link>
-
               </div>
             </div>
           </div>
