@@ -38,6 +38,11 @@
                 <router-link :to="{ name: 'Post' , params: { post: ConvertToKebabCase(props.item.title)} , query: {id : props.item.id}}" class="btn btn-md m-3" color="orange">
                   Read
                 </router-link>
+
+                <router-link :to="{ name: 'Post' , params: { post: ConvertToKebabCase(props.item.title)} , query: {id : props.item.id}}" class="btn btn-md m-3" color="orange">
+                  Read
+                </router-link>
+
               </div>
             </div>
           </div>
@@ -112,8 +117,8 @@ export default {
 }
 .card-img-bottom {
   color: #fff;
-  height: 100%;
-  min-height: 15rem;
+  height: auto;
+  width: 100%;
   background-size: cover;
 }
 </style>

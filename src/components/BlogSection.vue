@@ -97,7 +97,10 @@ h2 {
       overflow: hidden;
     }
   }
-
+ .card-img-top{
+   height: auto;
+  width: 100%;
+ }
   .card-footer {
     border: none;
     background-color: #fff;
