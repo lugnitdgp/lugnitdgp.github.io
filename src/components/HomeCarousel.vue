@@ -22,7 +22,7 @@
           <div class="image-container"></div>
           <picture>
             <source media="(max-width: 576px)" :srcset="item.mobile_image" class="responsive">
-            <img :src="item.image" class="responsive">
+            <img :src="item.image" class="responsive"> 
           </picture>
           <div class="cover" />
           <div class="container">
@@ -83,11 +83,11 @@ export default {
   background-size: cover !important;
   background-repeat: no-repeat !important;
 
-@media only screen and (max-width: 600px) {
-  body {
-    height: 10vh;
+  @media only screen and (max-width: 600px) {
+    body {
+      height: 10vh;
+    }
   }
-}
 
   .cover {
     width: 100%;
@@ -204,5 +204,11 @@ export default {
   position: absolute;
   background-color: #000;
   opacity: 0.6;
+}
+
+@media (min-width: 1250px) {
+  .responsive{
+    object-fit: cover;
+  }
 }
 </style>
