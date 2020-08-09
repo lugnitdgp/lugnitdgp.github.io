@@ -205,4 +205,10 @@ export default {
   background-color: #000;
   opacity: 0.6;
 }
+
+@media only screen and (min-width: 1250px) {
+  .responsive{
+    object-fit: cover;
+  }
+}
 </style>
