@@ -45,29 +45,6 @@
               <v-btn v-else flat color="orange" @click="active = null">
                 Close
               </v-btn>
-              <social-sharing
-                url="https://vuejs.org/"
-                :title="item.title"
-                :hashtags="item.keywords || null"
-                inline-template
-                class="d-inline-flex justify-content-between social-share-container align-items-center"
-              >
-                <!-- Replace url by the actual blog link -->
-                <div>
-                  <network network="facebook">
-                    <i class="fab fa-facebook-f d-inline-flex social-share-icons justify-content-center align-items-center" />
-                  </network>
-                  <network network="linkedin">
-                    <i class="fab fa-linkedin d-inline-flex social-share-icons justify-content-center align-items-center" />
-                  </network>
-                  <network network="reddit">
-                    <i class="fab fa-reddit d-inline-flex social-share-icons justify-content-center align-items-center" />
-                  </network>
-                  <network network="twitter">
-                    <i class="fab fa-twitter d-inline-flex social-share-icons justify-content-center align-items-center" />
-                  </network>
-                </div>
-              </social-sharing>
             </v-card-actions>
           </v-card>
         </div>
@@ -121,6 +98,7 @@ span.highlighted {
 
 .card {
   margin-bottom: 20px;
+  transition: all 0.4s ease-in-out;
 
   .cover {
     background: rgba(255, 255, 255, 0.2);

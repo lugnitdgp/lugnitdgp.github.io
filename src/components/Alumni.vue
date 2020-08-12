@@ -17,11 +17,11 @@
           <div class="card text-center">
             <div class="row flex-wrap justify-content-center card-body ">
               <div v-for="alumni in EachYear.members" :key="alumni.id">
-                <div class="container-fluid">
+                <div class="container-fluid member">
                   <div class="card-group">
                     <div data-toggle="tooltip" :title="alumni.first_name">     
                       <div data-toggle="modal" :data-target="'#user'+alumni.id" class="Profile-avatar m-2 m-lg-4 " :style="{'background-image':'url('+alumni.image+')'}" />
-                        <h5 class="font-weight-bold dark-grey-text my-4">  {{ alumni.first_name }}<br /><span class="highlighted"> {{ alumni.last_name }}</span></h5>
+                        <p class="font-weight-bold dark-grey-text my-4">  {{ alumni.first_name }}<br /><span class="highlighted"> {{ alumni.last_name }}</span></p>
                     </div>                    
                   </div>
                  </div>
@@ -75,7 +75,9 @@ export default {
   data () {
     return {
       Allyears: [{name: '2020', members: []},
-        {name: '2019', members: []}]
+        {name: '2019', members: []},
+        {name: '2018', members: []},
+        {name: '2017', members: []}]
     }
   },
   created () {
@@ -99,7 +101,13 @@ export default {
     categorise (member) {
       if (member.passout_year === 2020) {
         this.Allyears[0].members.push(member) 
-      } else if (member.passout_year === 2019) { this.Allyears[1].members.push(member) } 
+      } else if (member.passout_year === 2019) { 
+        this.Allyears[1].members.push(member) 
+      } else if (member.passout_year === 2018) { 
+        this.Allyears[2].members.push(member) 
+      } else if (member.passout_year === 2017) { 
+        this.Allyears[3].members.push(member) 
+      }
     }
   }
 }
@@ -203,5 +211,14 @@ blockquote p {
 
 .modal-dialog a {
   pointer-events: auto;
+}
+
+.modal{
+  z-index: 20000;
+}
+
+.member{
+  padding-right: 10px;
+  padding-left: 0px;
 }
 </style>

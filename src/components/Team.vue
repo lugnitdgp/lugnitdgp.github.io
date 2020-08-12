@@ -14,39 +14,46 @@
               {{ EachYear.name }}
             </h6>
           </div>
-          <div class="row flex-wrap justify-content-center card-body">
-            <div v-for="(member,index) in EachYear.members" :key="index">
-              <div data-toggle="tooltip" :title="member.first_name">
-                <div data-toggle="modal" :data-target="'#user'+member.id" class="Profile-avatar m-2 m-lg-4 " :style="{'background-image':'url('+member.image+')'}" />
-              </div>
-              <div :id="'user'+member.id" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                <div class="modal-dialog ">
-                  <div class="modal-body">
-                    <div class="Profile p-0 m-0">
-                      <div class="row m-0 p-0 mb-4">
-                        <div class="col-12 Profile-back" :style="{'background-image':'url('+member.image+')'}">
-                          <div class="Profile-avatar mt-5 mb-0" :style="{'background-image':'url('+member.image+')'}" style="transform:scale(1.3)" />
+          <div class="card text-center">
+            <div class="row flex-wrap justify-content-center card-body">
+              <div v-for="(member,index) in EachYear.members" :key="index">
+                <div class="container-fluid padding">
+                  <div class="card-group">
+                    <div data-toggle="tooltip" :title="member.first_name">
+                      <div data-toggle="modal" :data-target="'#user'+member.id" class="Profile-avatar m-2 m-lg-4 " :style="{'background-image':'url('+member.image+')'}" />
+                      <p class="font-weight-bold dark-grey-text my-4">  {{ member.first_name }}<br /><span class="highlighted"> {{ member.last_name }}</span></p>
+                    </div>
+                  </div>
+                </div> 
+                <div :id="'user'+member.id" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog ">
+                    <div class="modal-body">
+                      <div class="Profile p-0 m-0">
+                        <div class="row m-0 p-0 mb-4">
+                          <div class="col-12 Profile-back" :style="{'background-image':'url('+member.image+')'}">
+                            <div class="Profile-avatar mt-5 mb-0" :style="{'background-image':'url('+member.image+')'}" style="transform:scale(1.3)" />
+                          </div>
                         </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-12 text-center m-0">
-                          <h5 class="member-name font-weight-bold mb-0 pb-0">
-                            {{ member.first_name + ' '+member.last_name }}
-                          </h5>
-                          <span v-if="member.position||member.alias">{{ member.alias }}</span>
-                          <blockquote v-if="member.bio">
-                            <p class="font-italic" v-html="member.bio" />
-                          </blockquote>
+                        <div class="row">
+                          <div class="col-12 text-center m-0">
+                            <h5 class="member-name font-weight-bold mb-0 pb-0">
+                              {{ member.first_name + ' '+member.last_name }}
+                            </h5>
+                            <span v-if="member.position||member.alias">{{ member.alias }}</span>
+                            <blockquote v-if="member.bio">
+                              <p class="font-italic" v-html="member.bio" />
+                            </blockquote>
+                          </div>
                         </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-12 text-center">
-                          <div class="Profile-links fabs">
-                            <a v-if="member.facebook_link != null" target="_blank" :href="member.facebook_link"><i class="fab fa-lg fa-facebook-f" /></a>
+                        <div class="row">
+                          <div class="col-12 text-center">
+                            <div class="Profile-links fabs">
+                              <a v-if="member.facebook_link != null" target="_blank" :href="member.facebook_link"><i class="fab fa-lg fa-facebook-f" /></a>
 
-                            <a v-if="member.git_link != null" target="_blank" :href="member.git_link"><i class="fab fa-lg fa-github" /></a>
+                              <a v-if="member.git_link != null" target="_blank" :href="member.git_link"><i class="fab fa-lg fa-github" /></a>
 
-                            <a v-if="member.email != null" target="_blank" :href="'mailto:'+member.email"><i class="fa fa-lg fa-envelope" /></a>
+                              <a v-if="member.email != null" target="_blank" :href="'mailto:'+member.email"><i class="fa fa-lg fa-envelope" /></a>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -188,5 +195,13 @@ blockquote p {
 }
 .modal-dialog a {
   pointer-events: auto;
+}
+.modal{
+  z-index: 20000;
+}
+
+.padding{
+  padding-right: 10px;
+  padding-left: 0px;
 }
 </style>

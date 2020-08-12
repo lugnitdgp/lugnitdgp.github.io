@@ -14,7 +14,7 @@
                   {{ displayheading(item.first_name+" "+item.last_name).first }}<span class="highlighted">{{ displayheading(item.first_name+" "+item.last_name).second }}</span>{{ displayheading(item.first_name+" "+item.last_name).third }}
                 </h5>
                 <h6 class="card-subtitle mb-2 text-muted align-text-bottom">
-                  {{ item.position||item.alias }}
+                  {{ item.alias }}
                 </h6>
               </div>
               <div class="card-footer border-0">
