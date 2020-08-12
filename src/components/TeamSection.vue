@@ -19,9 +19,11 @@
               </div>
               <div class="card-footer border-0">
                 <div class="icon-block text-center">
-                  <a :href="item.facebook_link"><i class="fab fa-facebook-f" /></a>
-                  <a :href="item.git_link"><i class="fab fa-github" /></a>
-                  <a :href="item.email"><i class="fab fa-google-plus-g" /></a>
+                  <a v-if="item.facebook_link != null" target="_blank" :href="item.facebook_link"><i class="fab fa-lg fa-facebook-f" /></a>
+
+                  <a v-if="item.git_link != null" target="_blank" :href="item.git_link"><i class="fab fa-lg fa-github" /></a>
+
+                  <a v-if="item.email != null" target="_blank" :href="'mailto:'+item.email"><i class="fa fa-lg fa-envelope" /></a>
                 </div>
               </div>
             </div>

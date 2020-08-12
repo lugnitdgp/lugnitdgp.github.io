@@ -24,7 +24,7 @@
                 </v-btn>
               </router-link>
               <v-spacer />
-              <social-sharing
+              <!-- <social-sharing                               //Removed since the links are not provided in the blog... See Backend for references. >>Sucharu Rai
                 :url="'https://nitdgplug.org/blog/' + convertToKebabCase(item.title) + '?id=' + item.id"
                 :title="item.title"
                 :description="item.description"
@@ -46,7 +46,7 @@
                     <i class="fab fa-twitter d-inline-flex social-share-icons justify-content-center align-items-center" />
                   </network>
                 </div>
-              </social-sharing>
+              </social-sharing> -->
             </div>
           </div>
         </div>

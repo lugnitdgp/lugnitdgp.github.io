@@ -112,7 +112,8 @@ export default {
       section4: [
         { icon: 'fa-users ', content: 'Members', number: 52 },
         { icon: 'fa-chess', content: 'Events', number: 32 },
-        { icon: 'fa-project-diagram', content: 'Projects', number: 10 }
+        { icon: 'fa-project-diagram', content: 'Projects', number: 10 },
+        { icon: 'fa-graduation-cap', content: 'Alumni', number: 50 }
       ],
       show: false
     }
@@ -124,6 +125,7 @@ export default {
         this.section4[0].number = response.data.members
         this.section4[1].number = response.data.events
         this.section4[2].number = response.data.projects
+        this.section4[3].number = response.data.alumni
       }
     ).catch(e => {
       console.log(e)
@@ -133,7 +135,7 @@ export default {
   mounted () {
     setTimeout(function () {
       var i
-      for (i = 0; i < 3; i++) {
+      for (i = 0; i < 4; i++) {
         var start = 0
         var temp = this.section4[i].number
         this.section4[i].number = 0

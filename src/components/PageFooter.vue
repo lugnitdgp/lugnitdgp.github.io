@@ -5,28 +5,28 @@
         <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
           <ul class="list-unstyled list-inline social text-center">
             <li class="list-inline-item">
-              <a href="https://www.facebook.com/nitdgplug"><i class="fab fa-facebook-f" /></a>
+              <a href="https://www.facebook.com/nitdgplug" target="_blank"><i class="fab fa-facebook-f" /></a>
             </li>
             <li class="list-inline-item">
-              <a href="https://gitter.im/lugnitdgp"><i class="fab fa-lg fa-gitter" /></a>
+              <a href="https://gitter.im/lugnitdgp" target="_blank"><i class="fab fa-lg fa-gitter" /></a>
             </li>
             <li class="list-inline-item">
-              <a href="https://www.youtube.com/channel/UCYZPnN5vP5B1sINLLkI1aDA"><i class="fab fa-youtube" /></a>
+              <a href="https://www.youtube.com/channel/UCYZPnN5vP5B1sINLLkI1aDA" target="_blank"><i class="fab fa-youtube" /></a>
             </li>
             <li class="list-inline-item">
-              <a href="https://github.com/lugnitdgp"><i class="fab fa-github" /></a>
+              <a href="https://github.com/lugnitdgp" target="_blank"><i class="fab fa-github" /></a>
             </li>
             <li class="list-inline-item">
-              <a href="https://www.instagram.com/nitdgplug"><i class="fab fa-instagram" /></a>
+              <a href="https://www.instagram.com/nitdgplug" target="_blank"><i class="fab fa-instagram" /></a>
             </li>
             <li class="list-inline-item">
               <a href="mailto:contact@nitdgplug.org" target="_blank"><i class="fa fa-envelope" /></a>
             </li>
             <li class="list-inline-item">
-              <a href="https://in.linkedin.com/company/lugnitdgp"><i class="fab fa-linkedin-in" /></a>
+              <a href="https://in.linkedin.com/company/lugnitdgp" target="_blank"><i class="fab fa-linkedin-in" /></a>
             </li>
             <li class="list-inline-item">
-              <a href="https://dev.to/nitdgplug"><i class="fab fa-dev" /></a>
+              <a href="https://dev.to/nitdgplug" target="_blank"><i class="fab fa-dev" /></a>
             </li>
           </ul>
         </div>

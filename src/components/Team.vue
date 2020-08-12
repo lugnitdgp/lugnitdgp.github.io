@@ -112,6 +112,7 @@ export default {
 <style scoped>
 .Team{
   background-size: cover;
+  font-size: 1.1rem !important;
   min-height: 100vh;
   padding-top: 5rem;
   border-bottom: 1px dashed #fa631c;
