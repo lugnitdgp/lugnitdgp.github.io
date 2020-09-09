@@ -9,7 +9,14 @@
            class="col-12 col-md-6 col-lg-4 mb-2"
       >
         <div class="card" style="width:100%;height:100%">
-          <img class="card-img-top" :src="item.thumbnail_image" alt="Card image cap" height="200px">
+          <v-img
+            :contain="true"
+            class="card-img-top"
+            :src="item.thumbnail_image"
+            alt="Card image cap"
+            height="200px"
+          >
+          </v-img>
           <div class="card-body">
             <h4 class="card-title font-weight-bold">
               {{ item.title }}

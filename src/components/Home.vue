@@ -64,6 +64,8 @@ export default {
     common.getEvents()
       .then(response => {
         this.events = response.data
+        this.events = this.events.filter(event => event.featured)
+        console.log(this.events)
         this.stopLoader()
       })
       .catch(e => {
@@ -72,6 +74,7 @@ export default {
     common.getBlogPosts()
       .then(response => {
         let tmp = response.data
+        tmp = tmp.filter(tm => tm.featured)
         for (var i = 0; i < tmp.length; i++) {
           if (tmp[i].show_bool === true) { this.blog.push(tmp[i]) }
         }
