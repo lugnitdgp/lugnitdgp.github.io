@@ -36,7 +36,7 @@ export default {
   height: auto;
   position: relative;
   z-index: 1;
-  background-image: url('/static/images/linit.jpeg');
+  background-image: url('/static/images/linit-comp.jpeg');
   background-attachment: fixed;
   background-position: center top;
   background-repeat: no-repeat;
