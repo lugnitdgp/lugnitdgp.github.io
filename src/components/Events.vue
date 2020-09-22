@@ -439,17 +439,17 @@ span.highlighted {
     @media only screen and (min-width: 766px){
       width: 620px;
       height: auto;
-      margin: 0 15%;
+      margin: 0 -45%;
     }
     @media only screen and (min-width: 960px){
       width: 620px;
       height: auto;
-      margin: 0 33%;
+      margin: 0 -9%;
     }
     @media only screen and (min-width: 1264px) {
       width: 750px;
       height: auto;
-      margin: 0 60%;
+       margin: 0 30%;
     }
     @media only screen and (min-width: 1200px) and (max-width: 1264px){
       width: 700px;
