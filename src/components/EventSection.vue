@@ -152,13 +152,11 @@ export default {
 
     .card-text {
       height: auto;
-      max-height: 200px;
     }
 
     @media only screen and (max-width: 514px){
       .card-text{
         height: auto;
-        max-height: 300px;
       }
     }
 

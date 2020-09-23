@@ -422,7 +422,6 @@ span.highlighted {
   }
   .card-text {
     height: auto;
-    max-height: 300px;
   }
   ////
     @media only screen and (max-width: 514px){
