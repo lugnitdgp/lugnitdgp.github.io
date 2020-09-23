@@ -422,33 +422,37 @@ span.highlighted {
   }
   .card-text {
     height: auto;
-    max-height: 200px;
   }
   ////
     @media only screen and (max-width: 514px){
       .card-text{
         height: auto;
-        max-height: 300px;
+        max-height: 700px;
       }
     }
     @media only screen and (min-width: 576px) {
       width: 500px;
       margin: 0 auto;
+      height: auto;
     }
     @media only screen and (min-width: 766px){
       width: 620px;
-      margin: 0 15%;
+      height: auto;
+      margin: 0 -45%;
     }
     @media only screen and (min-width: 960px){
       width: 620px;
-      margin: 0 33%;
+      height: auto;
+      margin: 0 -9%;
     }
     @media only screen and (min-width: 1264px) {
       width: 750px;
-      margin: 0 60%;
+      height: auto;
+       margin: 0 30%;
     }
     @media only screen and (min-width: 1200px) and (max-width: 1264px){
       width: 700px;
+      height: auto;
       margin: 0 50%;
     }
 }
