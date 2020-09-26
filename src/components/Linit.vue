@@ -9,11 +9,11 @@
       </p>
     </blockquote>
     <div class="row flex-wrap justify-content-center">
-      <div v-for="(linit, index) in linits" :key="index" class="col-xs-11 col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-2" data-aos="fade-up">
-        <a :href="(linit.pdf||'#')">
-          <div class="card bg-light book p-3" style="width:100%;height:100%">
-            <div class="card-img-top book-cover border border-dark">
-              <img :src="linit.image" alt="Card image cap" height="100%" width="100%">
+      <div v-for="(linit, index) in linits" :key="index" class="col-xs-11 col-sm-6 col-md-4 col-lg-3 mb-3 mb-lg-2">
+        <a href="#">
+          <div class="card bg-light book p-3" style="width:100%;height:100%" data-aos="fade-up" data-toggle="modal" :data-target="'#linitModal'+linit.year_edition">
+            <div class="card-img-top book-cover">
+              <img :src="linit.image" alt="Card image cap" height="100%" width="100%" class="responsive">
               <div class="overlay p-3">
                 <div class="overlay-content d-flex align-items-center justify-content-center">
                   <i class="fas fa-2x fa-glasses d-flex align-items-center justify-content-center"></i>
@@ -25,6 +25,25 @@
             </div>
           </div>
         </a>
+      </div>
+    </div>
+
+    <div
+      v-for="(linit, index) in linits" 
+      :key="index"
+      class="linit-modal"
+    >
+      <div :id="'linitModal'+linit.year_edition" ref="linit-modal" class="modal fade hide in" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+            </div>
+            <div class="modal-body">
+              <iframe :src="linit.pdf + '#toolbar=0'" autofullscreen></iframe>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -42,6 +61,7 @@ export default {
     common.getLinits()
       .then(response => {
         this.linits = response.data
+        console.log(this.linits)
         this.linits.sort(function (a, b) {
           return parseFloat(b.year_edition) - parseFloat(a.year_edition)
         })
@@ -49,6 +69,10 @@ export default {
         this.$emit('hideloader', true)
         this.$emit('hideloader', true)
       })
+  },
+  mounted () {
+    var myIframe = document.getElementsByTagName('iframe').getContent 
+    console.log(myIframe) 
   }
 }
 </script>
@@ -113,6 +137,9 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
+.responsive {
+  background-size: contain;
+}
 blockquote p {
   display: inline;
   color:#9c9c9c;
@@ -124,5 +151,43 @@ a{
 a:hover{
   color:#fa631c;
   text-decoration:none;
+}
+.modal {
+  height: 100vh;
+  z-index: 20000;
+  font-size: 1.05rem;
+  overflow: scroll;
+}
+.modal-lg {
+  max-width: 80%;
+}
+.modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+iframe {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+@media only screen and (max-width: 576px) {
+  .modal {
+    padding-top: 10%;
+  }
+  .modal-lg {
+    max-width: 100vw;
+  }
+  .modal-body {
+    height: 85vh;
+  }
+}
+@media only screen and (min-width: 1550px) {
+  .responsive {
+    width: 90%;
+    padding-left: 10%;
+  }
 }
 </style>
