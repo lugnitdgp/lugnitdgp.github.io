@@ -127,10 +127,9 @@ export default {
     onSelectYear: function (year) {
       this.selectedYear = year;
       let self = this;
-      fetch(`http://localhost:8000/api/linit-pages/?year=${year}`)
-        .then((res) => res.json())
+      common.getLinitImages(year)
         .then((response) => {
-          self.images = response.links;
+          self.images = response.data.links;
         });
     },
   },
