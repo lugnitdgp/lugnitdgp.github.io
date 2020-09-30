@@ -76,15 +76,15 @@
                 style="
                   display: flex;
                   flex-direction: column;
-                  height: 500px;
+                  height: 90%;
                   overflow-y: scroll;
                 "
               >
                 <img
-                  :src="image"
-                  style="width: 100%; padding: 20px"
                   v-for="image in images"
                   :key="image"
+                  :src="image"
+                  style="width: 100%; padding: 20px"
                 />
               </div>
             </div>

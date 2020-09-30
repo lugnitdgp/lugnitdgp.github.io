@@ -26,7 +26,7 @@ export default {
   getLinits () {
     return Api().get('api/linit/')
   },
-  getLinitImages(year) {
+  getLinitImages (year) {
     return Api().get(`api/linit-pages/?year=${year}`)
   },
   getAlumni () {
