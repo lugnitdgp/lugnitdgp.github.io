@@ -73,6 +73,23 @@
             </div>
             <div class="modal-body" style="padding: 0rem">
               <div
+                id="linit-image"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  height: 90%;
+                  overflow-y: scroll;
+                "
+              >
+                <inner-image-zoom
+                  v-for="image in images"
+                  :key="image"
+                  :src="image"
+                  style="width: 100%; padding: 30px; overflow: unset !important;"
+                />
+              </div>
+              <div
+                id="linit-image1"
                 style="
                   display: flex;
                   flex-direction: column;
@@ -88,6 +105,24 @@
                 />
               </div>
             </div>
+            <div class="zoom-buttons modal-footer">
+              <button
+              title="Zoom-In"
+              class="zoom-in"
+              type="button"
+              @click="zoomIn()"
+              >
+                <i class="fas fa-search-plus"></i>
+              </button>
+              <button
+              title="Zoom-Out"
+                class="zoom-out"
+                type="button"
+                @click="zoomOut()"
+              >
+                <i class="fas fa-search-minus"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -98,7 +133,11 @@
 <script>
 /* eslint-disable */
 import common from "@/services/common.js";
+import InnerImageZoom from 'vue-inner-image-zoom';
 export default {
+  components: {
+    'inner-image-zoom': InnerImageZoom
+  },
   data() {
     return {
       selectedYear: "",
@@ -118,11 +157,6 @@ export default {
       this.$emit("hideloader", true);
     });
   },
-  mounted() {
-    // var myIframe = document.getElementsByTagName("iframe").getContent;
-    // console.log(myIframe);
-    
-  },
   methods: {
     onSelectYear: function (year) {
       this.selectedYear = year;
@@ -132,6 +166,16 @@ export default {
           self.images = response.data.links;
         });
     },
+    zoomIn() {
+      let image = document.getElementById("linit-image");
+      let currWidth = image.clientWidth;
+      image.style.width = (currWidth+50) + "px";
+    },
+    zoomOut() {
+      let image = document.getElementById("linit-image");
+      let currWidth = image.clientWidth;
+      image.style.width = (currWidth-50) + "px";
+    }
   },
 };
 </script>
@@ -227,7 +271,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 85vh;
+  height: 80vh;
 }
 iframe {
   display: flex;
@@ -235,15 +279,45 @@ iframe {
   height: 100%;
   width: 100%;
 }
+.zoom-buttons {
+  margin: 0 auto;
+}
+.zoom-in,.zoom-out {
+  background-color: #ccc;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  opacity: 0.8;
+  border: none;
+  outline: none;
+}
+.zoom-in:hover,.zoom-out:hover {
+  opacity: 1.0;
+}
+.modal-footer .fas {
+  font-size: 25px;
+}
 @media only screen and (max-width: 576px) {
+  #linit-image {
+    display: none !important;
+  }
   .modal {
-    padding-top: 10%;
+    margin-top: 5% !important;
+    height: 100vh;
   }
   .modal-lg {
     max-width: 100vw;
   }
   .modal-body {
     height: 85vh;
+  }
+  .modal-footer {
+    display: none;
+  }
+}
+@media only screen and (min-width: 576px) {
+  #linit-image1 {
+    display: none !important;
   }
 }
 @media only screen and (min-width: 1550px) {
