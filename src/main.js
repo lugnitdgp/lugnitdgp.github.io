@@ -8,6 +8,7 @@ import 'aos/dist/aos.css'
 import SocialSharing from 'vue-social-sharing'
 import VueDisqus from 'vue-disqus'
 import Vuetify from 'vuetify'
+import 'vue-inner-image-zoom/lib/vue-inner-image-zoom.css'
 import('vuetify/dist/vuetify.min.css')
 
 Vue.use(Vuetify)
