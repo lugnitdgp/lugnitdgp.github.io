@@ -16,6 +16,21 @@
             <p class="caption">
               To keep you thus, updated, GLUG publishes LINIT, the annual open source magazine of NIT Durgapur.A perfect specimen of a geek's creativity, this magazine gives us trending technologies at its best.
             </p>
+            <p class="text-center ques">
+              Who can send articles for LINIT?
+            </p>
+            <p class="text-center entries">   
+              Anyone can, and on any technology they feel well 
+              versed in, or feel inspired by.
+            </p>  
+            <p class="text-center entries">
+              We welcome each of you, to send us your articles 
+              and get published on LINIT 2K21.   
+            </p>
+            <p class="text-center entries">
+              Send your entries to us via mail at: 
+              <a href="mailto: linit.lugdgp@gmail.com" class="email">linit.lugdgp@gmail.com</a>
+            </p>
           </div>
         </div>
       </div>
@@ -95,6 +110,44 @@ export default {
     color:#9c9c9c;
     font-weight: 600;
     font-size: 0.92rem !important;
+  }
+}
+
+.ques {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fa631c;
+}
+
+.entries {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: black;
+
+  .email {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: black;
+  }
+
+  .email:hover {
+    text-decoration: none;
+    color: #fa631c;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .ques {
+    font-size: 1.2rem;
+  }
+
+  .entries {
+    font-size: 1.2rem;
+
+    .email {
+      font-size: 1.2rem;
+      color: #fa631c;
+    }
   }
 }
 </style>

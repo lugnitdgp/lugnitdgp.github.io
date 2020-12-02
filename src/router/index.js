@@ -10,6 +10,7 @@ import Linit from '@/components/Linit'
 import PrivacyPolicy from '@/components/PrivacyPolicy'
 import PageNotFound from '@/components/PageNotFound'
 import AlumniSection from '@/components/Alumni'
+import JoinUs from '@/components/JoinUs'
 
 Vue.use(Router)
 
@@ -60,6 +61,11 @@ export default new Router({
       path: '/alumni',
       name: 'AlumniSection',
       component: AlumniSection
+    },
+    {
+      path: '/joinus',
+      name: 'JoinUs',
+      component: JoinUs
     },
     {
       path: '*',

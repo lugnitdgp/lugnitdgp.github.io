@@ -31,6 +31,9 @@
           <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/alumni">
             <a class="nav-link">Alumni</a>
           </router-link>
+          <router-link tag="li" class="nav-item" data-toggle="collapse" data-target="#navbar-links" to="/joinus">
+            <a class="nav-link">Join Us</a>
+          </router-link>
         </ul>
       </div>
     </nav>
