@@ -107,15 +107,15 @@
             </div>
             <div class="zoom-buttons modal-footer">
               <button
-              title="Zoom-In"
-              class="zoom-in"
-              type="button"
-              @click="zoomIn()"
+                title="Zoom-In"
+                class="zoom-in"
+                type="button"
+                @click="zoomIn()"
               >
                 <i class="fas fa-search-plus"></i>
               </button>
               <button
-              title="Zoom-Out"
+                title="Zoom-Out"
                 class="zoom-out"
                 type="button"
                 @click="zoomOut()"
