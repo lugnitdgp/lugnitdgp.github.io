@@ -1,10 +1,10 @@
 <template>
   <div class="container joinus">
-    <div class="mb-5 mt-5">
+    <div class="mb-2 mt-5">
       <div>
-        <h1 class="text-center heading font-weight-bold pb-3">
+        <h2 class="text-center heading font-weight-bold pb-3">
           <span class="highlighted">JOIN</span> US
-        </h1>
+        </h2>
       </div>
       <p class="pt-4 text">
         We advocate our love for open source loud and clear. Be it web development, app 
@@ -12,74 +12,136 @@
         diverse. Some of the ways in which we try to share our knowledge and enthusiasm for the 
         same :
       </p>
-      <p class="text">
+      <p class="text tab pt-4">
         <strong>
-          - Organizing regular workshops to present people with the resources to get started with 
-          contributing.
+          Be it workshops and tutorials like:
+          <ul class="tab2">
+            <li>
+              Linux Bootcamp
+            </li>
+            <li>
+              Git/GitHub Workshop
+            </li>
+            <li>
+              Hack.Me
+            </li>
+          </ul>
         </strong>
       </p>
-      <p class="text">
+      <p class="text tab">
         <strong>
-          - Spreading awareness through LINIT, our annual open source magazine.
-        </strong>        
-      </p>
-      <p class="text">
-        <strong>
-          - Sharing our passion through games and quizzes like Digital Fortress, Freemex, Screencast 
-          and many more.
+          Or events to enjoy:
+          <ul class="tab2">
+            <li>
+              Digital Fortress
+            </li>
+            <li>
+              Mindersnatch
+            </li>
+            <li>
+              Freemex
+            </li>
+          </ul>
         </strong>
       </p>
-      <p class="text">
+      <p class="text tab">
         <strong>
-          - Striving towards a better coding culture in our college through our flagship event Junior Code 
-          Cracker, where we use our very own open source Online Judge.
+          Or helping you to further your coding journey:
+          <ul class="tab2">
+            <li>
+              <a href="https://10-days-of-code.netlify.app/" target="_blank"><span class="imp-links">Ten Days of Code</span></a>
+            </li>
+            <li>
+              GSoC Heat
+            </li>
+            <li>
+              FooBar CTF
+            </li>
+            <li>
+              Junior Code Cracker(JCC)
+            </li>
+            <li>
+              Code Cracker
+            </li>
+          </ul>
         </strong>
       </p>
-      <p class="text">
+      <p class="text tab">
         <strong>
-          - Encouraging cyber security enthusiasts to find bugs and solve puzzles, as they hack their 
-          way to the ultimate flag in our yearly Capture The Flag ( CTF ) event, where we see 
-          international participation as well.
+          If you're a textual learner, then you can always follow our:
+          <ul class="tab2">
+            <li>
+              <a href="https://dev.to/nitdgplug" target="_blank"><span class="imp-links">DEV profile</span></a>, wherein we've a very steady and varied carousel of explorable technologies
+            </li>
+            <li>
+              <a href="https://nitdgplug.org/blog" target="_blank"><span class="imp-links">Our Website Blog</span></a>
+            </li>
+            <li>
+              <a href="https://nitdgplug.org/linit" target="_blank"><span class="imp-links">Our annual magazine LINIT</span></a>
+            </li>
+            <li>
+              Weekly Techbytes
+            </li>
+          </ul>
         </strong>
       </p>
-      <p class="text">
+      <p class="text tab">
         <strong>
-          - Organizing Aarohan, the second largest technical fest in Eastern India, as a part of Team 
-          Aavishkar. The fest is replete with software and hardware hackathons (HackOverFlow),
-          workshops and events which blend wit with fun and creativity.
+          We have also been instrumental in organizing a number of tech fests over the years. They are:
+          <ul class="tab2">
+            <li>
+              Aarohan, as a part of Team Aavishkar
+            </li>
+            <li>
+              Aavishkar (2018-2019)
+            </li>
+            <li>
+              Mukti (prior to 2018)
+            </li>
+          </ul>
         </strong>
-      </p> 
-      <p class="text">
+      </p>
+      <p class="text tab">
         <strong>
-          - Succesfully revamping and maintaining our official institute website.
-        </strong>  
+          We are also extremely proud of having developed and continuously maintaining the official website of NIT Durgapur.
+        </strong>
+      </p>
+      <p class="text pt-3">
+        <em>And all this is a just a small introduction to the endless opportunities we are ready to dive into.
+            You can check out all the events that we do <a href="https://nitdgplug.org/events"><span class="imp-links">here.</span></a>
+        </em>
+      </p>
+      <p class="text">
+        <em>So do stay tuned as we take you through a journey through the havens of technology where we shall cover 
+          and extensively support all things regarding software development in this institution.</em>
       </p>
     </div>
-    <div class="mb-5 pt-5">
+    <div class="mb-2 pt-5">
       <div>
-        <h1 class="text-center heading font-weight-bold pb-3">
+        <h2 class="text-center heading font-weight-bold pb-3">
           <span class="highlighted">WHY</span> GLUG?
-        </h1>
+        </h2>
       </div>
       <p class="pt-4 text">
-        We are the official Open Source Organization of NIT Durgapur. A group of Free and Open
-        Source Software enthusiasts, we are highly driven towards promoting the open-source culture in
-        our college. Designing, developing, and contributing towards this ever-growing community, we
-        wish our passion for open source to reach maximum people possible.
+        We are the official Open Source Organization of NIT Durgapur. A group of FOSS enthusiasts, we are highly 
+        driven towards promoting the idea of <strong>freedom of software </strong>which arms the user with 
+        complete control over what he/she uses. Not only in our college but beyond. Designing, developing, 
+        and contributing towards this ever-growing community, we're determined to populate this passion 
+        by reaching maximum people possible.
       </p>
-      <p class="text">
+      <p class=" pt-3 text">
         No matter where your interests lie, we believe in learning and growing together. Collaboration is 
         the key to thrive, and we believe in enriching our community by joining hands with the 
         uninitiated. Help broaden our vision of promoting Open Source software. Come join us to 
         explore, to learn, and to contribute towards a world that creates and innovates together.
       </p>
     </div>
-    <div class="mb-5 pt-1">
+    <div class="pt-3 mb-5">
       <p class="text">
         <strong>
           <em>
-            Are you dynamic, passionate, and willing to get involved in a club where team-spirit, 
-            expertise and active collaboration are key values.
+            Are you dynamic enough, passionate enough, and willing to get involved in a club where team-spirit, 
+            zeal to learn and active collaboration are key values?
           </em>
         </strong>
       </p>
@@ -110,14 +172,15 @@ export default {
 }
 
 .heading {
-  font-size: 6vh !important;
-  border-bottom: 5px solid #fa631c;
-  word-spacing: 20px;
+  font-size: 32px !important;
+  border-bottom: 4px solid #fa631c;
+  word-spacing: 5px;
 }
 
 .text {
-  font-size: 2.5vh;
-  word-spacing: 10px;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  margin-bottom: 3px !important;
 }
 
 .wrapper {
@@ -127,8 +190,24 @@ export default {
 .register {
   background-color: #fa631c !important;
   color: white;
-  font-size: 4vh;
+  font-size: 30px;
   border-radius: 40px;
+}
+
+.tab {
+  margin-left: 40px;
+}
+
+.tab2 {
+  margin-left: 80px
+}
+
+.imp-links {
+  color: #fa631c !important
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 776px) {
@@ -137,15 +216,15 @@ export default {
     padding-right: 3rem !important;
     padding-left: 3rem !important;
   }
+}
 
-  .heading {
-    font-size: 4.8vh !important;
-    border-bottom: 3px solid #fa631c;
-    word-spacing: 17px;
+@media only screen and (max-width: 576px) {
+  .tab {
+    margin-left: 20px;
   }
 
-  .text {
-    font-size: 2.2vh;
+  .tab2 {
+    margin-left: 40px
   }
 }
 </style>
