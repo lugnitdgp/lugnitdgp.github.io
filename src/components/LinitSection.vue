@@ -29,7 +29,7 @@
             </p>
             <p class="text-center entries">
               Send your entries to us via mail at: 
-              <a href="mailto: linit.lugdgp@gmail.com" class="email">linit.lugdgp@gmail.com</a>
+              <a href="mailto: linit@nitdgplug.org" class="email">linit@nitdgplug.org</a>
             </p>
           </div>
         </div>
@@ -114,40 +114,20 @@ export default {
 }
 
 .ques {
-  font-size: 1.4rem;
+  font-size: 1.0rem;
   font-weight: 600;
   color: #fa631c;
 }
 
 .entries {
-  font-size: 1.4rem;
+  font-size: 1.0rem;
   font-weight: 600;
   color: black;
 
   .email {
-    font-size: 1.4rem;
+    font-size: 1.0rem;
     font-weight: 600;
-    color: black;
-  }
-
-  .email:hover {
-    text-decoration: none;
     color: #fa631c;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .ques {
-    font-size: 1.2rem;
-  }
-
-  .entries {
-    font-size: 1.2rem;
-
-    .email {
-      font-size: 1.2rem;
-      color: #fa631c;
-    }
   }
 }
 </style>
