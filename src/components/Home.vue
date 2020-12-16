@@ -4,6 +4,7 @@
     <home-carousel id="Carousel" :carousel="carousel" @stoploader="stopLoader" />
     <about-us id="AboutUsSection" />
     <event-section id="EventsSection" :events="events" />
+    <fest-section id="FestSection" />
     <linit-section />
     <team-section id="TeamSection" :profiles="profiles" />
     <blog-section id="BlogSection" :blog="blog" />
@@ -19,6 +20,7 @@ import TeamSection from './TeamSection'
 import BlogSection from './BlogSection'
 import EventSection from './EventSection'
 import ContactUs from './ContactUs'
+import FestSection from './FestSection'
 import common from '@/services/common.js'
 
 export default {
@@ -30,7 +32,8 @@ export default {
     TeamSection,
     BlogSection,
     EventSection,
-    ContactUs
+    ContactUs,
+    FestSection
   },
   data () {
     return {
