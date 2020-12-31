@@ -32,3 +32,5 @@ jobs:
                 git checkout prod
                 git pull origin prod
                 sudo docker-compose up -d --build
+                cd ~
+                sudo systemctl restart nginx
