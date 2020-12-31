@@ -31,7 +31,4 @@ jobs:
                 cd ~/www/lugnitdgp.github.io
                 git checkout prod
                 git pull origin prod
-                npm install
-                npm run build
-                cd ~
-                sudo systemctl restart nginx
+                sudo docker-compose up -d --build
