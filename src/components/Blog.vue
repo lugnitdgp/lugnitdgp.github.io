@@ -6,6 +6,8 @@
     <p class="text-center font-weight-bold">
       To share.To connect.To create.To inspire.
     </p>
+    <Tabs>
+       <Tab name="Blogs" selected="true">
     <v-data-iterator
       content-tag="div"
       content-class="row flex-wrap justify-content-center d-flex p-2"
@@ -44,16 +46,32 @@
         </div>
       </div>
     </v-data-iterator>
+       </Tab>
+       <Tab name="Dev">
+         <div>
+       {{ info }}
+         </div>
+      </Tab>
+    </Tabs>
   </section>
 </template>
 
 <script>
 import common from '@/services/common.js'
+import axios from 'axios'
+import Tab from './Tab'
+import Tabs from './Tabs'
 export default {
+  components: {
+    Tab,
+    Tabs
+  },
   data () {
     return {
       blog: [],
       rowsPerPageItems: [1],
+      info: [],
+      articles: [],
       pagination: {
         rowsPerPage: 10
       }
@@ -69,13 +87,20 @@ export default {
         this.$emit('hideloader', true)
       })
   },
+ mounted () {
+    axios
+      .get('https://dev.to/api/articles?username=nitdgplug')
+      .then(response => 
+        this.info = response)
+  },
   methods: {
     ConvertToKebabCase (string) {
       return string.replace(/([a-z])([A-Z])/g, '$1-$2')
         .replace(/\s+/g, '-')
         .toLowerCase()
     }
-  }
+  },
+  
 }
 </script>
 
