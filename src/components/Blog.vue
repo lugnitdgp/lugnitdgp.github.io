@@ -9,29 +9,44 @@
     <Tabs>
        <Tab name="DEV" selected="true">
    <div v-for="article in articles" :key="article.index">
-   <div class="card">
+   <div class="container">
+    
+       <div class="card-header p-2 pl-3">
+ <div className="item" style=" position: relative;
+  flex-shrink: 0;
+  width: auto;
+  max-width: 500px;
+  height: auto;
+  border-radius: 5px;
+  border: 2px solid #dedede;
+  margin-right: auto;
+  padding: 20px;
+  margin-left: auto;
+  box-shadow: 5px 5px 10px #78787888;"
+  >
 
-      <div class="col-md-6 col-sm-12">
-              <img class="card-img-bottom" :src="article.cover_image" />
-       </div>
+ <h1 className="heading"><strong>{{ article.title }}</strong></h1>
+   <img class="card-img-bottom" :src="article.cover_image" />
+     
+          <div class="row" style="width: 70%; margin: 0 auto; display: flex;
+          justify-content: center;
+          align-items: center;
+          "
+          >
+                      
+      <i class="fa fa-heart" aria-hidden="true" style="margin: 10px auto; font-size: 20px;"> <strong>{{ article.positive_reactions_count }}</strong></i>
   
-  <div class="card-body">
-    <h5 class="card-title">{{article.title}}</h5>
-    <p class="card-text">
-      <i class="fa fa-heart" aria-hidden="true"> <strong>{{article.positive_reactions_count}}</strong></i>
-    </p>
-    <p> <i class="fas fa-comment" aria-hidden="true">  <strong>{{article.comments_count}}</strong></i></p>
-    <a v-if="article.canonical_url != null" target="_blank" :href="article.canonical_url"><i class="fab fa-dev" /></a>
-
+    <i class="fas fa-comment" aria-hidden="true" style="margin: 10px auto;  font-size: 20px;">  <strong>{{ article.comments_count }}</strong></i>
+    <a v-if="article.canonical_url != null" target="_blank" :href="article.canonical_url" style="margin: 10px auto; font-size: 30px;"><i class="fab fa-dev" /></a>
   </div>
 </div>
+</div>
+</div>
+</div>
 
-   </div>
+       </Tab>
 
-
-
-      </Tab>
-       <Tab name="BLOGS" >
+       <Tab name="BLOGS">
     <v-data-iterator
       content-tag="div"
       content-class="row flex-wrap justify-content-center d-flex p-2"
@@ -106,7 +121,7 @@ export default {
         this.$emit('hideloader', true)
       })
   },
- mounted () {
+  mounted () {
     axios
       .get('https://dev.to/api/articles?username=nitdgplug')
       .then(response => {
@@ -120,7 +135,7 @@ export default {
         .replace(/\s+/g, '-')
         .toLowerCase()
     }
-  },
+  }
   
 }
 </script>

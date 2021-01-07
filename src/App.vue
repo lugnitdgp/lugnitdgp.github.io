@@ -13,16 +13,12 @@
 import NavBar from './components/NavBar'
 import PreLoader from './components/PreLoader'
 import PageFooter from './components/PageFooter'
-import Tab from './components/Tab'
-import Tabs from './components/Tabs'
 export default {
   name: 'App',
   components: {
     PreLoader,
     NavBar,
-    PageFooter,
-    Tab,
-    Tabs
+    PageFooter
   },
   data () {
     return {

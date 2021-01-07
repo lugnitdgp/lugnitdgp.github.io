@@ -6,18 +6,24 @@
 
 <script>
 export default {
-    name: "Tab",
+  name: 'Tab',
   props: {
-    name: { required: true },
-    selected: { default: false }
+    name: {
+      type: String, 
+      required: true 
+    },
+    selected: {
+      type: Boolean,
+      default: false
+    }
   },
   data: () => {
     return {
       isActive: false
     }
   },
-  mounted() {
-    this.isActive = this.selected;
+  mounted () {
+    this.isActive = this.selected
   }
 }
 </script>
