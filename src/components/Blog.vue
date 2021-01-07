@@ -7,7 +7,12 @@
       To share.To connect.To create.To inspire.
     </p>
     <Tabs>
-       <Tab name="Blogs" selected="true">
+       <Tab name="Dev" selected="true">
+         <div>
+       {{ info.id }}
+         </div>
+      </Tab>
+       <Tab name="Blogs" >
     <v-data-iterator
       content-tag="div"
       content-class="row flex-wrap justify-content-center d-flex p-2"
@@ -47,11 +52,7 @@
       </div>
     </v-data-iterator>
        </Tab>
-       <Tab name="Dev">
-         <div>
-       {{ info }}
-         </div>
-      </Tab>
+      
     </Tabs>
   </section>
 </template>
@@ -71,7 +72,6 @@ export default {
       blog: [],
       rowsPerPageItems: [1],
       info: [],
-      articles: [],
       pagination: {
         rowsPerPage: 10
       }
@@ -90,8 +90,10 @@ export default {
  mounted () {
     axios
       .get('https://dev.to/api/articles?username=nitdgplug')
-      .then(response => 
-        this.info = response)
+      .then(response => {
+        this.info = response.data
+        console.log(this.info)
+      })
   },
   methods: {
     ConvertToKebabCase (string) {
