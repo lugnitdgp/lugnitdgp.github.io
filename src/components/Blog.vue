@@ -8,9 +8,10 @@
     </p>
     <Tabs>
        <Tab name="DEV" selected="true">
+          <div class="container">
+            <div class="row">
    <div v-for="article in articles" :key="article.index">
-   <div class="container">
-    
+      <div class="col-sm">
        <div class="card-header p-2 pl-3">
  <div className="item" style=" position: relative;
   flex-shrink: 0;
@@ -39,6 +40,8 @@
     <i class="fas fa-comment" aria-hidden="true" style="margin: 10px auto;  font-size: 20px;">  <strong>{{ article.comments_count }}</strong></i>
     <a v-if="article.canonical_url != null" target="_blank" :href="article.canonical_url" style="margin: 10px auto; font-size: 30px;"><i class="fab fa-dev" /></a>
   </div>
+</div>
+</div>
 </div>
 </div>
 </div>
