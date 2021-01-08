@@ -42,18 +42,23 @@ export default {
 
 <style lang="scss" scoped>
   .tabs {
-    border-bottom: 1px solid #fefefe;
-    margin: 0 10px;
+   border-bottom: 2px solid #ff6600;
+   margin: -15px -10px;
   }
   .tabs-details {
     padding: 10px;
   }
+   ol {
+    justify-content: space-evenly;
+  }
   ul {
+    font-size: 30px;
+    justify-content: space-evenly;
     display: flex;
     padding: 0;
     list-style: none;
     li {
-      margin-right: 40px;
+      margin-right: 80px;
     }
     .nav-item {
       cursor: pointer;
