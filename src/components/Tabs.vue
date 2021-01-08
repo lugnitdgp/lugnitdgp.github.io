@@ -49,15 +49,17 @@ export default {
     padding: 10px;
   }
    ol {
-    justify-content: space-evenly;
+    justify-content: center;
   }
   ul {
-    font-size: 30px;
-    justify-content: space-evenly;
+    font-size: 20px;
+    justify-content: center;
     display: flex;
-    padding: 0;
+    padding-top: 20px;
+    padding-left: 65px;
     list-style: none;
     li {
+      
       margin-right: 80px;
     }
     .nav-item {
@@ -66,6 +68,11 @@ export default {
         color: #FB130A;
       }
       &.is-active {
+         background-color: white; 
+  color: black; 
+  border-bottom-color: rgb(244, 67, 54);
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
         color: #FB130A;
       }
     }

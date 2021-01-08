@@ -11,12 +11,12 @@
           <div class="container">
             <div class="row">
    <div v-for="article in articles" :key="article.index">
-      <div class="col-sm">
+      <div class="col-md-auto">
        <div class="card-header p-2 pl-3">
  <div className="item" style=" position: relative;
   flex-shrink: 0;
   width: auto;
-  max-width: 500px;
+  max-width: 300px;
   height: auto;
   border-radius: 5px;
   border: 2px solid #dedede;
@@ -26,7 +26,7 @@
   box-shadow: 5px 5px 10px #78787888;"
   >
 
- <h1 className="heading"><strong>{{ article.title }}</strong></h1>
+ <h2 className="heading"><strong>{{ article.title }}</strong></h2>
    <img class="card-img-bottom" :src="article.cover_image" />
      
           <div class="row" style="width: 70%; margin: 0 auto; display: flex;
@@ -179,5 +179,33 @@ export default {
   height: auto;
   width: 100%;
   background-size: cover;
+}
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.03); 
+    border-bottom: none;
+}
+@media only screen and (min-width: 960px){
+.container {
+    max-width: 960px;
+    padding-left: 125px;
+}
+.row{
+  width: auto;
+}
+}
+@media only screen and (min-width: 280px){
+  .row{
+    width: auto;
+  }
+}
+@media only screen and (min-width: 1025px){
+.container {
+    margin-left: 54px;
+}
+.row{
+  width: 1400px;
+}
 }
 </style>
