@@ -74,7 +74,8 @@ import common from '@/services/common.js'
 export default {
   data () {
     return {
-      Allyears: [{name: '2020', members: []},
+      Allyears: [{name: '2021', members: []},
+        {name: '2020', members: []},
         {name: '2019', members: []},
         {name: '2018', members: []},
         {name: '2017', members: []}]
@@ -99,14 +100,16 @@ export default {
   },
   methods: {
     categorise (member) {
-      if (member.passout_year === 2020) {
+      if (member.passout_year === 2021) {
         this.Allyears[0].members.push(member) 
-      } else if (member.passout_year === 2019) { 
+      } else if (member.passout_year === 2020) {
         this.Allyears[1].members.push(member) 
-      } else if (member.passout_year === 2018) { 
+      } else if (member.passout_year === 2019) { 
         this.Allyears[2].members.push(member) 
-      } else if (member.passout_year === 2017) { 
+      } else if (member.passout_year === 2018) { 
         this.Allyears[3].members.push(member) 
+      } else if (member.passout_year === 2017) { 
+        this.Allyears[4].members.push(member) 
       }
     }
   }

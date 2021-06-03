@@ -38,10 +38,10 @@ export default {
   data () {
     return {
       contacts: [
-        {name: 'Liman Rahman (President)', phone: '+91 94755 22304', mail: 'president@nitdgplug.org'},
-        {name: 'Akshat Jain (General Secretary)', phone: '+91 80049 37056', mail: 'gs@nitdgplug.org'},
-        {name: 'Ayush Shukla (Treasurer)', phone: '+91 80015 07060', mail: 'treasurer@nitdgplug.org'},
-        {name: 'Archana Choudhary (Convener)', phone: '+91 70447 91608', mail: 'convenor@nitdgplug.org'}
+        {name: 'Rajas Kulkarni (President)', phone: '+91 89679 92555', mail: 'president@nitdgplug.org'},
+        {name: 'Himanshu Shekhar Jha (General Secretary)', phone: '+91 82107 39419', mail: 'gs@nitdgplug.org'},
+        {name: 'Mohit Agarwal (Treasurer)', phone: '+91 98303 72570', mail: 'treasurer@nitdgplug.org'},
+        {name: 'Harshith Surappureddi (Convener)', phone: '+91 79802 30635', mail: 'convenor@nitdgplug.org'}
       ]
     }
   }
