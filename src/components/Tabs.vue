@@ -1,4 +1,3 @@
-
 <template>
   <article>
     <header class="tabs">
@@ -41,28 +40,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .tabs {
-    border-bottom: 1px solid #fefefe;
-    margin: 0 10px;
+.tabs {
+  border-bottom: 2px solid #ff6600;
+  margin: -15px -10px;
+}
+.tabs-details {
+  padding: 10px;
+}
+  ol {
+  justify-content: center;
+}
+ul {
+  font-size: 20px;
+  justify-content: center;
+  display: flex;
+  padding-top: 20px;
+  padding-left: 65px;
+  list-style: none;
+  li {
+    
+    margin-right: 80px;
   }
-  .tabs-details {
-    padding: 10px;
-  }
-  ul {
-    display: flex;
-    padding: 0;
-    list-style: none;
-    li {
-      margin-right: 40px;
+  .nav-item {
+    cursor: pointer;
+    &:hover {
+      color: #FB130A;
     }
-    .nav-item {
-      cursor: pointer;
-      &:hover {
-        color: #FB130A;
-      }
-      &.is-active {
-        color: #FB130A;
-      }
+    &.is-active {
+      background-color: white; 
+      color: black; 
+      color: #FB130A;
     }
   }
+}
 </style>

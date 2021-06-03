@@ -6,7 +6,7 @@
       <div class="row align-middle d-flex flex-wrap">
         <div class="col-md-12 col-lg-4">
           <div>
-            <img src="static/images/MUKTI-17-logo.png" class="logo">
+            <img src="static/images/Mukti-17-logo.png" class="logo">
           </div>
           <div class="mukti"></div>
         </div>
@@ -102,7 +102,7 @@ h2 {
     color: white;
   }
   100% {
-    content: "2013 - 17";
+    content: "2005 - 17";
   }
 }
 
