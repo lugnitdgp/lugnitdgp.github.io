@@ -54,7 +54,7 @@ export default {
   left: 0;
   top: 0;
   z-index: 9999;
-
+  
   .navbar-brand {
     line-height: 1rem;
     padding: 10px 0px 10px 20px;

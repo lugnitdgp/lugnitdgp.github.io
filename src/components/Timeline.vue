@@ -28,7 +28,7 @@
               </div>
             </v-card-actions>
           </v-card>
-          <img class="logo" src="static/images/glug-logo.png">
+          <img class="logo" src="static/images/glugpridelogo.png">
           <div id="CombinedDayClock"
                :data-aos="index%2 == 1 ? 'fade-right' : 'fade-left'"
                data-aos-duration="600"
