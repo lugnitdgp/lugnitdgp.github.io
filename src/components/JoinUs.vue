@@ -147,17 +147,35 @@
       </p>
     </div>
     <div class="wrapper mb-5">
-      <button class="register btn btn-lg font-weight-bold" disabled>COMING SOON!</button>
+      <button v-if="config !== null && config.enable" class="register btn btn-lg font-weight-bold">
+        <a :href="config.value" class="register" target="_blank" rel="noopener noreferrer">REGISTER</a>
+      </button>
+      <button v-else class="register btn btn-lg font-weight-bold" disabled>COMING SOON!</button>
     </div>
   </div>
 </template>
 
 <script>
+import common from '@/services/common.js'
+
 export default {
+  data () {
+    return {
+      config: null
+    }
+  },
   created () {
-    this.$emit('hideloader', true)
-    this.$emit('hideloader', true)
-    this.$emit('hideloader', true)
+    common.getConfig()
+      .then(response => {
+        const configs = response.data
+        this.config = configs.find(config => config.key === 'audition')
+        this.$emit('hideloader', true)
+        this.$emit('hideloader', true)
+        this.$emit('hideloader', true)
+      })
+      .catch(e => {
+        console.log(e)
+      })
   }
 }
 </script>

@@ -31,5 +31,8 @@ export default {
   },
   getAlumni () {
     return Api().get('api/alumni/')
+  },
+  getConfig () {
+    return Api().get('api/configs/')
   }
 }
