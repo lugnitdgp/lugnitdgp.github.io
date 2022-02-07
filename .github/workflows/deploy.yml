@@ -25,14 +25,16 @@ jobs:
       env:
         CI: true    
     - name: Running remote SSH commands
-      uses: JimCronqvist/action-ssh@master
+      uses: appleboy/ssh-action@master
       with:
-        hosts: ${{ secrets.HOST }}
-        privatekey: ${{ secrets.SSHKEY }}
-        command: |
-                cd ~/www/lugnitdgp.github.io
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: |
+                cd /home/glugwebsite/lugnitdgp.github.io
                 git checkout prod
                 git pull origin prod
-                sudo docker-compose up -d --build
+                npm run build
                 cd ~
                 sudo systemctl restart nginx
