@@ -22,7 +22,6 @@ export default {
   },
 
   ready: function () {
-    console.log(this.number)
     this.displayNumber = this.number ? this.number : 0
   },
 

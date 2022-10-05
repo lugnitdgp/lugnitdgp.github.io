@@ -222,7 +222,6 @@ export default {
           this.featuredEvents.push(event)
         }
       })
-      console.log(this.featuredEvents)
     }
   }
 }

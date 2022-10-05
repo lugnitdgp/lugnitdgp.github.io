@@ -71,7 +71,6 @@ export default {
     common.getContact()
       .then(response => {
         this.contacts = response.data
-        console.log(this.contacts)
         this.$emit('hideloader', true)
       })
       .catch(e => {
