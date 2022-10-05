@@ -85,7 +85,6 @@ export default {
     common.getAlumni()
       .then(response => {
         const profiles = response.data
-        console.log(profiles)
         profiles.forEach((member) => {
           if (member.image === null) { member.image = 'static/images/Linux-Avatar.png' }
           this.categorise(member)
