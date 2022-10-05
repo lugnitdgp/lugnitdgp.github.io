@@ -5,25 +5,36 @@
     </h2>
     <div class="row p-0 Contact-us">
       <div class="col-md-12 col-lg-5 m-0 pb-4 pt-4">
-        <div v-for="(contact,index) in contacts" :key="index" class="row d-flex justify-content-center">
+        <div
+          v-for="(contact, index) in contacts"
+          :key="index"
+          class="row d-flex justify-content-center"
+        >
           <div class="col-11 font-weight-bold ">
             <div class="contact-card">
-              {{ contact.name }} <br>
-              <i class="fas fa-phone" /> {{ contact.phone }} <br>
-              <i class="fas fa-envelope" /> {{ contact.mail }} <br>
+              {{ contact.name }} <br />
+              <i class="fas fa-phone" /> {{ contact.phone_number }} <br />
+              <i class="fas fa-envelope" /> {{ contact.email }} <br />
             </div>
           </div>
         </div>
       </div>
       <div class="col-sm-12 col-lg-7 p-0">
-        <div class="Contact-footer--right" style="background-image: url('static/images/map.jpeg')">
+        <div
+          class="Contact-footer--right"
+          style="background-image: url('static/images/map.jpeg')"
+        >
           <div class="Contact-footer--right-content">
             <div class="row mt-2">
               <div class="col-1 p-0 mr-2">
                 <i class="fas fa-map-marker-alt fa-2x" />
               </div>
               <div class="col-10">
-                <p> <strong>GNU/Linux Users' Group<br>  NIT Durgapur</strong></p><p>Durgapur<br>West Bengal 713209</p>
+                <p>
+                  <strong>GNU/Linux Users' Group<br />
+                    NIT Durgapur</strong>
+                </p>
+                <p>Durgapur<br />West Bengal 713209</p>
               </div>
             </div>
           </div>
@@ -33,7 +44,7 @@
   </div>
 </template>
 
-<script>
+<!-- <script>
 export default {
   data () {
     return {
@@ -46,10 +57,31 @@ export default {
     }
   }
 }
+</script> -->
+
+<script>
+import common from '@/services/common.js'
+export default {
+  data () {
+    return {
+      contacts: []
+    }
+  },
+  created () {
+    common.getContact()
+      .then(response => {
+        this.contacts = response.data
+        console.log(this.contacts)
+        this.$emit('hideloader', true)
+      })
+      .catch(e => {
+        console.log(e)
+      })
+  }
+}
 </script>
 
 <style scoped>
-
 h2 {
   font-size: 32px;
   text-transform: uppercase;
@@ -57,7 +89,7 @@ h2 {
 .highlighted {
   color: #fa631c;
 }
-.Contact-us{
+.Contact-us {
   background-color: #f5f5f5;
 }
 .contact-card {
@@ -79,7 +111,7 @@ h2 {
   margin: 0;
   padding: 3vh 1vw 3vh;
   width: 100%;
-  float:left;
+  float: left;
   box-sizing: border-box;
   padding-bottom: 20vh;
 }
@@ -102,8 +134,7 @@ h2 {
   pointer-events: none;
   border: solid transparent;
   border-width: 12px;
-  border-color: rgba(218,77,60,0);
+  border-color: rgba(218, 77, 60, 0);
   border-top-color: #444;
 }
-
 </style>

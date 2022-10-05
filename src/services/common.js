@@ -5,6 +5,9 @@ export default {
   getCarousel () {
     return Api().get('api/carousel/')
   },
+  getContact () {
+    return Api().get('api/contact/')
+  },
   getMembers () {
     return Api().get('api/profiles/')
   },
