@@ -36,7 +36,6 @@ export default {
     common.getPost(this.$route.query.id)
       .then(response => {
         this.post = response.data
-        console.log(this.post)
         this.$emit('hideloader', true)
         this.$emit('hideloader', true)
         this.$emit('hideloader', true)

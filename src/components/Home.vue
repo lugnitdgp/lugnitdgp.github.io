@@ -68,7 +68,6 @@ export default {
       .then(response => {
         this.events = response.data
         this.events = this.events.filter(event => event.featured)
-        console.log(this.events)
         this.stopLoader()
       })
       .catch(e => {

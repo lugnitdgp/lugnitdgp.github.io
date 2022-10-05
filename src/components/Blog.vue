@@ -48,7 +48,6 @@ export default {
         this.blog.sort(function (a, b) { return new Date(b.date_to_show) - new Date(a.date_to_show) })
         this.recents = [...this.blog.slice(0, 3)]
         this.blog.splice(0, 3)
-        console.log(this.blog)
         this.$emit('hideloader', true)
         this.$emit('hideloader', true)
         this.$emit('hideloader', true)

@@ -56,7 +56,6 @@ export default {
     }
   },
   created () {
-    console.log(this.profiles[0])
   },
   methods: {
     displayheading (text) {
