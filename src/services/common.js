@@ -33,7 +33,7 @@ export default {
     return Api().get(`api/linit-pages/?year=${year}`)
   },
   getAlumni () {
-    return Api().get('api/alumni/')
+    return Api().get('api/alumni-by-year/')
   },
   getConfig () {
     return Api().get('api/configs/')
